@@ -49,6 +49,7 @@
       var places = $(xml).find('Place');
       var thumbTemplate = $('<div class="col_thumb"><a href="javascript:void(0)" class="thumbnail border_white"><img src=""/><div class="thumbname">example</div</a></div>');
       var descTemplate = $('<div class="obj_desc container-fluid"><div class="row"><div class="name col-xs-12 col-md-12 col-lg-12"></div><div class="what col-xs-12 col-md-12 col-lg-12"></div><div class="before col-xs-12 col-md-12 col-lg-12"></div><div class="process col-xs-12 col-md-12 col-lg-12"></div><div class="elements col-xs-12 col-md-12 col-lg-12"></div><div class="after col-xs-12 col-md-12 col-lg-12"></div><div class="properties col-xs-12 col-md-12 col-lg-12"></div><div class="dive col-xs-12 col-md-12 col-lg-12"></div></div></div>');
+      var pointTemplate = $('<div><a href="#"><div class="plot_point"></div></a></div>')
       var constellations = $(xml).find('Constellation');
       var cmb = $(xml).find('CMB');
       
@@ -58,6 +59,7 @@
         // create a temporary object of a thumbnail and of a description element from the templates above 
         var tmpthumb = thumbTemplate.clone();
         var tmpdesc = descTemplate.clone();
+        var tmppoint = pointTemplate.clone();
 
         tmpthumb.find('img').attr({
           src: place.find('ThumbnailUrl').text(),
@@ -97,6 +99,10 @@
           
         var targetdive = place.find('.Dive').html();
         tmpdesc.find('.dive').html(targetdive);
+
+        var top = place.attr('Top');
+        var left = place.attr('Left');
+        tmppoint.find('.plot_point').css("top", top).css("left", left);
     
           
         // apply the unique target description class to the description template clone
@@ -204,10 +210,27 @@
             on_click(element, true)
           });
 
+        tmppoint.find('a')
+          .data('foreground-image', place.attr('Name'))
+          //'click' - false; 'dblclick' - true.  on('click', function () { on_click(false) });
+
+          .on('click', function(event){
+            var element = event.target;
+            on_click(element, false);
+            console.log("single click of plot_point");
+          })
+
+          .on('dblclick', function(event){
+            var element = event.target;
+            on_click(element, true)
+          });
+
         // Plug the set of thumbnails into the #destinationThumbs element
         $('#destinationThumbs').append(tmpthumb);
           
         $("#description_container").append(tmpdesc);
+
+        $('#sloan_image_holder').append(tmppoint);
 
         // tag the reload button with a click action to reload the most recent thumbnail
         $("#reset_target").on('click', function(event){
@@ -465,12 +488,12 @@
     var container = $("html");
     var top_container = $(".top_container");
     var bottom_container = $(".bottom_container")
-    var thumb_gutter = $(".thumb_gutter");
+    var sloan_gutter = $(".sloan_gutter");
 
     // Constants here must be synced with settings in style.css
-    const new_wwt_width = (top_container.width() - thumb_gutter.width());
+    const new_wwt_width = (top_container.width() - sloan_gutter.width());
       // subtract 52 to account for the margin and border in .css file
-    const thumbs_height = thumb_gutter.outerHeight(true);
+    const sloan_height = sloan_gutter.outerHeight(true);
     // const new_wwt_height = ((0.5 * container.height()) - 52);
     const new_wwt_height = top_container.height() - 2;  //set wwt_canvas height to fill top_container, subtract 2 to account for border width
     const colophon_height = $("#colophon").height();
