@@ -2,7 +2,8 @@
 <Folder MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="BUAC Stellar Life Cycles" Group="Explorer" Searchable="False" Type="Earth">
   <VersionDependent>false</VersionDependent>
 
-  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="Orion Nebula Spitzer" DataSetType="Sky" RA="5.5808333333333344" Dec="-5.44416666666667" Constellation="ORI" Classification="Nebula" Magnitude="0" Distance="0" ZoomLevel="19.59" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="19.59">
+
+  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="Orion Nebula Spitzer" DataSetType="Sky" RA="5.5808333333333344" Dec="-5.44416666666667" Constellation="ORI" Classification="Nebula" Magnitude="0" Distance="0" ZoomLevel="19.59" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="19.59" Top="10%" Left="10%">
     <Target>orionnebula</Target>
     <ForegroundImageSet>
       <ImageSet MSRCommunityId="0" MSRComponentId="0" Permission="0" Generic="False" DataSetType="Sky" BandPass="IR" Url="http://r{S:1}.ortho.tiles.virtualearth.net/tiles/wsa0000010231{Q}?g=131" TileLevels="5" WidthFactor="2" Sparse="True" Rotation="0.015915112700651" QuadTreeMap="0123" Projection="Tangent" Name="Orion Nebula Spitzer" FileType=".png" CenterY="-5.59338109097" CenterX="83.6383655257" BottomsUp="False" StockSet="False" ElevationModel="False" OffsetX="-0.151262042234303" OffsetY="0.179267217168241" BaseTileLevel="0" BaseDegreesPerTile="0.682489467823981" MeanRadius="0" FOV="1.6">
@@ -75,7 +76,8 @@
     </Description>
   </Place>
 
-   <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="HOPS 68" DataSetType="Sky" RA="5.591333333" Dec="-5.15" Constellation="VIR" Classification="Unidentified" Magnitude="0" Distance="0" ZoomLevel="3.49" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="3.49">
+
+  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="HOPS 68" DataSetType="Sky" RA="5.591333333" Dec="-5.15" Constellation="VIR" Classification="Unidentified" Magnitude="0" Distance="0" ZoomLevel="3.49" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="3.49" Top="15%" Left="15%">
     <Target>hops68</Target>
     <ForegroundImageSet>
       <ImageSet Name="HOPS 68" DemUrl="" MSRCommunityId="0" MSRComponentId="0" Permission="0" Generic="False" DataSetType="Sky" BandPass="Visible" Url="http://www.spitzer.caltech.edu/uploaded_files/images/0007/9046/ssc2011-06c1_Med.jpg" TileLevels="0" WidthFactor="1" Sparse="False" Rotation="0.0327671586219935" QuadTreeMap="" Projection="SkyImage" FileType=".jpg" CenterY="-5.2756498433051791" CenterX="83.907803091754644" BottomsUp="False" StockSet="False" ElevationModel="False" OffsetX="612.165595583851" OffsetY="64.600102050693337" BaseTileLevel="0" BaseDegreesPerTile="0.0003690619088841799" ReferenceFrame="" MeanRadius="0" FOV="0.4">
@@ -157,7 +159,8 @@
     </Description>
   </Place> 
 
-  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="Sun" DataSetType="Sky" RA="0.21833333" Dec="1.41694444" Constellation="PSC" Classification="SolarSystem" Magnitude="-26.73" Distance="0.99690962291948559" ZoomLevel="4" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="4">
+
+  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="Sun" DataSetType="Sky" RA="0.21833333" Dec="1.41694444" Constellation="PSC" Classification="SolarSystem" Magnitude="-26.73" Distance="0.99690962291948559" ZoomLevel="4" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="4" Top="20%" Left="20%">
     <ImageSet>
     <Target>sunstar</Target>
     <ThumbnailUrl>http://www.worldwidetelescope.org/wwtweb/thumbnail.aspx?name=sun</ThumbnailUrl>
@@ -226,7 +229,8 @@
     </Description>
   </Place>
 
-  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="Sigma Orionis" DataSetType="Sky" RA="5.6455555553333348" Dec="-2.6" Constellation="ORI" Classification="Star" Magnitude="3.81" Distance="0" ZoomLevel="-1" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="-1">
+
+  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="Sigma Orionis" DataSetType="Sky" RA="5.6455555553333348" Dec="-2.6" Constellation="ORI" Classification="Star" Magnitude="3.81" Distance="0" ZoomLevel="-1" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="-1" Top="25%" Left="25%">
     <ImageSet FOV="1">
       <Target>sigmaorionis</Target>
       <ThumbnailUrl>sigma_orionis_thumbnail.png</ThumbnailUrl>
@@ -301,7 +305,8 @@
     </Description>
   </Place>
 
-  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="Aldebaran" DataSetType="Sky" RA="4.5986111113333337" Dec="16.50916667" Constellation="TAU" Classification="Star" Magnitude="0.85" Distance="0" ZoomLevel="-1" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="-1">
+
+  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="Aldebaran" DataSetType="Sky" RA="4.5986111113333337" Dec="16.50916667" Constellation="TAU" Classification="Star" Magnitude="0.85" Distance="0" ZoomLevel="-1" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="-1" Top="30%" Left="30%">
     <ImageSet FOV="4">
       <Target>aldebaranstar</Target>
       <ThumbnailUrl>aldebaran_thumbnail.png</ThumbnailUrl>
@@ -375,7 +380,7 @@
   </Place>
 
 
-  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="Betelgeuse" DataSetType="Sky" RA="5.9194444446666665" Dec="7.406944444" Constellation="ORI" Classification="Star" Magnitude="0.5" Distance="0" ZoomLevel="-1" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="-1">
+  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="Betelgeuse" DataSetType="Sky" RA="5.9194444446666665" Dec="7.406944444" Constellation="ORI" Classification="Star" Magnitude="0.5" Distance="0" ZoomLevel="-1" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="-1" Top="35%" Left="35%">
     <ImageSet FOV="8">
       <Target>betelgeusestar</Target>
       <ThumbnailUrl>betelgeuse_thumbnail.png</ThumbnailUrl>
@@ -455,7 +460,7 @@
   </Place>
 
 
-  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="The Ring Nebula (M57)" DataSetType="Sky" RA="18.893055555555591" Dec="33.0283333333333" Constellation="LYR" Classification="Nebula" Magnitude="0" Distance="0" ZoomLevel="0.565" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="0.565">
+  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="The Ring Nebula (M57)" DataSetType="Sky" RA="18.893055555555591" Dec="33.0283333333333" Constellation="LYR" Classification="Nebula" Magnitude="0" Distance="0" ZoomLevel="0.565" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="0.565" Top="40%" Left="40%">
     <Target>ringnebula</Target>
     <ForegroundImageSet>
         <ImageSet DemUrl="" MSRCommunityId="0" MSRComponentId="0" Permission="0" Generic="False" DataSetType="Sky" BandPass="Visible" Url="http://r{S:1}.ortho.tiles.virtualearth.net/tiles/wsa0000001201{Q}?g=138" TileLevels="3" WidthFactor="2" Sparse="True" Rotation="33.4150621086519" QuadTreeMap="0123" Projection="Tangent" Name="The Ring Nebula (M57)" FileType=".png" CenterY="33.0294929455291" CenterX="283.395104978147" BottomsUp="False" StockSet="False" ElevationModel="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.0565749886281826" MeanRadius="0" FOV="0.0565749886281826">
@@ -539,7 +544,7 @@
   </Place>
 
 
-  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="Crab Nebula : Dead Star Creates Celestial Havoc" DataSetType="Sky" RA="5.5755555555555461" Dec="22.0166666666667" Constellation="TAU" Classification="SupernovaRemnant" Magnitude="0" Distance="0" ZoomLevel="1" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="1">
+  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="Crab Nebula : Dead Star Creates Celestial Havoc" DataSetType="Sky" RA="5.5755555555555461" Dec="22.0166666666667" Constellation="TAU" Classification="SupernovaRemnant" Magnitude="0" Distance="0" ZoomLevel="1" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="1" Top="45%" Left="45%">
     <Target>crabnebula</Target>
         <ForegroundImageSet>
       <ImageSet DemUrl="" MSRCommunityId="0" MSRComponentId="0" Permission="0" Generic="False" DataSetType="Sky" BandPass="Visible" Url="http://r{S:2}.ortho.tiles.virtualearth.net/tiles/wsa0000001102{Q}?g=138" TileLevels="4" WidthFactor="2" Sparse="True" Rotation="-0.0751860195300311" QuadTreeMap="0123" Projection="Tangent" Name="Crab Nebula : Dead Star Creates Celestial Havoc" FileType=".png" CenterY="22.0172769653712" CenterX="83.6331623858263" BottomsUp="False" StockSet="False" ElevationModel="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.22681269761397" MeanRadius="0" FOV="0.2268127">
