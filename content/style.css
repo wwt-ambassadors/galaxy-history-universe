@@ -206,6 +206,23 @@ a, a:hover {
 }
 
 
+.spectrum_popup {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 40%;
+    max-height: calc(100% - 40px);
+    border: 2px solid #333333BB;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.spectrum_popup img {
+    width: 100%;
+}
+
+
 
 
 /* Target Descriptions */

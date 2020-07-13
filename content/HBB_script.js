@@ -48,7 +48,7 @@
       // store each of the Place objects from the WTML file in places
       var places = $(xml).find('Place');
       var thumbTemplate = $('<div class="col_thumb"><a href="javascript:void(0)" class="thumbnail border_white"><img src=""/><div class="thumbname">example</div</a></div>');
-      var descTemplate = $('<div class="obj_desc container-fluid"><div class="row"><div class="name col-xs-12 col-md-12 col-lg-12"></div><div class="what col-xs-12 col-md-12 col-lg-12"></div><div class="before col-xs-12 col-md-12 col-lg-12"></div><div class="process col-xs-12 col-md-12 col-lg-12"></div><div class="elements col-xs-12 col-md-12 col-lg-12"></div><div class="after col-xs-12 col-md-12 col-lg-12"></div><div class="properties col-xs-12 col-md-12 col-lg-12"></div><div class="dive col-xs-12 col-md-12 col-lg-12"></div></div></div>');
+      var descTemplate = $('<div class="obj_desc container-fluid"><div class="row"><div class="name col-xs-12 col-md-12 col-lg-12"></div><div class="what col-xs-12 col-md-12 col-lg-12"></div><div class="characteristics col-xs-12 col-md-12 col-lg-12"></div></div></div>');
       var pointTemplate = $('<div><a href="#"><div class="plot_point"></div></a></div>')
       var constellations = $(xml).find('Constellation');
       var cmb = $(xml).find('CMB');
@@ -82,23 +82,8 @@
         var targetwhat = place.find('.What').html();
         tmpdesc.find('.what').html(targetwhat);
           
-        var targetbefore = place.find('.Before').html();
-        tmpdesc.find('.before').html(targetbefore);
-          
-        var targetprocess = place.find('.Process').html();
-        tmpdesc.find('.process').html(targetprocess);
-          
-        var targetafter = place.find('.After').html();
-        tmpdesc.find('.after').html(targetafter);
-          
-        var targetelements = place.find('.Elements').html();
-        tmpdesc.find('.elements').html(targetelements);
-          
-        var targetproperties = place.find('.Properties').html();
-        tmpdesc.find('.properties').html(targetproperties);
-          
-        var targetdive = place.find('.Dive').html();
-        tmpdesc.find('.dive').html(targetdive);
+        var targetcharacteristics = place.find('.Characteristics').html();
+        tmpdesc.find('.characteristics').html(targetcharacteristics);
 
         var top = place.attr('Top');
         var left = place.attr('Left');
@@ -209,6 +194,16 @@
             var element = event.target;
             on_click(element, true)
           });
+
+          tmpdesc.find('a').mouseenter(function() {
+            var popup_id = "#" + place.attr('Index').toLowerCase() + "_spectrum"
+            console.log(popup_id)
+            $(popup_id).show();
+          })
+          tmpdesc.find('a').mouseleave(function() {
+            var popup_id = "#" + place.attr('Index').toLowerCase() + "_spectrum"
+            $(popup_id).hide();
+          })
 
         tmppoint.find('a')
           .data('foreground-image', place.attr('Name'))
@@ -349,17 +344,8 @@
         var targetwhat = cmb.find('.What').html();
         tmpdesc.find('.what').html(targetwhat);
           
-        var targetprocess = cmb.find('.Process').html();
-        tmpdesc.find('.process').html(targetprocess);
-          
-        var targetelements = cmb.find('.Elements').html();
-        tmpdesc.find('.elements').html(targetelements);
-          
-        var targetproperties = cmb.find('.Properties').html();
-        tmpdesc.find('.properties').html(targetproperties);
-          
-        var targetdive = cmb.find('.Dive').html();
-        tmpdesc.find('.dive').html(targetdive);
+        var targetcharacteristics = cmb.find('.Characteristics').html();
+        tmpdesc.find('.characeristics').html(targetcharacteristics);
     
           
         // apply the unique target description class to the description template clone
