@@ -3,8 +3,8 @@
   <VersionDependent>false</VersionDependent>
 
 
-  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="ESO 550-2" DataSetType="Sky" RA="4.3555555555555543" Dec="-18.8130555555556" Constellation="ERI" Classification="ClusterOfGalaxies" Magnitude="0" Distance="0" ZoomLevel="-1" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="-1" Top="40%" Left="40%">
-    <Target>Undefined</Target>
+  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Index="One" Name="ESO 550-2" DataSetType="Sky" RA="4.3555555555555543" Dec="-18.8130555555556" Constellation="ERI" Classification="ClusterOfGalaxies" Magnitude="0" Distance="0" ZoomLevel="-1" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="-1" Top="40%" Left="40%">
+    <Target>Neptune1</Target>
     <ForegroundImageSet>
       <ImageSet DemUrl="" MSRCommunityId="0" MSRComponentId="0" Permission="0" Generic="False" DataSetType="Sky" BandPass="Visible" Url="http://r{S:0}.ortho.tiles.virtualearth.net/tiles/wsa0000012100{Q}?g=182" TileLevels="4" WidthFactor="2" Sparse="True" Rotation="-96.5999999999999" QuadTreeMap="0123" Projection="Tangent" Name="ESO 550-2;ESO 550-IG02" FileType=".png" CenterY="-18.8116510878498" CenterX="65.3342901091328" BottomsUp="False" StockSet="False" ElevationModel="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.056755903020055" MeanRadius="0">
         <Credits>NASA, ESA, the Hubble Heritage (STScI/AURA)-ESA/Hubble Collaboration, and A. Evans (University of Virginia, Charlottesville/NRAO/Stony Brook University)</Credits>
@@ -12,11 +12,35 @@
         <ThumbnailUrl>http://www.worldwidetelescope.org/wwtweb/thumbnail.aspx?name=1302365329</ThumbnailUrl>
       </ImageSet>
     </ForegroundImageSet>
+    <Description Title="Neptune">
+      <div class="Thumbnail">
+        Neptune1
+      </div>
+      <div class="Name">
+        <h3>Neptune1<span class="stagename">outer planet</span></h3>
+      </div>
+      <div class="What">
+        <h4>What is it?</h4>
+        <p>
+          Neptune1 is an ice giant similar to Uranus. The orbits of Neptune and Pluto cross paths such that Pluto is closer to the Sun than Neptune for about 20 years every 248 years; however, the two objects will never collide. Neptune was discovered in the nineteenth century; it was the first planet discovered by a mathematical prediction that mapped the location of an unknown force affecting the orbit of Uranus. Neptune's atmosphere has large storms, similar to the Great Red Spot on Jupiter, that last for years at a time and are surrounded by white clouds of frozen methane.
+        </p>
+      </div>
+      <div class="Characteristics">
+        <h4>Characteristics</h4>
+        <ul>
+          <li><strong>Radius:</strong> <a id="neptune1_scale" href="#">3.88 Earth radii</a> (25,000 km)</li>
+          <li><strong>Mass:</strong> 17.1 Earth's mass (1 &#215; 10<sup>26</sup> kg)</li>
+          <li><strong>Average distance from Sun:</strong> 30.02 AU</li>
+          <li><strong>Length of year:</strong> 164.8 Earth years</li>
+          <li><strong>Known moons:</strong> 14</li>
+        </ul>
+      </div>
+    </Description>
   </Place>
 
 
-  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="Galaxy Abell 1689's 'Gravitational Lens' Magnifies Light of Distant Galaxies" DataSetType="Sky" RA="13.191666666666698" Dec="-1.33833333333333" Constellation="VIR" Classification="ClusterOfGalaxies" Magnitude="0" Distance="0" ZoomLevel="2" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="2" Top="20%" Left="20%">
-    <Target>Undefined</Target>
+  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Index="Two" Name="Galaxy Abell 1689's 'Gravitational Lens' Magnifies Light of Distant Galaxies" DataSetType="Sky" RA="13.191666666666698" Dec="-1.33833333333333" Constellation="VIR" Classification="ClusterOfGalaxies" Magnitude="0" Distance="0" ZoomLevel="2" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="2" Top="20%" Left="20%">
+    <Target>Neptune2</Target>
     <ForegroundImageSet>
       <ImageSet DemUrl="" MSRCommunityId="0" MSRComponentId="0" Permission="0" Generic="False" DataSetType="Sky" BandPass="Visible" Url="http://r{S:1}.ortho.tiles.virtualearth.net/tiles/wsa0000003131{Q}?g=138" TileLevels="4" WidthFactor="2" Sparse="True" Rotation="115.070264325489" QuadTreeMap="0123" Projection="Tangent" Name="Galaxy Abell 1689's 'Gravitational Lens' Magnifies Light of Distant Galaxies" FileType=".png" CenterY="-1.33802195447086" CenterX="197.875021977371" BottomsUp="False" StockSet="False" ElevationModel="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.0566848326740156" MeanRadius="0">
         <Credits>Credit: NASA, N. Benitez (JHU), T. Broadhurst (Racah Institute of  Physics/The Hebrew University), H. Ford (JHU), M. Clampin (STScI),  G. Hartig (STScI),  G. Illingworth (UCO/Lick Observatory), the  ACS Science Team and ESA The members of the ACS science team are: H.C. Ford (JHU),  G.D. Illingworth (UCO/Lick Observatory), N. Benitez (JHU),  M. Clampin (STScI), G.F. Hartig (STScI), D.R. Ardila (JHU),  F. Bartko (Bartko Science &amp; Technology), J.P. Blakeslee (JHU),  R.J. Bouwens (UCO/Lick Observatory), T.J. Broadhurst (Racah  Institute of Physics, The Hebrew University), R.A. Brown (STScI),  C.J. Burrows (STScI), E.S. Cheng (NASA-GSFC), N.J.G. Cross (JHU),  P.D. Feldman (JHU), M. Franx (Leiden Observatory), D.A. Golimowski  (JHU), C. Gronwall (Pennsylvania State University), L. Infante  (Pontificia Universidad Catolica de Chile), R.A. Kimble (NASA-GSFC),  J.E. Krist (STScI), M.P. Lesser (Steward Observatory), A.R. Martel  (JHU), F. Menanteau (JHU), G.R. Meurer (JHU), G.K. Miley (Leiden  Observatory), M. Postman (STScI), P. Rosati (European Southern  Observatory), M. Sirianni (JHU), W.B. Sparks (STScI), H.D. Tran  (JHU), Z.I. Tsvetanov (JHU), R.L. White (STScI/JHU), and  W. Zheng (JHU)</Credits>
@@ -24,11 +48,35 @@
         <ThumbnailUrl>http://www.worldwidetelescope.org/wwtweb/thumbnail.aspx?name=671562313</ThumbnailUrl>
       </ImageSet>
     </ForegroundImageSet>
+    <Description Title="Neptune">
+      <div class="Thumbnail">
+        Neptune2
+      </div>
+      <div class="Name">
+        <h3>Neptune2<span class="stagename">outer planet</span></h3>
+      </div>
+      <div class="What">
+        <h4>What is it?</h4>
+        <p>
+          Neptune2 is an ice giant similar to Uranus. The orbits of Neptune and Pluto cross paths such that Pluto is closer to the Sun than Neptune for about 20 years every 248 years; however, the two objects will never collide. Neptune was discovered in the nineteenth century; it was the first planet discovered by a mathematical prediction that mapped the location of an unknown force affecting the orbit of Uranus. Neptune's atmosphere has large storms, similar to the Great Red Spot on Jupiter, that last for years at a time and are surrounded by white clouds of frozen methane.
+        </p>
+      </div>
+      <div class="Characteristics">
+        <h4>Characteristics</h4>
+        <ul>
+          <li><strong>Radius:</strong> <a id="neptune2_scale" href="#">3.88 Earth radii</a> (25,000 km)</li>
+          <li><strong>Mass:</strong> 17.1 Earth's mass (1 &#215; 10<sup>26</sup> kg)</li>
+          <li><strong>Average distance from Sun:</strong> 30.02 AU</li>
+          <li><strong>Length of year:</strong> 164.8 Earth years</li>
+          <li><strong>Known moons:</strong> 14</li>
+        </ul>
+      </div>
+    </Description>
   </Place>
 
 
-  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="Centaurus A" DataSetType="Sky" RA="13.424999999999997" Dec="-43.0047222222222" Constellation="CEN" Classification="BlackHole" Magnitude="0" Distance="0" ZoomLevel="5.625" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="5.625" Top="30%" Left="30%">
-    <Target>Undefined</Target>
+  <Place MSRCommunityId="0" MSRComponentId="0" Permission="0" Index="Three" Name="Centaurus A" DataSetType="Sky" RA="13.424999999999997" Dec="-43.0047222222222" Constellation="CEN" Classification="BlackHole" Magnitude="0" Distance="0" ZoomLevel="5.625" Rotation="0" Angle="0" DomeAlt="0" DomeAz="0" Opacity="100" AngularSize="5.625" Top="30%" Left="30%">
+    <Target>Neptune3</Target>
     <ForegroundImageSet>
       <ImageSet MSRCommunityId="0" MSRComponentId="0" Permission="0" Generic="False" DataSetType="Sky" BandPass="Visible" Url="http://www.worldwidetelescope.org/wwtweb/tiles.aspx?q={1},{2},{3},613200509" TileLevels="4" WidthFactor="2" Sparse="True" Rotation="0" QuadTreeMap="" Projection="Tangent" Name="Centaurus A" FileType=".png" CenterY="-43.0176341168247" CenterX="201.364842778348" BottomsUp="False" StockSet="False" ElevationModel="False" OffsetX="-0.0001366666693" OffsetY="-0.0001366666693" BaseTileLevel="0" BaseDegreesPerTile="0.479461666257278" MeanRadius="0">
         <Credits>X-ray: NASA/CXC/CfA/R.Kraft et al; Radio: NSF/VLA/Univ.Hertfordshire/M.Hardcastle; Optical: ESO/VLT/ISAAC/M.Rejkuba et al. These multiwavelength images show the galaxy Centaurus A. Pictured: the radio image from the Very Large Array, the optical image from the ESO's Wide-Field Imager (WFI) camera at the ESO/MPG 2.2-m telescope on La Silla, Chile, and a combined X-ray, optical and radio version. 
@@ -37,6 +85,30 @@
         <ThumbnailUrl>http://www.worldwidetelescope.org/wwtweb/thumbnail.aspx?name=613200509</ThumbnailUrl>
       </ImageSet>
     </ForegroundImageSet>
+    <Description Title="Neptune">
+      <div class="Thumbnail">
+        Neptune3
+      </div>
+      <div class="Name">
+        <h3>Neptune3<span class="stagename">outer planet</span></h3>
+      </div>
+      <div class="What">
+        <h4>What is it?</h4>
+        <p>
+          Neptune3 is an ice giant similar to Uranus. The orbits of Neptune and Pluto cross paths such that Pluto is closer to the Sun than Neptune for about 20 years every 248 years; however, the two objects will never collide. Neptune was discovered in the nineteenth century; it was the first planet discovered by a mathematical prediction that mapped the location of an unknown force affecting the orbit of Uranus. Neptune's atmosphere has large storms, similar to the Great Red Spot on Jupiter, that last for years at a time and are surrounded by white clouds of frozen methane.
+        </p>
+      </div>
+      <div class="Characteristics">
+        <h4>Characteristics</h4>
+        <ul>
+          <li><strong>Radius:</strong> <a id="neptune3_scale" href="#">3.88 Earth radii</a> (25,000 km)</li>
+          <li><strong>Mass:</strong> 17.1 Earth's mass (1 &#215; 10<sup>26</sup> kg)</li>
+          <li><strong>Average distance from Sun:</strong> 30.02 AU</li>
+          <li><strong>Length of year:</strong> 164.8 Earth years</li>
+          <li><strong>Known moons:</strong> 14</li>
+        </ul>
+      </div>
+    </Description>
   </Place>
 
 
