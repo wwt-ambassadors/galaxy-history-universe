@@ -4,6 +4,12 @@
 
   // The WWT WWTControl singleton.
   var wwt_ctl = null;
+
+  // WWT Camera parameters
+  var wwt_cp = null;
+  var camera_zoom = 0;
+  var whatisra = 0;
+  var camera_params = null;
     
   // track zoom level for distance calculation.
   var zoom_level = 50;
@@ -34,6 +40,7 @@
 
   function wwt_ready() {
     wwt_ctl = wwtlib.WWTControl.singleton;
+    wwt_cp = wwtlib.CameraParameters;
 
     wwt_si.settings.set_showConstellationBoundries(false);
     wwt_si.settings.set_showConstellationFigures(false);
@@ -125,36 +132,11 @@
           var desc_box = $('#description_container')[0];
           
           if(desc_box.scrollHeight > desc_box.clientHeight) {
-            console.log("need arrow");
+            //console.log("need arrow");
             $('.fa-arrow-down').show();
           } else {
             $('.fa-arrow-down').hide();
           }
-
-          // check whether this target is a Solar System object (only the Sun, in this case)
-          if (place.attr('Classification') == 'SolarSystem') {
-
-            // This is a solar system object. In order to view it correctly,
-            // we need to find its associated wwtlib "Place" object and seek
-            // to it thusly. The get_camParams() function calculates its
-            // current RA and Dec.
-            wwt_si.setBackgroundImageByName('Digitized Sky Survey (Color)');
-
-            //set the global variables: current target classification / name / RA / dec / FOV
-            curr_clasification = place.attr('Classification');
-            curr_name = place.attr('Name');
-            curr_RA = null;
-            curr_dec = null;
-            curr_FOV = null;
-
-            $.each(folder.get_children(), function (i, wwtplace) {
-              if (wwtplace.get_name() == place.attr('Name')) {
-                wwt_ctl.gotoTarget3(wwtplace.get_camParams(), false, is_dblclick);
-              }
-            });
-
-          // everything else, which includes all non-solar system celestial objects
-          } else {
 
             wwt_si.setBackgroundImageByName('Digitized Sky Survey (Color)');
 
@@ -176,8 +158,12 @@
               parseFloat(place.find('ImageSet').attr('FOV')),
               is_dblclick
             );
+            // See if initializing this again helps?
+            wwt_cp = wwtlib.CameraParameters;
+            camera_params = wwt_cp.copy;
+            console.log("Just did gotoRADecZoom. Camera fov is", camera_params);
 
-          }
+          
         }
 
         tmpthumb.find('a')
@@ -196,7 +182,7 @@
 
           tmpdesc.find('a').mouseenter(function() {
             var popup_id = "#" + place.attr('Index').toLowerCase() + "_spectrum"
-            console.log(popup_id)
+            //console.log(popup_id)
             $(popup_id).show();
           })
           tmpdesc.find('a').mouseleave(function() {
@@ -211,7 +197,7 @@
           .on('click', function(event){
             var element = event.target;
             on_click(element, false);
-            console.log("single click of plot_point");
+            //console.log("single click of plot_point");
           })
 
           .on('dblclick', function(event){
@@ -232,27 +218,6 @@
           //set the background image to DSS for any target reset
           wwt_si.setBackgroundImageByName('Digitized Sky Survey (Color)');
 
-          console.log("should be resetting...");
-
-          if (curr_clasification == 'SolarSystem') {
-
-            // This is a solar system object. In order to view it correctly,
-            // we need to find its associated wwtlib "Place" object and seek
-            // to it thusly. The get_camParams() function calculates its
-            // current RA and Dec.
-
-            $.each(folder.get_children(), function (i, wwtplace) {
-              if (wwtplace.get_name() == curr_name) {
-                wwt_ctl.gotoTarget3(wwtplace.get_camParams(), false, true);
-              }
-            });
-
-          } else {
-
-            // Every other object (ie not SolarSystem) represents one of the 
-            // other thumbnails of celestial objects. CMB and Constellations
-            // not included.
-
             wwt_si.settings.set_showConstellationFigures(false);
             wwt_si.settings.set_showConstellationLabels(false);
 
@@ -264,8 +229,6 @@
               parseFloat(curr_FOV),
               true
             );
-
-          }
 
           $("#reset_target").fadeOut(1000);
 
@@ -299,7 +262,7 @@
           );
         
         }
-
+/*
         if (constellation.attr('Name') == "Orion Constellation") {
           $(".orion_const").on('click', function(event){
             console.log("clicked orion constellation link line 336 js")
@@ -319,106 +282,7 @@
             on_click(element, false)
           })
         }
-
-      });
-
-
-      // Add CMB to the thumbnails gutter
-      cmb.each(function (i, pl) {
-        var cmb = $(pl);
-
-        // create a temporary object of a thumbnail and of a description element from the templates above 
-        var tmpthumb = $('<div class="col_thumb"><a href="javascript:void(0)" class="thumbnail border_white" id="cmb_thumb"><div class="thumbname">example</div</a></div>');
-        console.log("just cloned thumb template: ", cmb.find('.Thumbnail').html());
-        var tmpdesc = descTemplate.clone();
-
-        // locate the thumbnail name and replace html contents with content from WTML file
-        var thumbname = cmb.find('.Thumbnail').html();
-        tmpthumb.find('.thumbname').html(thumbname);
-
-        // grab the class = Name/What/Process/Elements/Properties/Dive html content for each Place from the WTML file
-        var targetname = cmb.find('.Name').html();
-        tmpdesc.find('.name').html(targetname);
-
-        var targetwhat = cmb.find('.What').html();
-        tmpdesc.find('.what').html(targetwhat);
-          
-        var targetcharacteristics = cmb.find('.Characteristics').html();
-        tmpdesc.find('.characeristics').html(targetcharacteristics);
-    
-          
-        // apply the unique target description class to the description template clone
-        var desc_class = cmb.find('Target').text().toLowerCase() + "_description";
-        console.log("CMB desc_class: ", desc_class);
-        tmpdesc.addClass(desc_class);
-
-        function on_click(element, is_dblclick) {
-
-          if (wwt_si === null) {
-            return;
-          };
-
-          //	Change the text color of the Cosmic Microwave Background
-          var element = element;
-            
-          $(".thumbnail img").removeClass("border_green").addClass("border_black");
-          $(".thumbname").removeClass("text_green");
-          $(element).parent().find(".thumbname").addClass("text_green");
-
-          // (disable and hide reset button if visible)
-          reset_enabled = false;
-          $("#reset_target").fadeOut(100);
-
-          /* hide all descriptions, then show description specific to this target on sgl/dbl click */
-          var toggle_class = "." + desc_class;
-          $("#description_box").find(".obj_desc").hide();
-          $('#begin_container').hide();
-          $('#description_container').scrollTop(0).show();
-            
-          $(toggle_class).show();
-            
-          // Make arrow appear only for overflow
-          var desc_box = $('#description_container')[0];
-          
-          if(desc_box.scrollHeight > desc_box.clientHeight) {
-            console.log("need arrow");
-            $('.fa-arrow-down').show();
-          } else {
-            $('.fa-arrow-down').hide();
-          }
-
-          wwt_si.setBackgroundImageByName('Planck CMB');
-          wwt_si.settings.set_showConstellationFigures(false);
-          wwt_si.settings.set_showConstellationLabels(false);
-
-          wwt_si.setForegroundImageByName('');
-
-          wwt_si.gotoRaDecZoom(
-            parseFloat(cmb.attr('RA')) * 15,
-            cmb.attr('Dec'),
-            parseFloat(cmb.find('ImageSet').attr('FOV')),
-            false
-          );
-        
-        };
-
-        tmpthumb.find('a')
-          .data('foreground-image', cmb.attr('Name'))
-          //'click' - false; 'dblclick' - true.  on('click', function () { on_click(false) });
-
-          .on('click', function(event){
-            var element = event.target;
-            on_click(element, false)
-          })
-
-          .on('dblclick', function(event){
-            var element = event.target;
-            on_click(element, true)
-          });
-
-        // Plug the set of thumbnails into the #destinationThumbs element
-        $('#destinationThumbs').append(tmpthumb);
-        $("#description_container").append(tmpdesc);
+*/
 
       });
 
@@ -488,9 +352,9 @@
     const description_height = bottom_height - colophon_height;
     // const new_desc_height = (bottom_container.height() - colophon_height - 40);
     // const new_desc_height = (0.35 * container.height());
-    console.log("html: ", container.height())
-    console.log("top: ", top_container.outerHeight())
-    console.log("bottom: ", bottom_height)
+    //console.log("html: ", container.height())
+    //console.log("top: ", top_container.outerHeight())
+    //console.log("bottom: ", bottom_height)
 
     $("#wwtcanvas").css({
       "width": new_wwt_width + "px",
@@ -602,6 +466,7 @@
     });
 
     canvas.addEventListener("wwt-move", (function (proceed) {
+      //console.log("moving around");
       return function (event) {
         if (!proceed)
           return false;
@@ -621,6 +486,7 @@
     })(true));
 
     canvas.addEventListener("wwt-zoom", (function (proceed) {
+      //console.log("in zoom function");
       return function (event) {
         if (!proceed)
           return false;
@@ -632,10 +498,12 @@
 
         setTimeout(function () { proceed = true }, delay);
 
-        if (event.deltaY < 0)
+        if (event.deltaY < 0){
           wwt_ctl.zoom(1.43);
-        else
+        }
+        else{
           wwt_ctl.zoom(0.7);
+        }
 
       }
     })(true));
@@ -668,17 +536,21 @@
   $('#distance_button').on('click', function() {
     print_time(zoom_level);
     zoom_level =  50; // Fill this in with the proper method from wwt api to capture zoom level
-    console.log("zoom is ", zoom_level);
+    //random attempts to get something to return the camera FOV/Zoom level
+    camera_zoom=wwt_si.settings.get_fovCamera;
+    console.log("Distance calculator FOV", camera_zoom);
+    wwt_cp=wwtlib.CameraParameters;
+    whatisra=wwt_cp.get_RA;
+    console.log("Distance calculator RA is ", whatisra);
+
     // print_time(zoom_level);  // Un-Comment this once zoom_level accurately captures the zoom level
   })
-
-
 
   function print_time(num) {
     console.log("print time");
 
     $('#distance').html(num);
   }
-    
+  
     
 })();
