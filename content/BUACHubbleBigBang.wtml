@@ -2,7 +2,7 @@
 <Folder MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="BUAC_Hubble" Group="Explorer" Searchable="False" Type="Earth">
   <VersionDependent>false</VersionDependent>
 
-  <Place Name="NGC 6052" RA="16.0868148075333" Dec="20.5417849563" ZoomLevel="0.0901394594873344" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1909a.jpg" Constellation="" Modified="Sun Mar 17 2019">
+  <Place Name="NGC 6052" RA="16.0868148075333" Dec="20.5417849563" ZoomLevel="0.0901394594873344" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1909a.jpg" Constellation="" Modified="Sun Mar 17 2019" Top="20%" Left="20%">
     <ForegroundImageSet>
       <ImageSet DataSetType="Sky" Name="NGC 6052" BandPass="Visible" Url="https://wwtfiles.blob.core.windows.net/vamp/Hubble-potw1909aL{1}X{2}Y{3}.png" TileLevels="3" WidthFactor="1" Rotation="-45.02" Projection="Tan" FileType=".png" CenterY="20.5417849563" CenterX="241.302222113" BottomsUp="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.0225348648718336">
         <Credits>ESA/Hubble &amp; NASA, A. Adamo et a; Located in the constellation of Hercules, about 230 million light-years away, NGC 6052 is a pair of colliding galaxies. They wer...</Credits>
@@ -12,7 +12,8 @@
     </ForegroundImageSet>
   </Place>
  
-  <Place Name="Haro 11" RA="0.614611045857333" Dec="-33.5541945798" ZoomLevel="0.05681114176512" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1016a.jpg" Constellation="" Modified="Sat Nov 10 2018">
+
+  <Place Name="Haro 11" RA="0.614611045857333" Dec="-33.5541945798" ZoomLevel="0.05681114176512" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1016a.jpg" Constellation="" Modified="Sat Nov 10 2018" Top="30%" Left="60%">
     <ForegroundImageSet>
       <ImageSet DataSetType="Sky" Name="Haro 11" BandPass="Visible" Url="https://wwtfiles.blob.core.windows.net/vamp/Hubble-potw1016aL{1}X{2}Y{3}.png" TileLevels="3" WidthFactor="1" Rotation="10.1" Projection="Tan" FileType=".png" CenterY="-33.5541945798" CenterX="9.21916568786" BottomsUp="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.01420278544128">
         <Credits>ESA/Hubble/ESO and NASA; Haro 11 appears to shine gently amid clouds of gas and dust, but this placid facade belies the monumental rate of star formation...</Credits>
@@ -22,26 +23,29 @@
     </ForegroundImageSet>
   </Place>
 
-  <Place Name="UGC 2369" RA="2.90060095017333" Dec="14.9741613569" ZoomLevel="0.159164517445798" DataSetType="Sky" Opacity="100" Thumbnail="https://astropix.ipac.caltech.edu/archive/esahubble/potw1931a/esahubble_potw1931a_100.jpg" Constellation="">
- <ForegroundImageSet>
- <ImageSet DataSetType="Sky" Name="UGC 2369" BandPass="Visible" Url="https://astropix.ipac.caltech.edu/archive/esahubble/potw1931a/esahubble_potw1931a_1600.jpg" TileLevels="0" WidthFactor="2" Rotation="-107.2" Projection="SkyImage" FileType=".tif" CenterY="14.9741613569" CenterX="43.5090142526" BottomsUp="False" OffsetX="800" OffsetY="540.330188679245" BaseTileLevel="0" BaseDegreesPerTile="2.9456898907472E-05">
-<Credits></Credits>
-<CreditsUrl></CreditsUrl>
-</ImageSet>
-</ForegroundImageSet>
-</Place>
 
-<Place Name="Hercules A" RA="16.8522692206" Dec="4.99292628183" ZoomLevel="0.18247041024" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-opo1247a.jpg" Constellation="" Modified="Fri Nov 09 2018">
-   <ForegroundImageSet>
+  <Place Name="UGC 2369" RA="2.90060095017333" Dec="14.9741613569" ZoomLevel="0.159164517445798" DataSetType="Sky" Opacity="100" Thumbnail="https://astropix.ipac.caltech.edu/archive/esahubble/potw1931a/esahubble_potw1931a_100.jpg" Constellation="" Top="40%" Left="55%">
+    <ForegroundImageSet>
+      <ImageSet DataSetType="Sky" Name="UGC 2369" BandPass="Visible" Url="https://astropix.ipac.caltech.edu/archive/esahubble/potw1931a/esahubble_potw1931a_1600.jpg" TileLevels="0" WidthFactor="2" Rotation="-107.2" Projection="SkyImage" FileType=".tif" CenterY="14.9741613569" CenterX="43.5090142526" BottomsUp="False" OffsetX="800" OffsetY="540.330188679245" BaseTileLevel="0" BaseDegreesPerTile="2.9456898907472E-05">
+        <Credits></Credits>
+        <CreditsUrl></CreditsUrl>
+      </ImageSet>
+    </ForegroundImageSet>
+  </Place>
+
+
+  <Place Name="Hercules A" RA="16.8522692206" Dec="4.99292628183" ZoomLevel="0.18247041024" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-opo1247a.jpg" Constellation="" Modified="Fri Nov 09 2018" Top="45%" Left="45%">
+    <ForegroundImageSet>
       <ImageSet DataSetType="Sky" Name="Hercules A" BandPass="Visible" Url="https://wwtfiles.blob.core.windows.net/vamp/Hubble-opo1247aL{1}X{2}Y{3}.png" TileLevels="4" WidthFactor="1" Rotation="35.9876208852" Projection="Tan" FileType=".png" CenterY="4.99292628183" CenterX="252.784038309" BottomsUp="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.04561760256">
         <Credits>NASA, ESA, S. Baum and C. O'Dea ; Spectacular jets powered by the gravitational energy of a supermassive black hole in the core of the elliptical galaxy Hercules ...</Credits>
         <CreditsUrl>http://www.spacetelescope.org/images/opo1247a/</CreditsUrl>
         <ThumbnailUrl>https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-opo1247a.jpg</ThumbnailUrl>
       </ImageSet>
     </ForegroundImageSet>
-    </Place>
+  </Place>
 
-      <Place Name="Abell 370" RA="2.66467799178667" Dec="-1.57727281228" ZoomLevel="0.546414254882816" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-heic1816a.jpg" Constellation="" Modified="Thu Nov 08 2018">
+
+  <Place Name="Abell 370" RA="2.66467799178667" Dec="-1.57727281228" ZoomLevel="0.546414254882816" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-heic1816a.jpg" Constellation="" Modified="Thu Nov 08 2018" Top="60%" Left="50%">
     <ForegroundImageSet>
       <ImageSet DataSetType="Sky" Name="Abell 370" BandPass="Visible" Url="https://wwtfiles.blob.core.windows.net/vamp/Hubble-heic1816aL{1}X{2}Y{3}.png" TileLevels="6" WidthFactor="1" Rotation="27.72" Projection="Tan" FileType=".png" CenterY="-1.57727281228" CenterX="39.9701698768" BottomsUp="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.136603563720704">
         <Credits>NASA, ESA, A. Koekemoer, M. Jauz; The galaxy cluster Abell 370 was the first target of the BUFFALO survey, which aims to search for some of the first galaxies in ...</Credits>
@@ -51,7 +55,8 @@
     </ForegroundImageSet>
   </Place>
 
-    <Place Name="GOODS North Field" RA="12.6150941463333" Dec="62.243952347" ZoomLevel="0.546617051201536" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1834a.jpg" Constellation="" Modified="Thu Nov 08 2018">
+
+  <Place Name="GOODS North Field" RA="12.6150941463333" Dec="62.243952347" ZoomLevel="0.546617051201536" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1834a.jpg" Constellation="" Modified="Thu Nov 08 2018" Top="75%" Left="35%">
     <ForegroundImageSet>
       <ImageSet DataSetType="Sky" Name="GOODS North Field" BandPass="Visible" Url="https://wwtfiles.blob.core.windows.net/vamp/Hubble-potw1834aL{1}X{2}Y{3}.png" TileLevels="5" WidthFactor="1" Rotation="-19.7" Projection="Tan" FileType=".png" CenterY="62.243952347" CenterX="189.226412195" BottomsUp="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.136654262800384">
         <Credits>ESA/Hubble &amp; NASA; The Hubble Deep Field from 1995 allowed astronomers a first glimpse into the early Universe. This first picture was followed lat...</Credits>
@@ -59,9 +64,10 @@
         <ThumbnailUrl>https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1834a.jpg</ThumbnailUrl>
       </ImageSet>
     </ForegroundImageSet>
-    </Place>
+  </Place>
 
-      <Place Name="HDF-S" RA="22.5605084235333" Dec="-60.569712781" ZoomLevel="3.49762441777152" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-opo9841n.jpg" Constellation="" Modified="Fri Nov 09 2018">
+
+  <Place Name="HDF-S" RA="22.5605084235333" Dec="-60.569712781" ZoomLevel="3.49762441777152" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-opo9841n.jpg" Constellation="" Modified="Fri Nov 09 2018" Top="80%" Left="65%">
     <ForegroundImageSet>
       <ImageSet DataSetType="Sky" Name="HDF-S" BandPass="Visible" Url="https://wwtfiles.blob.core.windows.net/vamp/Hubble-opo9841nL{1}X{2}Y{3}.png" TileLevels="2" WidthFactor="1" Rotation="0.08" Projection="Tan" FileType=".png" CenterY="-60.569712781" CenterX="338.407626353" BottomsUp="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.87440610444288">
         <Credits>J. Gardner (NOAO/GSFC), Cerro To; After the great success of the origninal Hubble Deep Field, later called Hubble Deep Field North (HDF-N), an identical project f...</Credits>
