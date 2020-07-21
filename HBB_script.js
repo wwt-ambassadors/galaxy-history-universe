@@ -5,9 +5,8 @@
   // The WWT WWTControl singleton.
   var wwt_ctl = null;
     
-  // track whether user has panned or zoomed yet.
-  var click_counter = 0;
-  var zoom_counter = 0;
+  // track zoom level for distance calculation.
+  var zoom_level = 50;
 
   // global variables to hold the wwt_si navigation for the last thumbnail clicked, for use by the reset button
   var reset_enabled = false;
@@ -549,21 +548,21 @@
     const mouse_down = new_event("wwt-move", { movementX: 0, movementY: -53 }, true);
 
     const zoomCodes = {
-      "KeyZ": wheel_up,
-      "KeyX": wheel_down,
-      90: wheel_up,
-      88: wheel_down
+      "KeyI": wheel_up,
+      "KeyO": wheel_down,
+      73: wheel_up,
+      79: wheel_down
     };
 
     const moveCodes = {
-      "KeyJ": mouse_left,
-      "KeyI": mouse_up,
-      "KeyL": mouse_right,
-      "KeyK": mouse_down,
-      74: mouse_left,
-      73: mouse_up,
-      76: mouse_right,
-      75: mouse_down
+      "KeyA": mouse_left,
+      "KeyW": mouse_up,
+      "KeyD": mouse_right,
+      "KeyS": mouse_down,
+      65: mouse_left,
+      87: mouse_up,
+      68: mouse_right,
+      83: mouse_down
     };
 
     window.addEventListener("keydown", function (event) {
@@ -664,6 +663,19 @@
     }
 
   })
+
+  // Distance Calculator Button (calculated on back end based on how much the screen is zoomed)
+  $('#distance_button').on('click', function() {
+    print_time(zoom_level);
+  })
+
+
+
+  function print_time(num) {
+    console.log("print time");
+
+    $('#distance').html(num);
+  }
     
     
 })();
