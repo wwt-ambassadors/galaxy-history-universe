@@ -182,27 +182,27 @@ a, a:hover {
     pointer-events: none;
 }
 
-#distance_button {
+#distance_button, #zoom_button {
     text-align: right;
     pointer-events: all;
 }
 
-#distance_text {
+#distance_text, #zoom_text {
     border: 3px solid #41BEEC;
     border-radius: 15px;
     padding: 5px;
     font-size: 0.75em;
 }
 
-#distance_text:hover {
+#distance_text:hover, #zoom_text:hover {
     background-color: #41BEEC22;
 }
 
-#distance_text:active {
+#distance_text:active, #zoom_text:active {
     background-color: #41BEEC44;
 }
 
-#distance_text a {
+#distance_text a, #zoom_text a {
     color: #41BEEC;
     text-decoration: none;
 }

@@ -667,6 +667,9 @@
   // Distance Calculator Button (calculated on back end based on how much the screen is zoomed)
   $('#distance_button').on('click', function() {
     print_time(zoom_level);
+    zoom_level =  50; // Fill this in with the proper method from wwt api to capture zoom level
+    console.log("zoom is ", zoom_level);
+    // print_time(zoom_level);  // Un-Comment this once zoom_level accurately captures the zoom level
   })
 
 
