@@ -163,6 +163,107 @@ a, a:hover {
     pointer-events: none;
 }
 
+
+#speed_scale_container {
+    position: absolute;
+    bottom:10px;
+    right: 0px;
+    padding-right: 25px;
+    text-align: left;
+    pointer-events: none;
+}
+
+#tips_container {
+    position: absolute;
+    bottom: 25px;
+    left: 0px;
+    padding-left: 25px;
+    text-align: left;
+    pointer-events: none;
+}
+
+#distance_button {
+    text-align: right;
+    pointer-events: all;
+}
+
+#distance_text {
+    border: 3px solid #41BEEC;
+    border-radius: 15px;
+    padding: 5px;
+    font-size: 0.75em;
+}
+
+#distance_text:hover {
+    background-color: #41BEEC22;
+}
+
+#distance_text:active {
+    background-color: #41BEEC44;
+}
+
+#distance_text a {
+    color: #41BEEC;
+    text-decoration: none;
+}
+
+#time_buttons a {
+    color: #666;
+    cursor: default;
+}
+
+#time_buttons .text_orange {
+    color: #EFA928;
+}
+
+#time_buttons .fa-stack {
+    pointer-events: none;
+}
+
+#time_buttons .fa-stack.time_active {
+    color: white;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+#time_buttons .time_active:hover .fa-stack-1x {
+    color: #44FF44;
+}
+
+#time_buttons .time_active:active {
+    color: #44FF44;
+}
+
+#now_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#now_text {
+    font-size: 0.5em;
+}
+
+.times {
+    padding-left: 2px;
+}
+
+#distance_measure, #size_text {
+    padding: 10px 5px;
+    font-size: 0.75em;
+}
+
+#distance_measure {
+    margin-bottom: 20px;
+}
+
+
+#distance {
+    font-family: monospace, Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+    color: #44FF44;
+}
+
+
 #reset_target {
     position: absolute;
     bottom: 20px;
@@ -184,25 +285,25 @@ a, a:hover {
     pointer-events: none;
 }
 
-#zoom_pan_instrux {
-	width: 600px;
-    margin: 0 auto;
-	text-align: center;
-	font-size: 0.8rem;
-	color: #EEEEEECC;
-    background-color: #00000066;
-    border-radius: 25px;
-}
-
 @media screen and (max-width: 976px) {
     #zoom_pan_container {
         display: none;
     }
 }
 
+#zoom_pan_instrux {
+	width: 27em;
+    margin: 0 auto;
+	text-align: center;
+	font-size: 0.6em;
+	color: #EEEEEECC;
+    background-color: #00000066;
+    border-radius: 25px;
+}
+
 #zoom_pan_instrux strong {
     font-family: monospace, Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
-    color: #DDDDDD;
+    color: #EFA928;
 }
 
 
@@ -237,15 +338,21 @@ a, a:hover {
 	box-shadow: 0px 0px 15px #000 inset;
 }
 
-#begin_container {
-    margin-top: 50px;
-	text-align: center;
-    pointer-events: none;
+.thumbs_expl {
     user-select: none;
+	text-align: center;
+    padding: 20px;
+    color: #EFA928;
+    border-bottom: dotted #44FF44 2px;
+}
+
+.begin_ss {
+    margin-top: 1em;
+    text-align: left;
 }
 
 #description_container {
-	display: none;
+	display: block;
 	height: 100%;
 	overflow-y: auto;
 }
@@ -278,6 +385,7 @@ a, a:hover {
 
 #description_box .row a {
 	color: #41BEEC;
+    font-size: 0.9em;
 }
 
 #description_box i {
@@ -287,6 +395,7 @@ a, a:hover {
     font-family: "Font Awesome 5 Free";
 	font-style: normal;
 }
+
 .stagename {
     font-size: 80%;
     color: #44FF44;
