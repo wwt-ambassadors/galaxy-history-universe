@@ -304,7 +304,7 @@
       var view_height_deg = view_cam.zoom / 6;
 
       // Update the text of the HTML elements.
-      zoom_el.text((view_height_deg.toFixed(2) + "°");
+      zoom_el.text(view_height_deg.toFixed(2) + "°");
     };
 
     // Kick off the polling timer
@@ -382,6 +382,7 @@
       "width": new_wwt_width + "px",
       "height": new_wwt_height + "px"
     });
+    console.log("wwt height is ", $("#wwtcanvas").height());
 
     $(bottom_container).css({
       "height": bottom_height + "px"
@@ -559,11 +560,11 @@
     print_time(zoom_level);
     zoom_level = 50; // Fill this in with the proper method from wwt api to capture zoom level
     //random attempts to get something to return the camera FOV/Zoom level
-    camera_zoom = wwt_si.settings.get_fovCamera;
-    console.log("Distance calculator FOV", camera_zoom);
-    wwt_cp = wwtlib.CameraParameters;
-    whatisra = wwt_cp.get_RA;
-    console.log("Distance calculator RA is ", whatisra);
+    //camera_zoom = wwt_si.settings.get_fovCamera;
+    //console.log("Distance calculator FOV", camera_zoom);
+    //wwt_cp = wwtlib.CameraParameters;
+    //whatisra = wwt_cp.get_RA;
+    //console.log("Distance calculator RA is ", whatisra);
 
     // print_time(zoom_level);  // Un-Comment this once zoom_level accurately captures the zoom level
   })
