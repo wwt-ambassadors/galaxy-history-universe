@@ -77,6 +77,10 @@
           title: place.find('Description').attr('Title')
         });
 
+        tmppoint.find('.plot_point').attr({
+          title: place.find('Description').attr('Title')
+        })
+
         // locate the thumbnail name and replace html contents with content from WTML file
         var thumbname = place.find('.Thumbnail').html();
         tmpthumb.find('.thumbname').html(thumbname);
