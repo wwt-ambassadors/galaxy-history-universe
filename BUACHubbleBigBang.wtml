@@ -10,6 +10,28 @@
         <ThumbnailUrl>https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1909a.jpg</ThumbnailUrl>
       </ImageSet>
     </ForegroundImageSet>
+    <Description Title="Galaxy A">
+      <div class="Thumbnail">
+        Galaxy A
+      </div>
+      <div class="Name">
+        <h3>Galaxy A<span class="stagename">type of galaxy</span></h3>
+      </div>
+      <div class="What">
+        <h4>What is it?</h4>
+        <p>
+          Galaxy A is such and such and such...
+        </p>
+      </div>
+      <div class="Characteristics">
+        <h4>Characteristics</h4>
+        <ul>
+          <li><strong>Trait 1:</strong> <a id="neptune_scale" href="#">####</a> (####)</li>
+          <li><strong>Trait 2:</strong> #### (####)</li>
+          <li><strong>Trait 3:</strong> ####</li>
+        </ul>
+      </div>
+    </Description>
   </Place>
  
 
@@ -21,6 +43,28 @@
         <ThumbnailUrl>https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1016a.jpg</ThumbnailUrl>
       </ImageSet>
     </ForegroundImageSet>
+    <Description Title="Galaxy B">
+      <div class="Thumbnail">
+        Galaxy B
+      </div>
+      <div class="Name">
+        <h3>Galaxy B<span class="stagename">type of galaxy</span></h3>
+      </div>
+      <div class="What">
+        <h4>What is it?</h4>
+        <p>
+          Galaxy B is such and such and such...
+        </p>
+      </div>
+      <div class="Characteristics">
+        <h4>Characteristics</h4>
+        <ul>
+          <li><strong>Trait 1:</strong> <a id="neptune_scale" href="#">####</a> (####)</li>
+          <li><strong>Trait 2:</strong> #### (####)</li>
+          <li><strong>Trait 3:</strong> ####</li>
+        </ul>
+      </div>
+    </Description>
   </Place>
 
 
@@ -31,6 +75,28 @@
         <CreditsUrl></CreditsUrl>
       </ImageSet>
     </ForegroundImageSet>
+    <Description Title="Galaxy C">
+      <div class="Thumbnail">
+        Galaxy C
+      </div>
+      <div class="Name">
+        <h3>Galaxy C<span class="stagename">type of galaxy</span></h3>
+      </div>
+      <div class="What">
+        <h4>What is it?</h4>
+        <p>
+          Galaxy C is such and such and such...
+        </p>
+      </div>
+      <div class="Characteristics">
+        <h4>Characteristics</h4>
+        <ul>
+          <li><strong>Trait 1:</strong> <a id="neptune_scale" href="#">####</a> (####)</li>
+          <li><strong>Trait 2:</strong> #### (####)</li>
+          <li><strong>Trait 3:</strong> ####</li>
+        </ul>
+      </div>
+    </Description>
   </Place>
 
 
@@ -42,6 +108,28 @@
         <ThumbnailUrl>https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-opo1247a.jpg</ThumbnailUrl>
       </ImageSet>
     </ForegroundImageSet>
+    <Description Title="Galaxy D">
+      <div class="Thumbnail">
+        Galaxy D
+      </div>
+      <div class="Name">
+        <h3>Galaxy D<span class="stagename">type of galaxy</span></h3>
+      </div>
+      <div class="What">
+        <h4>What is it?</h4>
+        <p>
+          Galaxy D is such and such and such...
+        </p>
+      </div>
+      <div class="Characteristics">
+        <h4>Characteristics</h4>
+        <ul>
+          <li><strong>Trait 1:</strong> <a id="neptune_scale" href="#">####</a> (####)</li>
+          <li><strong>Trait 2:</strong> #### (####)</li>
+          <li><strong>Trait 3:</strong> ####</li>
+        </ul>
+      </div>
+    </Description>
   </Place>
 
 
@@ -53,6 +141,28 @@
         <ThumbnailUrl>https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-heic1816a.jpg</ThumbnailUrl>
       </ImageSet>
     </ForegroundImageSet>
+    <Description Title="Galaxy E">
+      <div class="Thumbnail">
+        Galaxy E
+      </div>
+      <div class="Name">
+        <h3>Galaxy E<span class="stagename">type of galaxy</span></h3>
+      </div>
+      <div class="What">
+        <h4>What is it?</h4>
+        <p>
+          Galaxy E is such and such and such...
+        </p>
+      </div>
+      <div class="Characteristics">
+        <h4>Characteristics</h4>
+        <ul>
+          <li><strong>Trait 1:</strong> <a id="neptune_scale" href="#">####</a> (####)</li>
+          <li><strong>Trait 2:</strong> #### (####)</li>
+          <li><strong>Trait 3:</strong> ####</li>
+        </ul>
+      </div>
+    </Description>
   </Place>
 
 
@@ -64,6 +174,28 @@
         <ThumbnailUrl>https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1834a.jpg</ThumbnailUrl>
       </ImageSet>
     </ForegroundImageSet>
+    <Description Title="Galaxy F">
+      <div class="Thumbnail">
+        Galaxy F
+      </div>
+      <div class="Name">
+        <h3>Galaxy F<span class="stagename">type of galaxy</span></h3>
+      </div>
+      <div class="What">
+        <h4>What is it?</h4>
+        <p>
+          Galaxy F is such and such and such...
+        </p>
+      </div>
+      <div class="Characteristics">
+        <h4>Characteristics</h4>
+        <ul>
+          <li><strong>Trait 1:</strong> <a id="neptune_scale" href="#">####</a> (####)</li>
+          <li><strong>Trait 2:</strong> #### (####)</li>
+          <li><strong>Trait 3:</strong> ####</li>
+        </ul>
+      </div>
+    </Description>
   </Place>
 
 
@@ -75,6 +207,28 @@
         <ThumbnailUrl>https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-opo9841n.jpg</ThumbnailUrl>
       </ImageSet>
     </ForegroundImageSet>
+    <Description Title="Galaxy G">
+      <div class="Thumbnail">
+        Galaxy G
+      </div>
+      <div class="Name">
+        <h3>Galaxy G<span class="stagename">type of galaxy</span></h3>
+      </div>
+      <div class="What">
+        <h4>What is it?</h4>
+        <p>
+          Galaxy G is such and such and such...
+        </p>
+      </div>
+      <div class="Characteristics">
+        <h4>Characteristics</h4>
+        <ul>
+          <li><strong>Trait 1:</strong> <a id="neptune_scale" href="#">####</a> (####)</li>
+          <li><strong>Trait 2:</strong> #### (####)</li>
+          <li><strong>Trait 3:</strong> ####</li>
+        </ul>
+      </div>
+    </Description>
   </Place>
 
 </Folder>
