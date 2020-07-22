@@ -10,7 +10,7 @@
   var camera_zoom = 0;
   var whatisra = 0;
   var camera_params = null;
-    
+
   // track zoom level for distance calculation.
   var zoom_level = 50;
 
@@ -58,7 +58,7 @@
       var pointTemplate = $('<div><a href="#"><div class="plot_point"></div></a></div>')
       var constellations = $(xml).find('Constellation');
       var cmb = $(xml).find('CMB');
-      
+
       places.each(function (i, pl) {
         var place = $(pl);
 
@@ -87,15 +87,15 @@
 
         var targetwhat = place.find('.What').html();
         tmpdesc.find('.what').html(targetwhat);
-          
+
         var targetcharacteristics = place.find('.Characteristics').html();
         tmpdesc.find('.characteristics').html(targetcharacteristics);
 
         var top = place.attr('Top');
         var left = place.attr('Left');
         tmppoint.find('.plot_point').css("top", top).css("left", left);
-    
-          
+
+
         // apply the unique target description class to the description template clone
         var desc_class = place.find('Target').text().toLowerCase() + "_description";
         tmpdesc.addClass(desc_class);
@@ -110,7 +110,7 @@
 
           //	Change the border color of the selected thumbnail
           var element = element;
-            
+
           $(".thumbnail img").removeClass("border_green").addClass("border_black");
           $(".thumbname").removeClass("text_green");
           $(element).parent().find("img").removeClass("border_black").addClass("border_green");
@@ -125,110 +125,110 @@
           $("#description_box").find(".obj_desc").hide();
           $('#begin_container').hide();
           $('#description_container').scrollTop(0).show();
-            
+
           $(toggle_class).show();
-            
+
           // Make arrow appear only for overflow
           var desc_box = $('#description_container')[0];
-          
-          if(desc_box.scrollHeight > desc_box.clientHeight) {
+
+          if (desc_box.scrollHeight > desc_box.clientHeight) {
             //console.log("need arrow");
             $('.fa-arrow-down').show();
           } else {
             $('.fa-arrow-down').hide();
           }
 
-            wwt_si.setBackgroundImageByName('Digitized Sky Survey (Color)');
+          wwt_si.setBackgroundImageByName('Digitized Sky Survey (Color)');
 
-            //set the global variables: current target classification / name / RA / dec / FOV
-            curr_clasification = place.attr('Classification');
-            curr_name = place.attr('Name');
-            curr_RA = place.attr('RA');
-            curr_dec = place.attr('Dec');
-            curr_FOV = place.find('ImageSet').attr('FOV');
+          //set the global variables: current target classification / name / RA / dec / FOV
+          curr_clasification = place.attr('Classification');
+          curr_name = place.attr('Name');
+          curr_RA = place.attr('RA');
+          curr_dec = place.attr('Dec');
+          curr_FOV = place.find('ImageSet').attr('FOV');
 
-            wwt_si.settings.set_showConstellationFigures(false);
-            wwt_si.settings.set_showConstellationLabels(false);
+          wwt_si.settings.set_showConstellationFigures(false);
+          wwt_si.settings.set_showConstellationLabels(false);
 
-            wwt_si.setForegroundImageByName(place.attr('Name'));
+          wwt_si.setForegroundImageByName(place.attr('Name'));
 
-            wwt_si.gotoRaDecZoom(
-              parseFloat(place.attr('RA')) * 15,
-              place.attr('Dec'),
-              parseFloat(place.find('ImageSet').attr('FOV')),
-              is_dblclick
-            );
-            // See if initializing this again helps?
-            wwt_cp = wwtlib.CameraParameters;
-            camera_params = wwt_cp.copy;
-            console.log("Just did gotoRADecZoom. Camera fov is", camera_params);
+          wwt_si.gotoRaDecZoom(
+            parseFloat(place.attr('RA')) * 15,
+            place.attr('Dec'),
+            parseFloat(place.find('ImageSet').attr('FOV')),
+            is_dblclick
+          );
+          // See if initializing this again helps?
+          wwt_cp = wwtlib.CameraParameters;
+          camera_params = wwt_cp.copy;
+          console.log("Just did gotoRADecZoom. Camera fov is", camera_params);
 
-          
+
         }
 
         tmpthumb.find('a')
           .data('foreground-image', place.attr('Name'))
           //'click' - false; 'dblclick' - true.  on('click', function () { on_click(false) });
 
-          .on('click', function(event){
+          .on('click', function (event) {
             var element = event.target;
             on_click(element, false)
           })
 
-          .on('dblclick', function(event){
+          .on('dblclick', function (event) {
             var element = event.target;
             on_click(element, true)
           });
 
-          tmpdesc.find('a').mouseenter(function() {
-            var popup_id = "#" + place.attr('Index').toLowerCase() + "_spectrum"
-            //console.log(popup_id)
-            $(popup_id).show();
-          })
-          tmpdesc.find('a').mouseleave(function() {
-            var popup_id = "#" + place.attr('Index').toLowerCase() + "_spectrum"
-            $(popup_id).hide();
-          })
+        tmpdesc.find('a').mouseenter(function () {
+          var popup_id = "#" + place.attr('Index').toLowerCase() + "_spectrum"
+          //console.log(popup_id)
+          $(popup_id).show();
+        })
+        tmpdesc.find('a').mouseleave(function () {
+          var popup_id = "#" + place.attr('Index').toLowerCase() + "_spectrum"
+          $(popup_id).hide();
+        })
 
         tmppoint.find('a')
           .data('foreground-image', place.attr('Name'))
           //'click' - false; 'dblclick' - true.  on('click', function () { on_click(false) });
 
-          .on('click', function(event){
+          .on('click', function (event) {
             var element = event.target;
             on_click(element, false);
             //console.log("single click of plot_point");
           })
 
-          .on('dblclick', function(event){
+          .on('dblclick', function (event) {
             var element = event.target;
             on_click(element, true)
           });
 
         // Plug the set of thumbnails into the #destinationThumbs element
         $('#destinationThumbs').append(tmpthumb);
-          
+
         $("#description_container").append(tmpdesc);
 
         $('#sloan_image_holder').append(tmppoint);
 
         // tag the reload button with a click action to reload the most recent thumbnail
-        $("#reset_target").on('click', function(event){
+        $("#reset_target").on('click', function (event) {
 
           //set the background image to DSS for any target reset
           wwt_si.setBackgroundImageByName('Digitized Sky Survey (Color)');
 
-            wwt_si.settings.set_showConstellationFigures(false);
-            wwt_si.settings.set_showConstellationLabels(false);
+          wwt_si.settings.set_showConstellationFigures(false);
+          wwt_si.settings.set_showConstellationLabels(false);
 
-            wwt_si.setForegroundImageByName(curr_name);
+          wwt_si.setForegroundImageByName(curr_name);
 
-            wwt_si.gotoRaDecZoom(
-              parseFloat(curr_RA) * 15,
-              curr_dec,
-              parseFloat(curr_FOV),
-              true
-            );
+          wwt_si.gotoRaDecZoom(
+            parseFloat(curr_RA) * 15,
+            curr_dec,
+            parseFloat(curr_FOV),
+            true
+          );
 
           $("#reset_target").fadeOut(1000);
 
@@ -260,33 +260,55 @@
             parseFloat(constellation.find('ImageSet').attr('FOV')),
             false
           );
-        
+
         }
-/*
-        if (constellation.attr('Name') == "Orion Constellation") {
-          $(".orion_const").on('click', function(event){
-            console.log("clicked orion constellation link line 336 js")
-            var element = event.target;
-            on_click(element, false)
-          })
-        } else if (constellation.attr('Name') == "Taurus Constellation") {
-          $(".taurus_const").on('click', function(event){
-            console.log("clicked taurus constellation link line 342 js")
-            var element = event.target;
-            on_click(element, false)
-          })
-        } else if (constellation.attr('Name') == "Lyra Constellation") {
-          $(".lyra_const").on('click', function(event){
-            console.log("clicked lyra constellation link line 348 js")
-            var element = event.target;
-            on_click(element, false)
-          })
-        }
-*/
+        /*
+                if (constellation.attr('Name') == "Orion Constellation") {
+                  $(".orion_const").on('click', function(event){
+                    console.log("clicked orion constellation link line 336 js")
+                    var element = event.target;
+                    on_click(element, false)
+                  })
+                } else if (constellation.attr('Name') == "Taurus Constellation") {
+                  $(".taurus_const").on('click', function(event){
+                    console.log("clicked taurus constellation link line 342 js")
+                    var element = event.target;
+                    on_click(element, false)
+                  })
+                } else if (constellation.attr('Name') == "Lyra Constellation") {
+                  $(".lyra_const").on('click', function(event){
+                    console.log("clicked lyra constellation link line 348 js")
+                    var element = event.target;
+                    on_click(element, false)
+                  })
+                }
+        */
 
       });
 
     });
+
+    // Setup timeout to monitor view parameters.
+
+    var zoom_el = $("#zoom_text");
+    var dist_el = $("#distance_text");
+
+    var view_monitor = function () {
+      // First order of business: schedule self to be called again in 30 ms.
+      setTimeout(view_monitor, 30);
+
+      // OK, get the view info.
+      var view_cam = wwt_ctl.renderContext.viewCamera;
+
+      // In sky mode, the zoom value Just Is six times the viewport height, in degrees.
+      var view_height_deg = view_cam.zoom / 6;
+
+      // Update the text of the HTML elements.
+      zoom_el.text((view_height_deg.toFixed(2) + "°");
+    };
+
+    // Kick off the polling timer
+    setTimeout(view_monitor, 30);
   };
 
   // Load data from wtml file
@@ -321,12 +343,12 @@
       getWtml();
     }, 1500);
     //trigger size_content function again after thumbnails have started loading
-    setTimeout(function() {
-        size_content();
+    setTimeout(function () {
+      size_content();
     }, 500);
     //trigger size_content function a second time after thumbnails have started loading
-    setTimeout(function() {
-        size_content();
+    setTimeout(function () {
+      size_content();
     }, 3000);
   };
 
@@ -341,13 +363,13 @@
 
     // Constants here must be synced with settings in style.css
     const new_wwt_width = (top_container.width() - sloan_gutter.width());
-      // subtract 52 to account for the margin and border in .css file
+    // subtract 52 to account for the margin and border in .css file
     const sloan_height = sloan_gutter.outerHeight(true);
     // const new_wwt_height = ((0.5 * container.height()) - 52);
     const new_wwt_height = top_container.height() - 2;  //set wwt_canvas height to fill top_container, subtract 2 to account for border width
     const colophon_height = $("#colophon").height();
-      // subtract 20 to account for the margin in .css file, and give a little wiggle room
-    
+    // subtract 20 to account for the margin in .css file, and give a little wiggle room
+
     const bottom_height = container.height() - top_container.outerHeight() - 50;
     const description_height = bottom_height - colophon_height;
     // const new_desc_height = (bottom_container.height() - colophon_height - 40);
@@ -375,8 +397,8 @@
   $(document).ready(size_content);
   $(window).resize(size_content);
   // also triggering size_content function in the load_wtml function, because thumbnails aren't loading immediately
-    
-    
+
+
 
 
 
@@ -466,7 +488,7 @@
     });
 
     canvas.addEventListener("wwt-move", (function (proceed) {
-      //console.log("moving around");
+      console.log("moving around");
       return function (event) {
         if (!proceed)
           return false;
@@ -498,22 +520,22 @@
 
         setTimeout(function () { proceed = true }, delay);
 
-        if (event.deltaY < 0){
+        if (event.deltaY < 0) {
           wwt_ctl.zoom(1.43);
         }
-        else{
+        else {
           wwt_ctl.zoom(0.7);
         }
 
       }
     })(true));
   }
-  
+
   // when user scrolls to bottom of the description container, remove the down arrow icon. Add it back when scrolling back up.
-  $('#description_container').on('scroll', function(event) {
-      var element = event.target;
-    
-    if(element.scrollHeight - element.scrollTop === element.clientHeight) {
+  $('#description_container').on('scroll', function (event) {
+    var element = event.target;
+
+    if (element.scrollHeight - element.scrollTop === element.clientHeight) {
       console.log("reached bottom!");
       $('.fa-arrow-down').fadeOut(200);
     }
@@ -521,26 +543,26 @@
       $('.fa-arrow-down').show();
     }
   })
-    
+
   // may use later, in order to identify when canvas has been interacted with
-  $('#wwtcanvas').on('click', function() {
+  $('#wwtcanvas').on('click', function () {
     $("#zoom_pan_instrux").delay(5000).fadeOut(1000);
 
-    if(reset_enabled) {
+    if (reset_enabled) {
       $("#reset_target").show();
     }
 
   })
 
   // Distance Calculator Button (calculated on back end based on how much the screen is zoomed)
-  $('#distance_button').on('click', function() {
+  $('#distance_button').on('click', function () {
     print_time(zoom_level);
-    zoom_level =  50; // Fill this in with the proper method from wwt api to capture zoom level
+    zoom_level = 50; // Fill this in with the proper method from wwt api to capture zoom level
     //random attempts to get something to return the camera FOV/Zoom level
-    camera_zoom=wwt_si.settings.get_fovCamera;
+    camera_zoom = wwt_si.settings.get_fovCamera;
     console.log("Distance calculator FOV", camera_zoom);
-    wwt_cp=wwtlib.CameraParameters;
-    whatisra=wwt_cp.get_RA;
+    wwt_cp = wwtlib.CameraParameters;
+    whatisra = wwt_cp.get_RA;
     console.log("Distance calculator RA is ", whatisra);
 
     // print_time(zoom_level);  // Un-Comment this once zoom_level accurately captures the zoom level
@@ -551,6 +573,6 @@
 
     $('#distance').html(num);
   }
-  
-    
+
+
 })();
