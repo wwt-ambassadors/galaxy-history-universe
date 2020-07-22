@@ -44,13 +44,26 @@
             <div id="sloan_image_holder">
                 <img src="cosmos_map.png" alt="cosmos map">
             </div>
-        </div>
-        <div id="wwtcanvas">
-            <h1 id="page_title">Hubble and the Big Bang</h1>
-            <div id="speed_scale_container">
-
-                <div id="zoom_button">
-                    <span><a id="zoom_text" data-toggle="modal" href="#">CALCULATE ZOOM</a></span>
+            <div id="wwtcanvas">
+                <h1 id="page_title">Hubble and the Big Bang</h1>
+                    <div id="speed_scale_container">
+                        <div id="zoom_button">
+                            <span><a id="zoom_text" data-toggle="modal" href="#">CALCULATE zoom</a></span>
+                        </div>
+                        <div id="distance_button">
+                            <span><a id="distance_text" data-toggle="modal" href="#">CALCULATE DISTANCE</a></span>
+                        </div>
+                        <div id="distance_measure">
+                            distance: <span id="distance">XXX</span>
+                        </div>
+                    </div>
+                <i id="reset_target" class="fas fa-redo-alt"></i>
+                <div id="zoom_pan_container">
+                    <div id="zoom_pan_instrux">
+                        to zoom, scroll in and out (or use the <strong>I-O</strong> keys)<br>
+                        to pan, click + drag (or use the <strong>W-A-S-D</strong> keys)<br>
+                        to rotate, hold <strong>control</strong> while you click + drag
+                    </div>
                 </div>
                 <br>
                 <div id="distance_button">
@@ -79,18 +92,39 @@
             </div>
 
         </div>
-    </div>
-    <div class="container-fluid bottom_container">
-        <div id="description_box">
-            <div id="description_container">
-                <div class="obj_desc">
-                    <div class="thumbs_expl">
-                        <p>
-                            Click on one of the red points on the Sloan map above to fly to the selected object.
-                        </p>
-                        <p>
-                            Double-click on a thumbnail to arrive there immediately.
-                        </p>
+		<div class="container-fluid bottom_container">
+			<div id="description_box">
+				<div id="description_container">
+                    <div class="obj_desc">
+                        <div class="thumbs_expl">
+                            <p>
+                                Click on one of the orange points on the Sloan map above to fly to the selected object.
+                            </p>
+                            <p>
+                                Double-click on a thumbnail to arrive there immediately.
+                            </p>
+                        </div>
+                    </div>
+				</div>
+				<i id="scroll_arrow" class="fas fa-arrow-down"></i>
+			</div>
+		</div>
+        
+    				
+							
+        <!-- beginning of target object description modal -->
+        <div class="modal fade" id="objectModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">The Periodic Table</h3>
+                    </div>
+                    <div class="modal-body text-info">
+                        <img src="PeriodicTablePlaceholder@0.75x.png" class="object_banner" alt="banner">
+                    </div>
+                    <div class="modal-footer">
+                        <span class="target_object_description">This is the Periodic Table description</span>
+                        <button type="button" class="btn btn-info" data-dismiss="modal">close</button>
                     </div>
                 </div>
             </div>
