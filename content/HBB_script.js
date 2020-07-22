@@ -11,8 +11,11 @@
   var whatisra = 0;
   var camera_params = null;
 
-  // track zoom level for distance calculation.
-  var zoom_level = 50;
+  // track zoom level and length for distance calculation.
+  var currgal_distance = null
+  var currgal_length = null;
+  var view_height_rad = null;
+
 
   // global variables to hold the wwt_si navigation for the last thumbnail clicked, for use by the reset button
   var reset_enabled = false;
@@ -127,10 +130,12 @@
           /* hide all descriptions, reset scrolls, then show description specific to this target on sgl/dbl click */
           var toggle_class = "." + place.find('Target').text().toLowerCase() + "_description";
           $("#description_box").find(".obj_desc").hide();
-          $('#begin_container').hide();
           $('#description_container').scrollTop(0).show();
 
           $(toggle_class).show();
+
+          /* update the current length value */
+          currgal_length = place.attr("Length");
 
           // Make arrow appear only for overflow
           var desc_box = $('#description_container')[0];
@@ -294,7 +299,10 @@
 
     // Setup timeout to monitor view parameters.
 
-    var zoom_el = $("#zoom_text");
+    var gal_length_el = $("#galaxy_length_text");
+    var zoom_deg_el = $("#zoom_deg_text");
+    var zoom_sec_el = $("#zoom_sec_text");
+    var zoom_rad_el = $("#zoom_rad_text");
     var dist_el = $("#distance_text");
 
     var view_monitor = function () {
@@ -308,8 +316,33 @@
       var view_height_deg = view_cam.zoom / 6;
 
       // Update the text of the HTML elements.
-      zoom_el.text(view_height_deg.toFixed(2) + "°");
+
+      zoom_deg_el.text(view_height_deg.toFixed(2) + "°");
+
+      var view_height_sec = convert_to_sec(view_height_deg);
+
+      zoom_sec_el.text(view_height_sec);
+
+      view_height_rad = convert_to_rad(view_height_deg);
+
+      zoom_rad_el.text(view_height_rad.toFixed(2) + " radians");
+
+      gal_length_el.text(currgal_length + " mpc");
+
+      dist_el.text()
     };
+
+    var convert_to_sec = function (deg) {
+      return deg.toFixed(6);
+    };
+
+    var convert_to_rad = function (deg) {
+      return (Math.PI * deg) / 180;
+    };
+
+    var calculate_distance = function (rad) {
+      return currgal_length / rad;
+    }
 
     // Kick off the polling timer
     setTimeout(view_monitor, 30);
@@ -561,8 +594,7 @@
 
   // Distance Calculator Button (calculated on back end based on how much the screen is zoomed)
   $('#distance_button').on('click', function () {
-    print_time(zoom_level);
-    zoom_level = 50; // Fill this in with the proper method from wwt api to capture zoom level
+    print_distance();
     //random attempts to get something to return the camera FOV/Zoom level
     //camera_zoom = wwt_si.settings.get_fovCamera;
     //console.log("Distance calculator FOV", camera_zoom);
@@ -573,10 +605,11 @@
     // print_time(zoom_level);  // Un-Comment this once zoom_level accurately captures the zoom level
   })
 
-  function print_time(num) {
-    console.log("print time");
+  function print_distance() {
+    console.log("print distance");
 
-    $('#distance').html(num);
+    currgal_distance = currgal_length / view_height_rad;
+    $('#distance').html(currgal_distance.toFixed(2) + " mpc");
   }
 
 
