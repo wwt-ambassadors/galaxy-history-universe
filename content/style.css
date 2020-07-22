@@ -184,6 +184,10 @@ a, a:hover {
     pointer-events: none;
 }
 
+#zoom_button {
+    font-size: 0.6em;
+}
+
 #distance_button {
     text-align: right;
     pointer-events: all;
@@ -204,7 +208,7 @@ a, a:hover {
     background-color: #41BEEC44;
 }
 
-#distance_text a {
+#distance_text a, #zoom_text {
     color: #41BEEC;
     text-decoration: none;
 }
@@ -260,7 +264,7 @@ a, a:hover {
 }
 
 
-#distance {
+#distance, #zoom_deg_text, #zoom_sec_text, #zoom_rad_text, #galaxy_length_text {
     font-family: monospace, Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
     color: #44FF44;
 }
