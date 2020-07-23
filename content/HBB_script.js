@@ -5,23 +5,20 @@
   // The WWT WWTControl singleton.
   var wwt_ctl = null;
 
-  // WWT Camera parameters
-  var wwt_cp = null;
-  var camera_zoom = 0;
-  var whatisra = 0;
-  var camera_params = null;
-
-  // track zoom level for distance calculation.
-  var zoom_level = 50;
+  // track zoom level and length for distance calculation.
+  var currgal_distance = null
+  var currgal_length = null;
+  var view_height_rad = null;
 
   // global variables to hold the wwt_si navigation for the last thumbnail clicked, for use by the reset button
   var reset_enabled = false;
-  var curr_clasification = null;
   var curr_name = null;
   var curr_RA = null;
   var curr_dec = null;
   var curr_FOV = null;
 
+
+  // function to start off with when $(document).ready() takes off
   function initialize() {
     // This function call is
     // wwt-web-client/HTML5SDK/wwtlib/WWTControl.cs:WWTControl::InitControlParam.
@@ -36,11 +33,13 @@
     wwt_si.add_ready(wwt_ready);
   }
 
+  // Execute on load of DOM
   $(document).ready(initialize);
 
+
+  // If you can follow the logic above, it'll get here, and this is where the action really happens
   function wwt_ready() {
     wwt_ctl = wwtlib.WWTControl.singleton;
-    wwt_cp = wwtlib.CameraParameters;
 
     wwt_si.settings.set_showConstellationBoundries(false);
     wwt_si.settings.set_showConstellationFigures(false);
@@ -48,44 +47,37 @@
     wwt_si.settings.set_showCrosshairs(false);
     setup_controls();
 
-    //(variables defined inside a function are not known to other functions)
+
+    // (variables defined inside a function are not known to other functions)
     loadWtml(function (folder, xml) {
 
       // store each of the Place objects from the WTML file in places
       var places = $(xml).find('Place');
-      var thumbTemplate = $('<div class="col_thumb"><a href="javascript:void(0)" class="thumbnail border_white"><img src=""/><div class="thumbname">example</div</a></div>');
       var descTemplate = $('<div class="obj_desc container-fluid"><div class="row"><div class="name col-xs-12 col-md-12 col-lg-12"></div><div class="what col-xs-12 col-md-12 col-lg-12"></div><div class="characteristics col-xs-12 col-md-12 col-lg-12"></div></div></div>');
       var pointTemplate = $('<div><a href="#"><div class="plot_point"></div></a></div>')
-      var constellations = $(xml).find('Constellation');
-      var cmb = $(xml).find('CMB');
 
+
+      // iterate fully through each places object
       places.each(function (i, pl) {
         var place = $(pl);
 
-        // create a temporary object of a thumbnail and of a description element from the templates above 
-        var tmpthumb = thumbTemplate.clone();
+        // create a temporary object of a thumbnail and of a description element from the templates above
         var tmpdesc = descTemplate.clone();
         var tmppoint = pointTemplate.clone();
 
-        tmpthumb.find('img').attr({
-          src: place.find('ThumbnailUrl').text(),
-          class: 'border_black',
-          alt: place.attr('Name'),
-          'data-toggle': 'tooltip',
-          'data-placement': 'top',
-          'data-container': 'body',
-          title: place.find('Description').attr('Title')
-        });
 
+        // grab the key attributes to associate with the plot point from the wtml
         tmppoint.find('.plot_point').attr({
           title: place.find('Description').attr('Title')
         })
 
-        // locate the thumbnail name and replace html contents with content from WTML file
-        var thumbname = place.find('.Thumbnail').html();
-        tmpthumb.find('.thumbname').html(thumbname);
+        // grab the top/left adjustments from wtml for where plot point should appear over sloan image
+        var top = place.attr('Top');
+        var left = place.attr('Left');
+        tmppoint.find('.plot_point').css("top", top).css("left", left);
 
-        // grab the class = Name/What/Before/Process/After/Elements/Properties/Dive html content for each Place from the WTML file
+
+        // grab the class = Name/What/Characteristics html content for each Place from the WTML file
         var targetname = place.find('.Name').html();
         tmpdesc.find('.name').html(targetname);
 
@@ -95,30 +87,22 @@
         var targetcharacteristics = place.find('.Characteristics').html();
         tmpdesc.find('.characteristics').html(targetcharacteristics);
 
-        var top = place.attr('Top');
-        var left = place.attr('Left');
-        tmppoint.find('.plot_point').css("top", top).css("left", left);
-
 
         // apply the unique target description class to the description template clone
         var desc_class = place.find('Target').text().toLowerCase() + "_description";
         tmpdesc.addClass(desc_class);
 
 
-        // add event listener to every thumbnail element, which listens for single- vs. double-click
+        // click functions - add event listener to every plot point element, which listens for single- vs. double-click
         function on_click(element, is_dblclick) {
 
+          // ignore if wwt_si hasn't initialized yet
           if (wwt_si === null) {
             return;
           };
 
-          //	Change the border color of the selected thumbnail
+          // Change the border color of the selected thumbnail
           var element = element;
-
-          $(".thumbnail img").removeClass("border_green").addClass("border_black");
-          $(".thumbname").removeClass("text_green");
-          $(element).parent().find("img").removeClass("border_black").addClass("border_green");
-          $(element).parent().find(".thumbname").addClass("text_green");
 
           // enable the reset button (and hide if visible)
           reset_enabled = true;
@@ -127,63 +111,52 @@
           /* hide all descriptions, reset scrolls, then show description specific to this target on sgl/dbl click */
           var toggle_class = "." + place.find('Target').text().toLowerCase() + "_description";
           $("#description_box").find(".obj_desc").hide();
-          $('#begin_container').hide();
           $('#description_container').scrollTop(0).show();
 
           $(toggle_class).show();
 
-          // Make arrow appear only for overflow
+
+          // Make scroll arrow appear only for overflow
           var desc_box = $('#description_container')[0];
 
           if (desc_box.scrollHeight > desc_box.clientHeight) {
-            //console.log("need arrow");
             $('.fa-arrow-down').show();
           } else {
             $('.fa-arrow-down').hide();
           }
 
+
+          // fade in the galaxy length value if it hasn't appeared yet, and fade out the distance to galaxy value
+          $("#galaxy_length_val").fadeIn(500);
+          $('#distance_val').fadeOut(1000);
+
+          /* update the current length value */
+          currgal_length = place.attr("Length");
+
+
+          // set the background image dataset to DSS
           wwt_si.setBackgroundImageByName('Digitized Sky Survey (Color)');
 
-          //set the global variables: current target classification / name / RA / dec / FOV
-          curr_clasification = place.attr('Classification');
+          // set the global variables: current target name / RA / dec / FOV
           curr_name = place.attr('Name');
           curr_RA = place.attr('RA');
           curr_dec = place.attr('Dec');
           curr_FOV = place.find('ImageSet').attr('FOV');
 
-          wwt_si.settings.set_showConstellationFigures(false);
-          wwt_si.settings.set_showConstellationLabels(false);
-
+          // set the foreground image relevant to our galaxy
           wwt_si.setForegroundImageByName(place.attr('Name'));
 
+          // send wwt viewer to our destination ra/dec
           wwt_si.gotoRaDecZoom(
             parseFloat(place.attr('RA')) * 15,
             place.attr('Dec'),
             parseFloat(place.find('ImageSet').attr('FOV')),
             is_dblclick
           );
-          // See if initializing this again helps?
-          wwt_cp = wwtlib.CameraParameters;
-          camera_params = wwt_cp.copy;
-          console.log("Just did gotoRADecZoom. Camera fov is", camera_params);
-
 
         }
 
-        tmpthumb.find('a')
-          .data('foreground-image', place.attr('Name'))
-          //'click' - false; 'dblclick' - true.  on('click', function () { on_click(false) });
-
-          .on('click', function (event) {
-            var element = event.target;
-            on_click(element, false)
-          })
-
-          .on('dblclick', function (event) {
-            var element = event.target;
-            on_click(element, true)
-          });
-
+        // pop up image of galaxy spectrum, using mouseenter/mouseleave methods
         tmpdesc.find('a').mouseenter(function () {
           var popup_id = "#" + place.attr('Index').toLowerCase() + "_spectrum"
           //console.log(popup_id)
@@ -194,36 +167,33 @@
           $(popup_id).hide();
         })
 
+
+        // attach click events to plot points to trigger the on_click function (defined above)
         tmppoint.find('a')
           .data('foreground-image', place.attr('Name'))
-          //'click' - false; 'dblclick' - true.  on('click', function () { on_click(false) });
-
+          // specify different functionality for click vs. dblclick
           .on('click', function (event) {
             var element = event.target;
             on_click(element, false);
-            //console.log("single click of plot_point");
           })
-
           .on('dblclick', function (event) {
             var element = event.target;
             on_click(element, true)
           });
 
-        // Plug the set of thumbnails into the #destinationThumbs element
-        $('#destinationThumbs').append(tmpthumb);
 
-        $("#description_container").append(tmpdesc);
-
+        // Plug the set of plot points into the #sloan_image_holder element
         $('#sloan_image_holder').append(tmppoint);
 
-        // tag the reload button with a click action to reload the most recent thumbnail
+        // Plug the set of descriptions into the #description_container element
+        $("#description_container").append(tmpdesc);
+
+
+        // tag the reset button with a click action to reload the most recent thumbnail
         $("#reset_target").on('click', function (event) {
 
           //set the background image to DSS for any target reset
           wwt_si.setBackgroundImageByName('Digitized Sky Survey (Color)');
-
-          wwt_si.settings.set_showConstellationFigures(false);
-          wwt_si.settings.set_showConstellationLabels(false);
 
           wwt_si.setForegroundImageByName(curr_name);
 
@@ -234,69 +204,22 @@
             true
           );
 
+          // slowly fade out reset button, because it was just clicked
           $("#reset_target").fadeOut(1000);
 
         })
-
       });
-
-      // Add constellation links to text in description
-      constellations.each(function (i, pl) {
-
-        var constellation = $(pl);
-
-        function on_click(element, is_dblclick) {
-
-          if (wwt_si === null) {
-            return;
-          };
-
-          // display the reset button
-          $("#reset_target").show();
-
-          wwt_si.setBackgroundImageByName('Digitized Sky Survey (Color)');
-          wwt_si.settings.set_showConstellationFigures(true);
-          wwt_si.settings.set_showConstellationLabels(true);
-
-          wwt_si.gotoRaDecZoom(
-            parseFloat(constellation.attr('RA')) * 15,
-            constellation.attr('Dec'),
-            parseFloat(constellation.find('ImageSet').attr('FOV')),
-            false
-          );
-
-        }
-        /*
-                if (constellation.attr('Name') == "Orion Constellation") {
-                  $(".orion_const").on('click', function(event){
-                    console.log("clicked orion constellation link line 336 js")
-                    var element = event.target;
-                    on_click(element, false)
-                  })
-                } else if (constellation.attr('Name') == "Taurus Constellation") {
-                  $(".taurus_const").on('click', function(event){
-                    console.log("clicked taurus constellation link line 342 js")
-                    var element = event.target;
-                    on_click(element, false)
-                  })
-                } else if (constellation.attr('Name') == "Lyra Constellation") {
-                  $(".lyra_const").on('click', function(event){
-                    console.log("clicked lyra constellation link line 348 js")
-                    var element = event.target;
-                    on_click(element, false)
-                  })
-                }
-        */
-
-      });
-
     });
 
-    // Setup timeout to monitor view parameters.
 
-    var zoom_el = $("#zoom_text");
-    var dist_el = $("#distance_text");
+    // Angular Size Calculations -- Setup timeout to monitor view parameters.
+    var gal_length_el = $("#galaxy_length_val");
+    var zoom_deg_el = $("#zoom_deg_val");
+    var zoom_deglong_el = $("#zoom_deglong_val");
+    var zoom_ddmmss_el = $("#zoom_ddmmss_val");
+    var zoom_rad_el = $("#zoom_rad_val");
 
+    // perpetually self-called timeout function
     var view_monitor = function () {
       // First order of business: schedule self to be called again in 30 ms.
       setTimeout(view_monitor, 30);
@@ -304,16 +227,52 @@
       // OK, get the view info.
       var view_cam = wwt_ctl.renderContext.viewCamera;
 
-      // In sky mode, the zoom value Just Is six times the viewport height, in degrees.
+      // In sky mode, the zoom value is six times the viewport height, in degrees.
       var view_height_deg = view_cam.zoom / 6;
 
-      // Update the text of the HTML elements.
-      zoom_el.text(view_height_deg.toFixed(2) + "°");
+      // Update the text of the HTML elements. Some will not be visible in the interactive when they aren't necessary.
+      zoom_deg_el.text(view_height_deg.toFixed(2) + "°");
+      zoom_deglong_el.text(view_height_deg.toFixed(6) + "°");
+
+      var view_height_sec = extract_degs(view_height_deg) + ":"  + extract_mins(view_height_deg) + ":" + extract_secs(view_height_deg);
+      zoom_ddmmss_el.text(view_height_sec);
+
+      view_height_rad = convert_to_rad(view_height_deg);
+      zoom_rad_el.text(view_height_rad.toFixed(2) + " radians");
+
+      gal_length_el.text(currgal_length + " mpc");
     };
 
-    // Kick off the polling timer
+    // pull out just the degrees value for DDMMSS
+    var extract_degs = function (deg) {
+      var degs = String(Math.floor(deg)).padStart(2, "0");
+      return degs;
+    };
+
+    // pull out just the minutes value for DDMMSS
+    var extract_mins = function (deg) {
+      var mins = deg%1 * 60;
+      mins = String(Math.round(mins)).padStart(2, "0");
+      return mins;
+    };
+
+    // pull out just the seconds value for DDMMSS
+    var extract_secs = function (deg) {
+      var secs = (deg%1 * 60)%1 * 60;
+      secs = String(Math.round(secs)).padStart(2, "0");
+      return secs; 
+    }
+
+    // convert a degree value to radians
+    var convert_to_rad = function (deg) {
+      return (Math.PI * deg) / 180;
+    };
+
+
+    // Kick off the polling timer, having just set up the function above.
     setTimeout(view_monitor, 30);
   };
+
 
   // Load data from wtml file
   function loadWtml(callback) {
@@ -321,7 +280,6 @@
 
     //This is what Ron calls getXml
     function getWtml() {
-      //console.log("in getWtml function");
       if (hasLoaded) { return; }
       hasLoaded = true;
       $.ajax({
@@ -336,7 +294,6 @@
           console.log({ a: a, b: b, c: c });
         }
       });
-      //console.log("ran ajax thing");
     }
 
     var wtmlPath = "BUACHubbleBigBang.wtml";
@@ -367,43 +324,35 @@
 
     // Constants here must be synced with settings in style.css
     const new_wwt_width = (top_container.width() - sloan_gutter.width());
-    // subtract 52 to account for the margin and border in .css file
-    const sloan_height = sloan_gutter.outerHeight(true);
-    // const new_wwt_height = ((0.5 * container.height()) - 52);
-    const new_wwt_height = top_container.height() - 2;  //set wwt_canvas height to fill top_container, subtract 2 to account for border width
-    const colophon_height = $("#colophon").height();
-    // subtract 20 to account for the margin in .css file, and give a little wiggle room
+    const new_wwt_height = top_container.height() - 2;
+    // set wwt_canvas height to fill top_container, subtract 2 to account for border width
 
+    const colophon_height = $("#colophon").height();
     const bottom_height = container.height() - top_container.outerHeight() - 50;
     const description_height = bottom_height - colophon_height;
-    // const new_desc_height = (bottom_container.height() - colophon_height - 40);
-    // const new_desc_height = (0.35 * container.height());
-    //console.log("html: ", container.height())
-    //console.log("top: ", top_container.outerHeight())
-    //console.log("bottom: ", bottom_height)
 
+    // resize wwtcanvas with new values
     $("#wwtcanvas").css({
       "width": new_wwt_width + "px",
       "height": new_wwt_height + "px"
     });
-    console.log("wwt height is ", $("#wwtcanvas").height());
 
+    // resize bottom container to new value
     $(bottom_container).css({
       "height": bottom_height + "px"
     })
 
+    // resize description box to new value
     $("#description_box").css({
       "height": description_height + "px"
-      // "height": new_desc_height + "px"
     });
 
   }
 
   $(document).ready(size_content);
   $(window).resize(size_content);
-  // also triggering size_content function in the load_wtml function, because thumbnails aren't loading immediately
-
-
+  // also triggering size_content function in the load_wtml function,
+  // because thumbnails aren't loading immediately
 
 
 
@@ -493,7 +442,6 @@
     });
 
     canvas.addEventListener("wwt-move", (function (proceed) {
-      console.log("moving around");
       return function (event) {
         if (!proceed)
           return false;
@@ -513,7 +461,6 @@
     })(true));
 
     canvas.addEventListener("wwt-zoom", (function (proceed) {
-      //console.log("in zoom function");
       return function (event) {
         if (!proceed)
           return false;
@@ -541,7 +488,6 @@
     var element = event.target;
 
     if (element.scrollHeight - element.scrollTop === element.clientHeight) {
-      console.log("reached bottom!");
       $('.fa-arrow-down').fadeOut(200);
     }
     else {
@@ -561,23 +507,30 @@
 
   // Distance Calculator Button (calculated on back end based on how much the screen is zoomed)
   $('#distance_button').on('click', function () {
-    print_time(zoom_level);
-    zoom_level = 50; // Fill this in with the proper method from wwt api to capture zoom level
-    //random attempts to get something to return the camera FOV/Zoom level
-    //camera_zoom = wwt_si.settings.get_fovCamera;
-    //console.log("Distance calculator FOV", camera_zoom);
-    //wwt_cp = wwtlib.CameraParameters;
-    //whatisra = wwt_cp.get_RA;
-    //console.log("Distance calculator RA is ", whatisra);
-
-    // print_time(zoom_level);  // Un-Comment this once zoom_level accurately captures the zoom level
+    calculate_distance();
   })
 
-  function print_time(num) {
-    console.log("print time");
+  // the distance is calculated by dividing the length of the galaxy by the angular size in radians.
+  // given that sometimes wwt is still zooming a little, "calculating..." text to delay actual calculation.
+  function calculate_distance() {
+    currgal_distance = currgal_length / view_height_rad;
+    $('#distance_val').show();
 
-    $('#distance').html(num);
+    print_distance("calculating.");
+    setTimeout(function () {
+      print_distance("calculating..")
+    }, 1000);
+    setTimeout(function () {
+      print_distance("calculating...")
+    }, 2000);
+    setTimeout(function () {
+      print_distance(Math.round(currgal_distance) + " mpc")
+    }, 3000);
   }
 
+  // print the text parameter to the distance value element
+  function print_distance(text) {
+    $('#distance_val').html(text);
+  }
 
 })();

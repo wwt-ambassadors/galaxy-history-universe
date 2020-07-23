@@ -184,6 +184,10 @@ a, a:hover {
     pointer-events: none;
 }
 
+#zoom_button {
+    font-size: 0.6em;
+}
+
 #distance_button {
     text-align: right;
     pointer-events: all;
@@ -204,7 +208,7 @@ a, a:hover {
     background-color: #41BEEC44;
 }
 
-#distance_text a {
+#distance_text a, #zoom_text {
     color: #41BEEC;
     text-decoration: none;
 }
@@ -260,9 +264,13 @@ a, a:hover {
 }
 
 
-#distance {
+#distance_val, #zoom_deg_val, #zoom_deglong_val, #zoom_ddmmss_val, #zoom_rad_val, #galaxy_length_val {
     font-family: monospace, Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
     color: #44FF44;
+}
+
+#zoom_deglong_text, #zoom_rad_text, #galaxy_length_val {
+    display: none;
 }
 
 
@@ -314,15 +322,16 @@ a, a:hover {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    width: 40%;
-    max-height: calc(100% - 40px);
-    border: 2px solid #333333BB;
-    border-radius: 5px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
     overflow: hidden;
 }
 
 .spectrum_popup img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5px;
+    border: 2px solid #333333BB;
 }
 
 
@@ -398,7 +407,7 @@ a, a:hover {
 	font-style: normal;
 }
 
-.stagename {
+.galaxy_type {
     font-size: 80%;
     color: #44FF44;
     padding-left: 10px;
@@ -442,7 +451,7 @@ a, a:hover {
 
 #scroll_arrow {
     display: none;
-	color: #44ff44; /* considered #FBCB1F alternate color */
+	color: #EFA928; /* considered #FBCB1F alternate color */
 }
 
 .fa-arrow-down {
