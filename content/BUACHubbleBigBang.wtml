@@ -11,17 +11,17 @@
         <ThumbnailUrl>https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1909a.jpg</ThumbnailUrl>
       </ImageSet>
     </ForegroundImageSet>
-    <Description Title="Galaxy A">
+    <Description Title="NGC 6052">
       <div class="Thumbnail">
-        Galaxy A
+        NGC 6052
       </div>
       <div class="Name">
-        <h3>Galaxy A<span class="galaxy_type">type of galaxy</span></h3>
+        <h3>NGC 6052<span class="galaxy_type">type of galaxy</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-          Galaxy A is such and such and such...
+          NGC 6052 is such and such and such...
         </p>
       </div>
       <div class="Characteristics">
@@ -45,17 +45,17 @@
         <ThumbnailUrl>https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1016a.jpg</ThumbnailUrl>
       </ImageSet>
     </ForegroundImageSet>
-    <Description Title="Galaxy B">
+    <Description Title="Haro 11">
       <div class="Thumbnail">
-        Galaxy B
+        Haro 11
       </div>
       <div class="Name">
-        <h3>Galaxy B<span class="galaxy_type">type of galaxy</span></h3>
+        <h3>Haro 11<span class="galaxy_type">type of galaxy</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-          Galaxy B is such and such and such...
+          Haro 11 is such and such and such...
         </p>
       </div>
       <div class="Characteristics">
@@ -78,17 +78,17 @@
         <CreditsUrl></CreditsUrl>
       </ImageSet>
     </ForegroundImageSet>
-    <Description Title="Galaxy C">
+    <Description Title="UGC 2369">
       <div class="Thumbnail">
-        Galaxy C
+        UGC 2369
       </div>
       <div class="Name">
-        <h3>Galaxy C<span class="galaxy_type">type of galaxy</span></h3>
+        <h3>UGC 2369<span class="galaxy_type">type of galaxy</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-          Galaxy C is such and such and such...
+          UGC 2369 is such and such and such...
         </p>
       </div>
       <div class="Characteristics">
@@ -112,17 +112,17 @@
         <ThumbnailUrl>https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-opo1247a.jpg</ThumbnailUrl>
       </ImageSet>
     </ForegroundImageSet>
-    <Description Title="Galaxy D">
+    <Description Title="Hercules A">
       <div class="Thumbnail">
-        Galaxy D
+        Hercules A
       </div>
       <div class="Name">
-        <h3>Galaxy D<span class="galaxy_type">type of galaxy</span></h3>
+        <h3>Hercules A<span class="galaxy_type">type of galaxy</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-          Galaxy D is such and such and such...
+          Hercules A is such and such and such...
         </p>
       </div>
       <div class="Characteristics">
@@ -146,17 +146,17 @@
         <ThumbnailUrl>https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-heic1816a.jpg</ThumbnailUrl>
       </ImageSet>
     </ForegroundImageSet>
-    <Description Title="Galaxy E">
+    <Description Title="Galaxy in Abell 370">
       <div class="Thumbnail">
-        Galaxy E
+        Galaxy in Abell 370
       </div>
       <div class="Name">
-        <h3>Galaxy E<span class="galaxy_type">type of galaxy</span></h3>
+        <h3>Galaxy in Abell 370<span class="galaxy_type">type of galaxy</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-          Galaxy E is such and such and such...
+          Galaxy in Abell 370 is such and such and such...
         </p>
       </div>
       <div class="Characteristics">
@@ -180,17 +180,17 @@
         <ThumbnailUrl>https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1834a.jpg</ThumbnailUrl>
       </ImageSet>
     </ForegroundImageSet>
-    <Description Title="Galaxy F">
+    <Description Title="Galaxy in GOODS North">
       <div class="Thumbnail">
-        Galaxy F
+        Galaxy in GOODS North
       </div>
       <div class="Name">
-        <h3>Galaxy F<span class="galaxy_type">type of galaxy</span></h3>
+        <h3>Galaxy in GOODS North<span class="galaxy_type">type of galaxy</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-          Galaxy F is such and such and such...
+          Galaxy in GOODS North is such and such and such...
         </p>
       </div>
       <div class="Characteristics">
@@ -203,28 +203,26 @@
       </div>
     </Description>
   </Place>
-
-
-  <Place Name="HDF-S" RA="22.5605084235333" Dec="-60.569712781" ZoomLevel="3.49762441777152" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-opo9841n.jpg" Constellation="" Modified="Fri Nov 09 2018" Top="80%" Left="65%" Index="One" Length="170">
+  <Place Name="Hubble Ultra Deep Field" RA="3.54440350794667" Dec="-27.7918511555" ZoomLevel="0.254903439597568" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-heic0714g.jpg" Constellation="" Modified="Fri Nov 09 2018" Top="80%" Left="65%" Index="One" Length="170">
     <Target>galaxyg</Target>
     <ForegroundImageSet>
-      <ImageSet DataSetType="Sky" Name="HDF-S" BandPass="Visible" Url="https://wwtfiles.blob.core.windows.net/vamp/Hubble-opo9841nL{1}X{2}Y{3}.png" TileLevels="2" WidthFactor="1" Rotation="0.08" Projection="Tan" FileType=".png" CenterY="-60.569712781" CenterX="338.407626353" BottomsUp="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.87440610444288">
-        <Credits>J. Gardner (NOAO/GSFC), Cerro To; After the great success of the origninal Hubble Deep Field, later called Hubble Deep Field North (HDF-N), an identical project f...</Credits>
-        <CreditsUrl>http://www.spacetelescope.org/images/opo9841n/</CreditsUrl>
-        <ThumbnailUrl>https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-opo9841n.jpg</ThumbnailUrl>
+      <ImageSet DataSetType="Sky" Name="Hubble Ultra Deep Field" BandPass="Visible" Url="https://wwtfiles.blob.core.windows.net/vamp/Hubble-heic0714gL{1}X{2}Y{3}.png" TileLevels="4" WidthFactor="1" Rotation="43.46" Projection="Tan" FileType=".png" CenterY="-27.7918511555" CenterX="53.1660526192" BottomsUp="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.063725859899392">
+        <Credits>NASA, ESA, and N. Pirzkal (Europ; The Hubble Ultra Deep Field Image....</Credits>
+        <CreditsUrl>http://www.spacetelescope.org/images/heic0714g/</CreditsUrl>
+        <ThumbnailUrl>https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-heic0714g.jpg</ThumbnailUrl>
       </ImageSet>
     </ForegroundImageSet>
-    <Description Title="Galaxy G">
+      <Description Title="Galaxy in Hubble Ultra Deep Field">
       <div class="Thumbnail">
-        Galaxy G
+        Galaxy in Hubble Ultra Deep Field
       </div>
       <div class="Name">
-        <h3>Galaxy G<span class="galaxy_type">type of galaxy</span></h3>
+        <h3>Galaxy in Hubble Ultra Deep Field<span class="galaxy_type">type of galaxy</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-          Galaxy G is such and such and such...
+          Galaxy in Hubble Ultra Deep Field is such and such and such...
         </p>
       </div>
       <div class="Characteristics">
@@ -237,5 +235,69 @@
       </div>
     </Description>
   </Place>
+    
+  <Place Name="SDSS_J143450.62+033842.5" RA="14.5807298760667" Dec="3.64544619847" ZoomLevel="0.113680722092032" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1726a.jpg" Constellation="" Modified="Thu Nov 08 2018" Top="20%" Left="25%">
+    <ForegroundImageSet>
+      <ImageSet DataSetType="Sky" Name="SDSS_J143450.62+033842.5" BandPass="Visible" Url="https://wwtfiles.blob.core.windows.net/vamp/Hubble-potw1726aL{1}X{2}Y{3}.png" TileLevels="3" WidthFactor="1" Rotation="-98.38" Projection="Tan" FileType=".png" CenterY="3.64544619847" CenterX="218.710948141" BottomsUp="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.028420180523008">
+        <Credits>ESA/Hubble &amp; NASA;   Not all galaxies have the luxury of possessing a simple moniker or quirky nickname. The subject of this NASA/ESA Hubble Space ...</Credits>
+        <CreditsUrl>https://www.spacetelescope.org/images/potw1726a/</CreditsUrl>
+        <ThumbnailUrl>https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1726a.jpg</ThumbnailUrl>
+      </ImageSet>
+    </ForegroundImageSet>
+    <Description Title="SDSS_J143450.62+033842.5">
+      <div class="Thumbnail">
+        SDSS_J143450.62+033842.5
+      </div>
+      <div class="Name">
+        <h3>SDSS_J143450.62+033842.5<span class="stagename">type of galaxy</span></h3>
+      </div>
+      <div class="What">
+        <h4>What is it?</h4>
+        <p>
+          SDSS_J143450.62+033842.5 is such and such and such...
+        </p>
+      </div>
+      <div class="Characteristics">
+        <h4>Characteristics</h4>
+        <ul>
+          <li><strong>Trait 1:</strong> <a id="neptune_scale" href="#">####</a> (####)</li>
+          <li><strong>Trait 2:</strong> #### (####)</li>
+          <li><strong>Trait 3:</strong> ####</li>
+        </ul>
+      </div>
+    </Description>
+  </Place>
+
+<Place Name="4C 73.08" RA="9.83038860206667" Dec="73.2360951224" ZoomLevel="0.182228417744599" DataSetType="Sky" Opacity="100" Thumbnail="http://www.spacetelescope.org/static/archives/images/thumbs/potw1246a.jpg" Constellation="" Top="90%" Left="90%" >
+ <ForegroundImageSet>
+ <ImageSet DataSetType="Sky" Name="4C 73.08" BandPass="Visible" Url="http://www.spacetelescope.org/static/archives/images/screen/potw1246a.jpg" TileLevels="0" WidthFactor="2" Rotation="-61.96" Projection="SkyImage" FileType=".tif" CenterY="73.2360951224" CenterX="147.455829031" BottomsUp="False" OffsetX="639.823837049" OffsetY="581.690063309" BaseTileLevel="0" BaseDegreesPerTile="3.13274077105556E-05">
+<Credits></Credits>
+<CreditsUrl>http://www.spacetelescope.org/images/potw1246a/</CreditsUrl>
+</ImageSet>
+</ForegroundImageSet>
+    <Description Title="095000+731408">
+      <div class="Thumbnail">
+        095000+731408
+      </div>
+      <div class="Name">
+        <h3>095000+731408<span class="stagename">type of galaxy</span></h3>
+      </div>
+      <div class="What">
+        <h4>What is it?</h4>
+        <p>
+          095000+731408 is such and such and such...
+        </p>
+      </div>
+      <div class="Characteristics">
+        <h4>Characteristics</h4>
+        <ul>
+          <li><strong>Trait 1:</strong> <a id="neptune_scale" href="#">####</a> (####)</li>
+          <li><strong>Trait 2:</strong> #### (####)</li>
+          <li><strong>Trait 3:</strong> ####</li>
+        </ul>
+      </div>
+    </Description>
+</Place>
+
 
 </Folder>
