@@ -50,16 +50,17 @@
             <h1 id="page_title">Hubble and the Big Bang</h1>
             <div id="speed_scale_container">
                 <div id="zoom_button">
-                    Galaxy Length: <span id="galaxy_length_text"></span><br>
-                    Angular size (deg): <span id="zoom_deg_text"></span><br>
-                    Angular size (sec): <span id="zoom_sec_text"></span><br>
-                    Angular size (rad): <span id="zoom_rad_text"></span>
+                    <span id="galaxy_length_text">Galaxy Length: <span id="galaxy_length_val"></span><br></span>
+                    <span id="zoom_deg_text">Angular size (deg): <span id="zoom_deg_val"></span><br></span>
+                    <span id="zoom_deglong_text">Angular size (deglong): <span id="zoom_deglong_val"></span><br></span>
+                    <span id="zoom_ddmmss_text">Angular size (dd:mm:ss): <span id="zoom_ddmmss_val"></span><br></span>
+                    <span id="zoom_rad_text">Angular size (rad): <span id="zoom_rad_val"></span></span>
                 </div>
                 <div id="distance_button">
                     <span id="distance_text"><a data-toggle="modal" href="#">CALCULATE DISTANCE</a></span>
                 </div>
                 <div id="distance_measure">
-                    distance: <span id="distance">XXX</span>
+                    distance: <span id="distance_val"></span>
                 </div>
             </div>
             <i id="reset_target" class="fas fa-redo-alt"></i>
@@ -89,10 +90,10 @@
                 <div class="obj_desc">
                     <div class="thumbs_expl">
                         <p>
-                            Click on one of the orange points on the Sloan map above to fly to the selected object.
+                            Click on one of the orange points on the Sloan map above to fly to the selected galaxy.
                         </p>
                         <p>
-                            Double-click on a thumbnail to arrive there immediately.
+                            Double-click on the point to arrive there immediately.
                         </p>
                     </div>
                 </div>

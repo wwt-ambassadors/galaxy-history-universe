@@ -131,6 +131,8 @@
           var toggle_class = "." + place.find('Target').text().toLowerCase() + "_description";
           $("#description_box").find(".obj_desc").hide();
           $('#description_container').scrollTop(0).show();
+          $("#galaxy_length_val").fadeIn(500);
+          $('#distance_val').fadeOut(1000);
 
           $(toggle_class).show();
 
@@ -299,11 +301,12 @@
 
     // Setup timeout to monitor view parameters.
 
-    var gal_length_el = $("#galaxy_length_text");
-    var zoom_deg_el = $("#zoom_deg_text");
-    var zoom_sec_el = $("#zoom_sec_text");
-    var zoom_rad_el = $("#zoom_rad_text");
-    var dist_el = $("#distance_text");
+    var gal_length_el = $("#galaxy_length_val");
+    var zoom_deg_el = $("#zoom_deg_val");
+    var zoom_deglong_el = $("#zoom_deglong_val");
+    var zoom_ddmmss_el = $("#zoom_ddmmss_val");
+    var zoom_rad_el = $("#zoom_rad_val");
+    var dist_el = $("#distance_val");
 
     var view_monitor = function () {
       // First order of business: schedule self to be called again in 30 ms.
@@ -318,10 +321,11 @@
       // Update the text of the HTML elements.
 
       zoom_deg_el.text(view_height_deg.toFixed(2) + "°");
+      zoom_deglong_el.text(view_height_deg.toFixed(6) + "°");
 
-      var view_height_sec = convert_to_sec(view_height_deg);
+      var view_height_sec = extract_degs(view_height_deg) + ":"  + extract_mins(view_height_deg) + ":" + extract_secs(view_height_deg);
 
-      zoom_sec_el.text(view_height_sec);
+      zoom_ddmmss_el.text(view_height_sec);
 
       view_height_rad = convert_to_rad(view_height_deg);
 
@@ -329,20 +333,28 @@
 
       gal_length_el.text(currgal_length + " mpc");
 
-      dist_el.text()
     };
 
-    var convert_to_sec = function (deg) {
-      return deg.toFixed(6);
+    var extract_degs = function (deg) {
+      var degs = String(Math.floor(deg)).padStart(2, "0");
+      return degs;
     };
+
+    var extract_mins = function (deg) {
+      var mins = deg%1 * 60;
+      mins = String(Math.round(mins)).padStart(2, "0");
+      return mins;
+    };
+
+    var extract_secs = function (deg) {
+      var secs = (deg%1 * 60)%1 * 60;
+      secs = String(Math.round(secs)).padStart(2, "0");
+      return secs; 
+    }
 
     var convert_to_rad = function (deg) {
       return (Math.PI * deg) / 180;
     };
-
-    var calculate_distance = function (rad) {
-      return currgal_length / rad;
-    }
 
     // Kick off the polling timer
     setTimeout(view_monitor, 30);
@@ -594,7 +606,7 @@
 
   // Distance Calculator Button (calculated on back end based on how much the screen is zoomed)
   $('#distance_button').on('click', function () {
-    print_distance();
+    calculate_distance();
     //random attempts to get something to return the camera FOV/Zoom level
     //camera_zoom = wwt_si.settings.get_fovCamera;
     //console.log("Distance calculator FOV", camera_zoom);
@@ -605,11 +617,25 @@
     // print_time(zoom_level);  // Un-Comment this once zoom_level accurately captures the zoom level
   })
 
-  function print_distance() {
-    console.log("print distance");
-
+  function calculate_distance() {
     currgal_distance = currgal_length / view_height_rad;
-    $('#distance').html(currgal_distance.toFixed(2) + " mpc");
+    $('#distance_val').show();
+
+    print_distance("Calculating.");
+    setTimeout(function () {
+      print_distance("Calculating..")
+    }, 1000);
+    setTimeout(function () {
+      print_distance("Calculating...")
+    }, 2000);
+    setTimeout(function () {
+      print_distance(Math.round(currgal_distance) + " mpc")
+    }, 3000);
+  }
+
+  function print_distance(text) {
+    var distance_val = $('#distance_val');
+    distance_val.text(text);
   }
 
 
