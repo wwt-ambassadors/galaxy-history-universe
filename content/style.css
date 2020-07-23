@@ -264,9 +264,13 @@ a, a:hover {
 }
 
 
-#distance, #zoom_deg_text, #zoom_sec_text, #zoom_rad_text, #galaxy_length_text {
+#distance_val, #zoom_deg_val, #zoom_deglong_val, #zoom_ddmmss_val, #zoom_rad_val, #galaxy_length_val {
     font-family: monospace, Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
     color: #44FF44;
+}
+
+#zoom_deglong_text, #zoom_rad_text, #galaxy_length_val {
+    display: none;
 }
 
 
