@@ -7,7 +7,8 @@
 
   // track zoom level and length for distance calculation.
   var currgal_distance = null
-  var currgal_length = null;
+  var currgal_length_in_ltyr = null;
+  var currgal_length_in_Mpc = null;
   var view_height_rad = null;
 
   // global variables to hold the wwt_si navigation for the last thumbnail clicked, for use by the reset button
@@ -16,7 +17,6 @@
   var curr_RA = null;
   var curr_dec = null;
   var curr_FOV = null;
-
 
   // function to start off with when $(document).ready() takes off
   function initialize() {
@@ -131,8 +131,7 @@
           $('#distance_val').fadeOut(1000);
 
           /* update the current length value */
-          currgal_length = place.attr("Length");
-
+          currgal_length_in_ltyr = place.attr("Length");
 
           // set the background image dataset to DSS
           wwt_si.setBackgroundImageByName('Digitized Sky Survey (Color)');
@@ -240,7 +239,16 @@
       view_height_rad = convert_to_rad(view_height_deg);
       zoom_rad_el.text(view_height_rad.toFixed(2) + " radians");
 
-      gal_length_el.text(currgal_length + " mpc");
+      if (currgal_length_in_ltyr==null) {
+        gal_length_el.text(" "); 
+      }
+      else {
+      //console.log("length:",currgal_length_in_ltyr.toLocaleString());
+      gal_length_el.text(Number(currgal_length_in_ltyr).toLocaleString() + " light years");
+      }
+
+      //console.log("length:",currgal_length_in_ltyr.toLocaleString());
+
     };
 
     // pull out just the degrees value for DDMMSS
@@ -259,7 +267,7 @@
     // pull out just the seconds value for DDMMSS
     var extract_secs = function (deg) {
       var secs = (deg%1 * 60)%1 * 60;
-      secs = String(Math.round(secs)).padStart(2, "0");
+      secs = String(Math.round(secs*10)/10).padStart(2, "0");
       return secs; 
     }
 
@@ -268,10 +276,10 @@
       return (Math.PI * deg) / 180;
     };
 
-
     // Kick off the polling timer, having just set up the function above.
     setTimeout(view_monitor, 30);
   };
+
 
 
   // Load data from wtml file
@@ -513,20 +521,28 @@
   // the distance is calculated by dividing the length of the galaxy by the angular size in radians.
   // given that sometimes wwt is still zooming a little, "calculating..." text to delay actual calculation.
   function calculate_distance() {
-    currgal_distance = currgal_length / view_height_rad;
+
+    currgal_length_in_Mpc = convert_ltyr_to_Mpc(currgal_length_in_ltyr);
+    currgal_distance = currgal_length_in_Mpc / view_height_rad;
     $('#distance_val').show();
 
     print_distance("calculating.");
     setTimeout(function () {
       print_distance("calculating..")
-    }, 1000);
+    }, 500);
     setTimeout(function () {
       print_distance("calculating...")
-    }, 2000);
+    }, 1000);
     setTimeout(function () {
-      print_distance(Math.round(currgal_distance) + " mpc")
-    }, 3000);
+      print_distance(Math.round(currgal_distance).toLocaleString() + " Mpc")
+    }, 1500);
   }
+
+  // convert length from light years to Mpc
+  var convert_ltyr_to_Mpc = function (length_in_ltyr) {
+    return (length_in_ltyr / 3.26 / 1e6);
+  };
+
 
   // print the text parameter to the distance value element
   function print_distance(text) {
