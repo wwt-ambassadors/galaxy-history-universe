@@ -47,6 +47,53 @@
     wwt_si.settings.set_showCrosshairs(false);
     setup_controls();
 
+    circle1 = wwt_si.createCircle();
+    circle1.set_id("NGC 6052")
+    circle1.setCenter(241.304,20.54);
+    circle1.set_radius(0.012);
+    wwt_si.addAnnotation(circle1);
+
+    circle2 = wwt_si.createCircle();
+    circle2.set_id("Haro 11")
+    circle2.setCenter(9.219,-33.554);
+    circle2.set_radius(0.005);
+    wwt_si.addAnnotation(circle2);
+
+    circle3 = wwt_si.createCircle();
+    circle3.set_id("SDSS_J1434")
+    circle3.setCenter(218.711,3.645);
+    circle3.set_radius(0.005);
+    wwt_si.addAnnotation(circle3);
+
+    circle4 = wwt_si.createCircle();
+    circle4.set_id("UGC 2369")
+    circle4.setCenter(43.509, 14.974);
+    circle4.set_radius(0.008);
+    wwt_si.addAnnotation(circle4);
+
+    circle5 = wwt_si.createCircle();
+    circle5.set_id("09500")
+    circle5.setCenter(147.50, 73.2365);
+    circle5.set_radius(0.008);
+    wwt_si.addAnnotation(circle5);
+
+    circle6 = wwt_si.createCircle();
+    circle6.set_id("GOODS J1237")
+    circle6.setCenter(189.34, 62.213);
+    circle6.set_radius(0.007);
+    wwt_si.addAnnotation(circle6);
+
+    circle7 = wwt_si.createCircle();
+    circle7.set_id("Hercules A")
+    circle7.setCenter(252.784, 4.993);
+    circle7.set_radius(0.007);
+    wwt_si.addAnnotation(circle7);
+
+    circle8 = wwt_si.createCircle();
+    circle8.set_id("Abell 370")
+    circle8.setCenter(39.9741,-1.59464);
+    circle8.set_radius(0.0004);
+    wwt_si.addAnnotation(circle8);
 
     // (variables defined inside a function are not known to other functions)
     loadWtml(function (folder, xml) {
