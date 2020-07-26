@@ -41,21 +41,32 @@
             <div id="sloan_image_holder">
                 <img src="cosmos_map.png" alt="cosmos map">
             </div>
+            <div class="dist_instrux">
+                <strong>To estimate distance to a galaxy:</strong>  
+                <ul>
+                    <li>Rotate the circled galaxy (<strong>Ctrl-click-drag</strong>) so the longest dimension is vertical</li>
+                    <li>Zoom in (or out) until the <strong>galaxy</strong>(not the marker circle)just matches the height of the viewport</li>
+                    <li>Click on "ESTIMATE DISTANCE"</li>
+                </ul>
+            </div>
         </div>
         
         <div id="wwtcanvas">
             <h1 id="page_title">Hubble and the Big Bang</h1>
             <div id="angle_distance_container">
                 <div id="angle_measures">
-                    <span id="galaxy_length_text">Assumed size for this galaxy type:<br></span>
-                    <span id="galaxy_length_text"><span class="value" id="galaxy_length_val"></span><br></span>
-                    <span id="zoom_ddmmss_text">Height of display: <span class="value" id="zoom_ddmmss_val"></span><br></span>
+                    <!-- <span id="galaxy_length_text">Assumed size for this galaxy type:<br></span>
+                    <span id="galaxy_length_text"><span class="value" id="galaxy_length_val"></span><br></span> -->
+                    <span id="zoom_ddmmss_text">
+                        Height of display:<br> 
+                    <span class="value" id="zoom_ddmmss_val"></span><br></span>
                 </div>
                 <div id="distance_button">
                     <span id="distance_text"><a href="#">ESTIMATE DISTANCE</a></span>
                 </div>
                 <div id="distance_measure">
-                    Estimated distance: <span class="value" id="distance_val"></span>
+                    Estimated distance:<br> 
+                    <span class="value" id="distance_val"></span>
                 </div>
             </div>
             <i id="reset_target" class="fas fa-redo-alt"></i>
@@ -100,10 +111,16 @@
                 <div class="obj_desc">
                     <div class="points_expl">
                         <p>
-                            Click on one of the orange points on the Sloan map above to fly to the selected galaxy.
+                            The image in the upper left is a map of our cosmos, with the Milky Way in the center.
                         </p>
-                        <p>
+                        <br>
+                            Click on one of the blue points to fly to the selected galaxy.
+                        <br>
                             Double-click on the point to arrive there immediately.
+                    </div>
+                    <div class="footnote">
+                        <p>
+                            The cosmos map shows data from the <a href="https://www.sdss.org/" target="_blank"> Sloan Digitial Sky Survey</a> and the <a href="http://www.2dfgrs.net/" target="_blank">2dF Galaxy Redshift Survey</a>, <a href="https://github.com/Samreay/SurveyVisualiser" target="_blank">visualized</a> by Samuel Hinton.
                         </p>
                     </div>
                 </div>

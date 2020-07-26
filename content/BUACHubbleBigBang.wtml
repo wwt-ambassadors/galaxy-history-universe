@@ -2,7 +2,7 @@
 <Folder MSRCommunityId="0" MSRComponentId="0" Permission="0" Name="BUAC_Hubble" Group="Explorer" Searchable="False" Type="Earth">
   <VersionDependent>false</VersionDependent>
 
-  <Place Name="NGC 6052" RA="16.0869" Dec="20.54" ZoomLevel="0.0901394594873344" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1909a.jpg" Constellation="" Modified="Sun Mar 17 2019" Top="47%" Left="47%" Index="One" Length="50000">
+  <Place Name="NGC 6052" RA="16.0869" Dec="20.54" ZoomLevel="0.0901394594873344" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1909a.jpg" Constellation="" Modified="Sun Mar 17 2019" Top="47%" Left="47%" Index="One" Length="100000">
     <Target>galaxya</Target>
     <ForegroundImageSet>
       <ImageSet DataSetType="Sky" Name="NGC 6052" BandPass="Visible" Url="https://wwtfiles.blob.core.windows.net/vamp/Hubble-potw1909aL{1}X{2}Y{3}.png" TileLevels="3" WidthFactor="1" Rotation="-45.02" Projection="Tan" FileType=".png" CenterY="20.5417849563" CenterX="241.302222113" BottomsUp="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.0225348648718336" FOV="0.08">
@@ -16,27 +16,29 @@
         NGC 6052
       </div>
       <div class="Name">
-        <h3>NGC 6052<span class="galaxy_type">type of galaxy</span></h3>
+        <h3>NGC 6052<span class="galaxy_type">Colliding spiral galaxies</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-          NGC 6052 is such and such and such...
+          How many galaxies do you see here? When NGC 6052 was discovered in the late 1700's, it was classified as an irregular galaxy because of its unusual shape. The Hubble Space Telescope image here gives us a clearer picture of what is happening. NGC 6052 is actually two spiral galaxies in the process of crashing into each other.
+        </p>
+        <p>This gives us a preview of our future. In about 4 billion years, our galaxy, the Milky Way, will collide with our neighbor Andromeda.
         </p>
       </div>
       <div class="Characteristics">
-        <h4>Characteristics</h4>
+        <h4>Data</h4>
         <ul>
-          <li><strong>Trait 1:</strong> <a href="#">####</a> (####)</li>
-          <li><strong>Trait 2:</strong> #### (####)</li>
-          <li><strong>Trait 3:</strong> ####</li>
+          <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
+          <li>Galaxy size assumed in distance estimation: 100,000 light years</li>
+
         </ul>
       </div>
     </Description>
   </Place>
  
 
-  <Place Name="Haro 11" RA="0.614611045857333" Dec="-33.5541945798" ZoomLevel="0.05681114176512" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1016a.jpg" Constellation="" Modified="Sat Nov 10 2018" Top="53%" Left="50%" Index="Two" Length="100000">
+  <Place Name="Haro 11" RA="0.614611045857333" Dec="-33.5541945798" ZoomLevel="0.05681114176512" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1016a.jpg" Constellation="" Modified="Sat Nov 10 2018" Top="53%" Left="50%" Index="Two" Length="50000">
     <Target>galaxyb</Target>
     <ForegroundImageSet>
       <ImageSet DataSetType="Sky" Name="Haro 11" BandPass="Visible" Url="https://wwtfiles.blob.core.windows.net/vamp/Hubble-potw1016aL{1}X{2}Y{3}.png" TileLevels="3" WidthFactor="1" Rotation="10.1" Projection="Tan" FileType=".png" CenterY="-33.5541945798" CenterX="9.21916568786" BottomsUp="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.01420278544128" FOV="0.03">
@@ -50,20 +52,19 @@
         Haro 11
       </div>
       <div class="Name">
-        <h3>Haro 11<span class="galaxy_type">type of galaxy</span></h3>
+        <h3>Haro 11<span class="galaxy_type">Irregular starburst galaxy</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-          Haro 11 is such and such and such...
+          Haro 11 is a "starburst" galaxy that is producing new stars at a rate that is 20 times higher than in our own Milky Way galaxy. The many massive newborn stars give Haro 11 its blue'ish hue. Astronomers believe that Haro 11 formed from the merger of two smaller galaxies.
         </p>
       </div>
       <div class="Characteristics">
-        <h4>Characteristics</h4>
+        <h4>Data</h4>
         <ul>
-          <li><strong>Trait 1:</strong> <a href="#">####</a> (####)</li>
-          <li><strong>Trait 2:</strong> #### (####)</li>
-          <li><strong>Trait 3:</strong> ####</li>
+          <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
+          <li>Galaxy size assumed in distance estimation: 50,000 light years</li>
         </ul>
       </div>
     </Description>
@@ -83,20 +84,19 @@
         SDSS_J143450.62+033842.5
       </div>
       <div class="Name">
-        <h3>SDSS_J143450.62+033842.5<span class="stagename">type of galaxy</span></h3>
+        <h3>SDSS J143450.62+033842.5<span class="galaxy_type">Spiral galaxy</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-          SDSS_J143450.62+033842.5 is such and such and such...
+          What kind of a name is SDSS J143450.62+033842.5? There are so many galaxies in the cosmos that it is difficult to name them all. Most distant galaxies are named with a long string of numbers that give their coordinates in the sky. This galaxy is at a right ascension of 14h34m50.62s and a declination of 03d38'42.5", and it was identified by the Sloan Digital Sky Survey (SDSS).
         </p>
       </div>
       <div class="Characteristics">
-        <h4>Characteristics</h4>
+        <h4>Data</h4>
         <ul>
-          <li><strong>Trait 1:</strong> <a href="#">####</a> (####)</li>
-          <li><strong>Trait 2:</strong> #### (####)</li>
-          <li><strong>Trait 3:</strong> ####</li>
+          <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
+          <li>Galaxy size assumed in distance estimation: 100,000 light years</li>
         </ul>
       </div>
     </Description>
@@ -116,20 +116,19 @@
         UGC 2369
       </div>
       <div class="Name">
-        <h3>UGC 2369<span class="galaxy_type">type of galaxy</span></h3>
+        <h3>UGC 2369<span class="galaxy_type">Colliding spiral galaxies</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-          UGC 2369 is such and such and such...
+          Due to the expansion of the Universe, most galaxies in the cosmos are moving apart from each other. However, if galaxies are near enough to each other (like the two galaxies in UGC 2369), gravity can pull them together, causing them to collide and eventually merge. 
         </p>
       </div>
       <div class="Characteristics">
-        <h4>Characteristics</h4>
+        <h4>Data</h4>
         <ul>
-          <li><strong>Trait 1:</strong> <a href="#">####</a> (####)</li>
-          <li><strong>Trait 2:</strong> #### (####)</li>
-          <li><strong>Trait 3:</strong> ####</li>
+          <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
+          <li>Galaxy size assumed in distance estimation: 100,000 light years</li>
         </ul>
       </div>
     </Description>
@@ -143,25 +142,24 @@
 <CreditsUrl>http://www.spacetelescope.org/images/potw1246a/</CreditsUrl>
 </ImageSet>
 </ForegroundImageSet>
-    <Description Title="095000+731408">
+    <Description Title="J095000+731408">
       <div class="Thumbnail">
-        095000+731408
+        J095000+731408
       </div>
       <div class="Name">
-        <h3>095000+731408<span class="stagename">type of galaxy</span></h3>
+        <h3>J095000+731408<span class="galaxy_type">Spiral galaxy</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-          095000+731408 is such and such and such...
+          J095000+731408 is another distant galaxy that is named for its position in the sky. It is part of a small group of nine galaxies associated with a bright radio source, 4C 73.08, an elliptical galaxy which likely harbors a supermassive black hole. You can see the other galaxies in this group by panning around this image taken with the Hubble Space Telescope.
         </p>
       </div>
       <div class="Characteristics">
-        <h4>Characteristics</h4>
+        <h4>Data</h4>
         <ul>
-          <li><strong>Trait 1:</strong> <a href="#">####</a> (####)</li>
-          <li><strong>Trait 2:</strong> #### (####)</li>
-          <li><strong>Trait 3:</strong> ####</li>
+          <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
+          <li>Galaxy size assumed in distance estimation: 100,000 light years</li>
         </ul>
       </div>
     </Description>
@@ -181,20 +179,22 @@
         Galaxy in GOODS North
       </div>
       <div class="Name">
-        <h3>Galaxy in GOODS North<span class="galaxy_type">type of galaxy</span></h3>
+        <h3>Galaxy in GOODS North<span class="galaxy_type">Spiral galaxy</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-          Galaxy in GOODS North is such and such and such...
+        This galaxy is one of the closest in a patch of sky known as the "GOODS North" field. The Great Observatories Origins Deep Survey (GOODS) included observations of two patches of sky (one northern and one southern) by NASA's Hubble, Spitzer, and Chandra Observatories, and the European Space Agency's Herschel and XMM-Newton observatories. This image shows the GOODS North field as observed by the Hubble Space Telescope. 
+        </p>
+        <p>
+        After you've estimated the distance to the nearby galaxy, pan around the field to see other galaxies that are much farther away. Astronomers have measured distances to almost 3000 galaxies in this field. How many of them can you spot in the image?
         </p>
       </div>
       <div class="Characteristics">
-        <h4>Characteristics</h4>
+        <h4>Data</h4>
         <ul>
-          <li><strong>Trait 1:</strong> <a href="#">####</a> (####)</li>
-          <li><strong>Trait 2:</strong> #### (####)</li>
-          <li><strong>Trait 3:</strong> ####</li>
+          <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
+          <li>Galaxy size assumed in distance estimation: 100,000 light years</li>
         </ul>
       </div>
     </Description>
@@ -212,23 +212,23 @@
     </ForegroundImageSet>
     <Description Title="Hercules A">
       <div class="Thumbnail">
-        Hercules A
+        Hercules A is a 
       </div>
       <div class="Name">
-        <h3>Hercules A<span class="galaxy_type">type of galaxy</span></h3>
+        <h3>Hercules A<span class="galaxy_type">Elliptical galaxy (and radio galaxy)</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-          Hercules A is such and such and such...
+          Hercules A is a very large elliptical galaxy with a mass that is roughly 1000 times that of our Milky Way galaxy. This image combines observations from the Hubble Space Telescope and the Jansky Very Large Array radio telescope. The radio observations (shown in pink in false color) show enormous jets that are powered by a supermassive black hole at the center of the galaxy. The jets consist of high energy plasma and magnetic fields that have been blasted almost a million light years away from the galaxy center. 
         </p>
       </div>
       <div class="Characteristics">
-        <h4>Characteristics</h4>
+        <h4>Data</h4>
         <ul>
-          <li><strong>Trait 1:</strong> <a href="#">####</a> (####)</li>
-          <li><strong>Trait 2:</strong> #### (####)</li>
-          <li><strong>Trait 3:</strong> ####</li>
+          <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
+          <li>Galaxy size assumed in distance estimation: 200,000 light years</li>
+          <li>Note: When estimating the distance to Hercules A, only include the central yellow'ish elliptical galaxy in the viewport. Do not include the large radio jets, or your distance estimate will be very inaccurate!</li>
         </ul>
       </div>
     </Description>
@@ -248,20 +248,22 @@
         Galaxy in Abell 370
       </div>
       <div class="Name">
-        <h3>Galaxy in Abell 370<span class="galaxy_type">type of galaxy</span></h3>
+        <h3>Galaxy in Abell 370<span class="galaxy_type">Irregular galaxy</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-          Galaxy in Abell 370 is such and such and such...
+          Abell 370 is a galaxy cluster, and it contains several hundred galaxies bound together by gravity. All types of galaxies are represented in this cluster, including spirals and ellipticals and the small blue irregular galaxy whose distance you will estimate.
+        </p>
+        <p>
+          Note there are also several long arcs that appear streaked between the galaxies. These are images of far more distant galaxies behind the cluster that have been magnified and distorted by the immense mass of the cluster in a phenomenon known as gravitational lensing.
         </p>
       </div>
       <div class="Characteristics">
-        <h4>Characteristics</h4>
+        <h4>Data</h4>
         <ul>
-          <li><strong>Trait 1:</strong> <a href="#">####</a> (####)</li>
-          <li><strong>Trait 2:</strong> #### (####)</li>
-          <li><strong>Trait 3:</strong> ####</li>
+          <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
+          <li>Galaxy size assumed in distance estimation: 50,000 light years</li>
         </ul>
       </div>
     </Description>

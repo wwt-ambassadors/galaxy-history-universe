@@ -192,13 +192,24 @@
           // set the foreground image relevant to our galaxy
           wwt_si.setForegroundImageByName(place.attr('Name'));
 
+          if (is_dblclick){
           // send wwt viewer to our destination ra/dec
-          wwt_si.gotoRaDecZoom(
-            parseFloat(place.attr('RA')) * 15,
-            place.attr('Dec'),
-            parseFloat(place.find('ImageSet').attr('FOV')),
-            is_dblclick
-          );
+
+          setTimeout( function(){
+            wwt_si.gotoRaDecZoom(
+              parseFloat(place.attr('RA')) * 15,
+              place.attr('Dec'),
+              parseFloat(place.find('ImageSet').attr('FOV')),
+              is_dblclick
+            );
+            }, 1500);
+          } else {
+            wwt_si.gotoRaDecZoom(
+              parseFloat(place.attr('RA')) * 15,
+              place.attr('Dec'),
+              parseFloat(place.find('ImageSet').attr('FOV')),
+              is_dblclick);
+          }
 
         }
 
@@ -313,8 +324,8 @@
 
     // pull out just the seconds value for DDMMSS
     var extract_secs = function (deg) {
-      var secs = (deg%1 * 60)%1 * 60;
-      secs = String(Math.round(secs*10)/10).padStart(2, "0");
+      var asecs = Math.round((deg%1 * 60)%1 * 60*10)/10;
+      secs = asecs.toFixed(1).padStart(4,"0");
       return secs; 
     }
 
