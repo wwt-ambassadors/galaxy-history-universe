@@ -74,7 +74,7 @@ a, a:hover {
     left: 30%;
     width: 4%;
     height: 4%;
-    background-color: #EFA928;
+    background-color: #41BEEC;
     border: 2px solid #000000BB;
     border-radius: 25px;
 }
@@ -84,6 +84,20 @@ a, a:hover {
     border: 2px solid #44FF44;
 }
 
+.sloan_gutter .dist_instrux {
+    width: 300px;
+    margin-top: 10px;
+	text-align: left;
+	font-size: 0.7em;
+    color: #EEEEEECC;
+    padding: 15px;
+    background-color: #00000066;
+    border: solid 1px #333;
+}
+
+.sloan_gutter .dist_instrux strong {
+    color: #EFA928;
+}
 
 
 /* WWT canvas */
@@ -122,8 +136,10 @@ a, a:hover {
     pointer-events: none;
 }
 
-#angle_measures {
-    font-size: 0.6em;
+#angle_measures, #size_text  {
+    padding: 10px 5px;
+    font-size: 0.75em;
+    text-align: right;
 }
 
 #distance_button {
@@ -154,6 +170,7 @@ a, a:hover {
 #distance_measure, #size_text {
     padding: 10px 5px;
     font-size: 0.75em;
+    text-align: right;
 }
 
 #distance_measure {
@@ -263,6 +280,16 @@ a, a:hover {
     border-bottom: dotted #44FF44 2px;
 }
 
+.footnote {
+    position: absolute;
+    user-select: none;
+    text-align: left;
+    bottom: 10px;
+    padding: 10px;
+    color: #EEEEEECC; 
+    font-size: 12px; /* used to 0.5em */   
+}
+
 #description_box .row * + div {
 	margin-top: 1em;
 }
@@ -287,7 +314,7 @@ a, a:hover {
 
 #description_box .row a {
 	color: #41BEEC;
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 #description_box i {
