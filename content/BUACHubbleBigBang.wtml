@@ -38,7 +38,7 @@
   </Place>
  
 
-  <Place Name="Haro 11" RA="0.614611045857333" Dec="-33.5541945798" ZoomLevel="0.05681114176512" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1016a.jpg" Constellation="" Modified="Sat Nov 10 2018" Top="53%" Left="50%" Index="Two" Length="50000">
+  <Place Name="Haro 11" RA="0.614611045857333" Dec="-33.5541945798" ZoomLevel="0.05681114176512" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1016a.jpg" Constellation="" Modified="Sat Nov 10 2018" Top="53%" Left="50%" Index="Two" Length="30000">
     <Target>galaxyb</Target>
     <ForegroundImageSet>
       <ImageSet DataSetType="Sky" Name="Haro 11" BandPass="Visible" Url="https://wwtfiles.blob.core.windows.net/vamp/Hubble-potw1016aL{1}X{2}Y{3}.png" TileLevels="3" WidthFactor="1" Rotation="10.1" Projection="Tan" FileType=".png" CenterY="-33.5541945798" CenterX="9.21916568786" BottomsUp="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.01420278544128" FOV="0.03">
@@ -64,7 +64,7 @@
         <h4>Data</h4>
         <ul>
           <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
-          <li>Galaxy size assumed in distance estimation: 50,000 light years</li>
+          <li>Galaxy size assumed in distance estimation: 30,000 light years</li>
         </ul>
       </div>
     </Description>
@@ -234,7 +234,7 @@
     </Description>
   </Place>
 
-  <Place Name="Abell 370" RA="2.66494" Dec="-1.59464" ZoomLevel="0.273109051054162" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-heic1711a.jpg" Constellation="" Modified="Thu Nov 08 2018" Top="92%" Left="86%" Index="Eight" Length="50000">
+  <Place Name="Abell 370" RA="2.66494" Dec="-1.59464" ZoomLevel="0.273109051054162" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-heic1711a.jpg" Constellation="" Modified="Thu Nov 08 2018" Top="92%" Left="86%" Index="Eight" Length="30000">
     <Target>galaxyh</Target>
     <ForegroundImageSet>
       <ImageSet DataSetType="Sky" Name="Abell 370" BandPass="Visible" Url="https://wwtfiles.blob.core.windows.net/vamp/Hubble-heic1711aL{1}X{2}Y{3}.png" TileLevels="5" WidthFactor="1" Rotation="27.94" Projection="Tan" FileType=".png" CenterY="-1.57683079556" CenterX="39.9702863319" BottomsUp="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.0682772627635405" FOV="0.1">
@@ -263,7 +263,7 @@
         <h4>Data</h4>
         <ul>
           <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
-          <li>Galaxy size assumed in distance estimation: 50,000 light years</li>
+          <li>Galaxy size assumed in distance estimation: 30,000 light years</li>
         </ul>
       </div>
     </Description>
