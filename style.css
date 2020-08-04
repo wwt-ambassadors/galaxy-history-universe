@@ -95,7 +95,12 @@ a, a:hover {
     border: solid 1px #333;
 }
 
+.sloan_gutter .dist_instrux h6 {
+    color: #EFA928;
+}
+
 .sloan_gutter .dist_instrux strong {
+    font-family: monospace, Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
     color: #EFA928;
 }
 
@@ -129,9 +134,9 @@ a, a:hover {
 
 #angle_distance_container {
     position: absolute;
-    bottom:10px;
+    bottom: 25px;
     right: 0px;
-    padding-right: 25px;
+    padding-right: 20px;
     text-align: left;
     pointer-events: none;
 }
@@ -139,7 +144,6 @@ a, a:hover {
 #angle_measures, #size_text  {
     padding: 10px 5px;
     font-size: 0.75em;
-    text-align: right;
 }
 
 #distance_button {
@@ -170,7 +174,6 @@ a, a:hover {
 #distance_measure, #size_text {
     padding: 10px 5px;
     font-size: 0.75em;
-    text-align: right;
 }
 
 #distance_measure {
