@@ -294,6 +294,10 @@
       var view_height_sec = extract_degs(view_height_deg) + ":"  + extract_mins(view_height_deg) + ":" + extract_secs(view_height_deg);
       zoom_ddmmss_el.text(view_height_sec);
 
+      if (Math.abs(convert_to_rad(view_height_deg)/view_height_rad - 1) >= 0.1) {
+        print_distance("&nbsp;");
+      }
+
       view_height_rad = convert_to_rad(view_height_deg);
       zoom_rad_el.text(view_height_rad.toFixed(2) + " radians");
 
