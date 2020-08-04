@@ -192,24 +192,13 @@
           // set the foreground image relevant to our galaxy
           wwt_si.setForegroundImageByName(place.attr('Name'));
 
-          if (is_dblclick){
           // send wwt viewer to our destination ra/dec
-
-          setTimeout( function(){
-            wwt_si.gotoRaDecZoom(
-              parseFloat(place.attr('RA')) * 15,
-              place.attr('Dec'),
-              parseFloat(place.find('ImageSet').attr('FOV')),
-              is_dblclick
-            );
-            }, 1500);
-          } else {
-            wwt_si.gotoRaDecZoom(
-              parseFloat(place.attr('RA')) * 15,
-              place.attr('Dec'),
-              parseFloat(place.find('ImageSet').attr('FOV')),
-              is_dblclick);
-          }
+          wwt_si.gotoRaDecZoom(
+            parseFloat(place.attr('RA')) * 15,
+            place.attr('Dec'),
+            parseFloat(place.find('ImageSet').attr('FOV')),
+            is_dblclick
+          );
 
         }
 
