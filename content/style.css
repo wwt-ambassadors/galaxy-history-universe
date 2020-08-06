@@ -79,9 +79,14 @@ a, a:hover {
     border-radius: 25px;
 }
 
-.sloan_gutter .plot_point:hover {
+.sloan_gutter .plot_point:hover, .sloan_gutter .plot_point.selected:hover {
     background-color: #44FF4466;
     border: 2px solid #44FF44;
+}
+
+.sloan_gutter .plot_point.selected, .sloan_gutter .plot_point:active, .sloan_gutter .plot_point.selected:active {
+    background-color: #44FF44;
+    border: 2px solid #000000BB;
 }
 
 .sloan_gutter .dist_instrux {

@@ -156,6 +156,11 @@
           // this creates a variable to hold the element clicked
           var element = element;
 
+          //	Change the border color of the selected thumbnail
+          $(".plot_point").removeClass("selected");
+          $(element).addClass("selected");
+
+
           // enable the reset button (and hide if visible)
           reset_enabled = true;
           $("#reset_target").fadeOut(100);
