@@ -41,6 +41,7 @@
   function wwt_ready() {
     wwt_ctl = wwtlib.WWTControl.singleton;
 
+    // apply initial WWT settings
     wwt_si.settings.set_showConstellationBoundries(false);
     wwt_si.settings.set_showConstellationFigures(false);
     wwt_si.settings.set_showConstellationSelection(false);
@@ -100,8 +101,9 @@
 
       // store each of the Place objects from the WTML file in places
       var places = $(xml).find('Place');
+      // create templates of the plotpoint and description text to clone from
+      var pointTemplate = $('<div><a href="#"><div class="plot_point"></div></a></div>');
       var descTemplate = $('<div class="obj_desc container-fluid"><div class="row"><div class="name col-xs-12 col-md-12 col-lg-12"></div><div class="what col-xs-12 col-md-12 col-lg-12"></div><div class="characteristics col-xs-12 col-md-12 col-lg-12"></div></div></div>');
-      var pointTemplate = $('<div><a href="#"><div class="plot_point"></div></a></div>')
 
 
       // iterate fully through each places object
@@ -109,8 +111,8 @@
         var place = $(pl);
 
         // create a temporary object of a thumbnail and of a description element from the templates above
-        var tmpdesc = descTemplate.clone();
         var tmppoint = pointTemplate.clone();
+        var tmpdesc = descTemplate.clone();
 
 
         // grab the key attributes to associate with the plot point from the wtml
@@ -148,7 +150,7 @@
             return;
           };
 
-          // Change the border color of the selected thumbnail
+          // this creates a variable to hold the element clicked
           var element = element;
 
           // enable the reset button (and hide if visible)
@@ -156,10 +158,10 @@
           $("#reset_target").fadeOut(100);
 
           /* hide all descriptions, reset scrolls, then show description specific to this target on sgl/dbl click */
-          var toggle_class = "." + place.find('Target').text().toLowerCase() + "_description";
           $("#description_box").find(".obj_desc").hide();
           $('#description_container').scrollTop(0).show();
 
+          var toggle_class = "." + place.find('Target').text().toLowerCase() + "_description";
           $(toggle_class).show();
 
 
@@ -213,17 +215,6 @@
 
         }
 
-        // pop up image of galaxy spectrum, using mouseenter/mouseleave methods
-        tmpdesc.find('a').mouseenter(function () {
-          var popup_id = "#" + place.attr('Index').toLowerCase() + "_spectrum"
-          //console.log(popup_id)
-          $(popup_id).show();
-        })
-        tmpdesc.find('a').mouseleave(function () {
-          var popup_id = "#" + place.attr('Index').toLowerCase() + "_spectrum"
-          $(popup_id).hide();
-        })
-
 
         // attach click events to plot points to trigger the on_click function (defined above)
         tmppoint.find('a')
@@ -237,6 +228,17 @@
             var element = event.target;
             on_click(element, true)
           });
+
+        // pop up image of galaxy spectrum, using mouseenter/mouseleave methods
+        tmpdesc.find('a').mouseenter(function () {
+          var popup_id = "#" + place.attr('Index').toLowerCase() + "_spectrum"
+          //console.log(popup_id)
+          $(popup_id).show();
+        })
+        tmpdesc.find('a').mouseleave(function () {
+          var popup_id = "#" + place.attr('Index').toLowerCase() + "_spectrum"
+          $(popup_id).hide();
+        })
 
 
         // Plug the set of plot points into the #sloan_image_holder element
@@ -264,7 +266,7 @@
           // slowly fade out reset button, because it was just clicked
           $("#reset_target").fadeOut(1000);
 
-        })
+        });
       });
     });
 
@@ -305,11 +307,8 @@
         gal_length_el.text(" "); 
       }
       else {
-      //console.log("length:",currgal_length_in_ltyr.toLocaleString());
       gal_length_el.text(Number(currgal_length_in_ltyr).toLocaleString() + " light years");
       }
-
-      //console.log("length:",currgal_length_in_ltyr.toLocaleString());
 
     };
 
@@ -366,6 +365,7 @@
       });
     }
 
+    // Load the image collection
     var wtmlPath = "BUACHubbleBigBang.wtml";
     wwt_si.loadImageCollection(wtmlPath);
     console.log("Loaded Image Collection");
@@ -477,6 +477,8 @@
 
     window.addEventListener("keydown", function (event) {
       // "must check the deprecated keyCode property for Qt"
+
+      // Check whether keyboard events initiate zoom methods
       if (zoomCodes.hasOwnProperty(event.code) || zoomCodes.hasOwnProperty(event.keyCode)) {
         // remove the zoom_pan instructions
         $("#zoom_pan_instrux").delay(5000).fadeOut(1000);
@@ -491,6 +493,7 @@
         canvas.dispatchEvent(action);
       }
 
+      // Check whether keyboard events initiate move methods
       if (moveCodes.hasOwnProperty(event.code) || moveCodes.hasOwnProperty(event.keyCode)) {
         // remove the zoom_pan instructions
         $("#zoom_pan_instrux").delay(5000).fadeOut(1000);
@@ -565,7 +568,7 @@
     }
   })
 
-  // may use later, in order to identify when canvas has been interacted with
+  // remove zoom-pan instructions upon canvas click, after a 5 second delay. Reset button appears
   $('#wwtcanvas').on('click', function () {
     $("#zoom_pan_instrux").delay(5000).fadeOut(1000);
 
