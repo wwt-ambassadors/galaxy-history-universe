@@ -26,12 +26,11 @@
         <p>This gives us a preview of our future. In about 4 billion years, our galaxy, the Milky Way, will collide with our neighbor Andromeda.
         </p>
       </div>
-      <div class="Characteristics">
+      <div class="Data">
         <h4>Data</h4>
         <ul>
           <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
           <li>Galaxy size assumed in distance estimation: 100,000 light years</li>
-
         </ul>
       </div>
     </Description>
@@ -60,7 +59,7 @@
           Haro 11 is a "starburst" galaxy that is producing new stars at a rate that is 20 times higher than in our own Milky Way galaxy. The many massive newborn stars give Haro 11 its blue'ish hue. Astronomers believe that Haro 11 formed from the merger of two smaller galaxies.
         </p>
       </div>
-      <div class="Characteristics">
+      <div class="Data">
         <h4>Data</h4>
         <ul>
           <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
@@ -69,6 +68,7 @@
       </div>
     </Description>
   </Place>
+
 
   <Place Name="SDSS_J143450.62+033842.5" RA="14.5807298760667" Dec="3.645" ZoomLevel="0.113680722092032" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1726a.jpg" Constellation="" Modified="Thu Nov 08 2018" Top="45%" Left="45%" Index="Three" Length="100000">
   <Target>galaxyc</Target>
@@ -92,7 +92,7 @@
           What kind of a name is SDSS J143450.62+033842.5? There are so many galaxies in the cosmos that it is difficult to name them all. Most distant galaxies are named with a long string of numbers that give their coordinates in the sky. This galaxy is at a right ascension of 14h34m50.62s and a declination of 03d38'42.5", and it was identified by the Sloan Digital Sky Survey (SDSS).
         </p>
       </div>
-      <div class="Characteristics">
+      <div class="Data">
         <h4>Data</h4>
         <ul>
           <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
@@ -124,7 +124,7 @@
           Due to the expansion of the Universe, most galaxies in the cosmos are moving apart from each other. However, if galaxies are near enough to each other (like the two galaxies in UGC 2369), gravity can pull them together, causing them to collide and eventually merge. 
         </p>
       </div>
-      <div class="Characteristics">
+      <div class="Data">
         <h4>Data</h4>
         <ul>
           <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
@@ -134,14 +134,15 @@
     </Description>
   </Place>
 
-<Place Name="4C 73.08" RA="9.8333" Dec="73.2365" ZoomLevel="0.182228417744599" DataSetType="Sky" Opacity="100" Thumbnail="http://www.spacetelescope.org/static/archives/images/thumbs/potw1246a.jpg" Constellation="" Top="43%" Left="55%" Index="Five" Length="100000">
-<Target>galaxye</Target>
- <ForegroundImageSet>
- <ImageSet DataSetType="Sky" Name="4C 73.08" BandPass="Visible" Url="http://www.spacetelescope.org/static/archives/images/screen/potw1246a.jpg" TileLevels="0" WidthFactor="2" Rotation="-61.96" Projection="SkyImage" FileType=".tif" CenterY="73.2360951224" CenterX="147.455829031" BottomsUp="False" OffsetX="639.823837049" OffsetY="581.690063309" BaseTileLevel="0" BaseDegreesPerTile="3.13274077105556E-05" FOV="0.05">
-<Credits></Credits>
-<CreditsUrl>http://www.spacetelescope.org/images/potw1246a/</CreditsUrl>
-</ImageSet>
-</ForegroundImageSet>
+
+  <Place Name="4C 73.08" RA="9.8333" Dec="73.2365" ZoomLevel="0.182228417744599" DataSetType="Sky" Opacity="100" Thumbnail="http://www.spacetelescope.org/static/archives/images/thumbs/potw1246a.jpg" Constellation="" Top="43%" Left="55%" Index="Five" Length="100000">
+    <Target>galaxye</Target>
+    <ForegroundImageSet>
+      <ImageSet DataSetType="Sky" Name="4C 73.08" BandPass="Visible" Url="http://www.spacetelescope.org/static/archives/images/screen/potw1246a.jpg" TileLevels="0" WidthFactor="2" Rotation="-61.96" Projection="SkyImage" FileType=".tif" CenterY="73.2360951224" CenterX="147.455829031" BottomsUp="False" OffsetX="639.823837049" OffsetY="581.690063309" BaseTileLevel="0" BaseDegreesPerTile="3.13274077105556E-05" FOV="0.05">
+        <Credits></Credits>
+        <CreditsUrl>http://www.spacetelescope.org/images/potw1246a/</CreditsUrl>
+      </ImageSet>
+    </ForegroundImageSet>
     <Description Title="J095000+731408">
       <div class="Thumbnail">
         J095000+731408
@@ -155,7 +156,7 @@
           J095000+731408 is another distant galaxy that is named for its position in the sky. It is part of a small group of nine galaxies associated with a bright radio source, 4C 73.08, an elliptical galaxy which likely harbors a supermassive black hole. You can see the other galaxies in this group by panning around this image taken with the Hubble Space Telescope.
         </p>
       </div>
-      <div class="Characteristics">
+      <div class="Data">
         <h4>Data</h4>
         <ul>
           <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
@@ -163,10 +164,11 @@
         </ul>
       </div>
     </Description>
-</Place>
+  </Place>
+
 
   <Place Name="GOODS North Field" RA="12.62267" Dec="62.213" ZoomLevel="0.546617051201536" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1834a.jpg" Constellation="" Modified="Thu Nov 08 2018" Top="35%" Left="47%" Index="Six" Length="100000">
-  <Target>galaxyf</Target>
+    <Target>galaxyf</Target>
     <ForegroundImageSet>
       <ImageSet DataSetType="Sky" Name="GOODS North Field" BandPass="Visible" Url="https://wwtfiles.blob.core.windows.net/vamp/Hubble-potw1834aL{1}X{2}Y{3}.png" TileLevels="5" WidthFactor="1" Rotation="-19.7" Projection="Tan" FileType=".png" CenterY="62.243952347" CenterX="189.226412195" BottomsUp="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.136654262800384" FOV="0.2">
         <Credits>ESA/Hubble &amp; NASA; The Hubble Deep Field from 1995 allowed astronomers a first glimpse into the early Universe. This first picture was followed lat...</Credits>
@@ -190,7 +192,7 @@
         After you've estimated the distance to the nearby galaxy, pan around the field to see other galaxies that are much farther away. Astronomers have measured distances to almost 3000 galaxies in this field. How many of them can you spot in the image?
         </p>
       </div>
-      <div class="Characteristics">
+      <div class="Data">
         <h4>Data</h4>
         <ul>
           <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
@@ -223,7 +225,7 @@
           Hercules A is a very large elliptical galaxy with a mass that is roughly 1000 times that of our Milky Way galaxy. This image combines observations from the Hubble Space Telescope and the Jansky Very Large Array radio telescope. The radio observations (shown in pink in false color) show enormous jets that are powered by a supermassive black hole at the center of the galaxy. The jets consist of high energy plasma and magnetic fields that have been blasted almost a million light years away from the galaxy center. 
         </p>
       </div>
-      <div class="Characteristics">
+      <div class="Data">
         <h4>Data</h4>
         <ul>
           <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
@@ -233,6 +235,7 @@
       </div>
     </Description>
   </Place>
+
 
   <Place Name="Abell 370" RA="2.66494" Dec="-1.59464" ZoomLevel="0.273109051054162" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-heic1711a.jpg" Constellation="" Modified="Thu Nov 08 2018" Top="92%" Left="86%" Index="Eight" Length="30000">
     <Target>galaxyh</Target>
@@ -259,7 +262,7 @@
           Note there are also several long arcs that appear streaked between the galaxies. These are images of far more distant galaxies behind the cluster that have been magnified and distorted by the immense mass of the cluster in a phenomenon known as gravitational lensing.
         </p>
       </div>
-      <div class="Characteristics">
+      <div class="Data">
         <h4>Data</h4>
         <ul>
           <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
@@ -268,8 +271,5 @@
       </div>
     </Description>
   </Place>
-
-
-
 
 </Folder>
