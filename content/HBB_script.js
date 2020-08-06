@@ -18,6 +18,9 @@
   var curr_dec = null;
   var curr_FOV = null;
 
+  // global variable for popup clicks
+  var popup_open = false;
+
   // function to start off with when $(document).ready() takes off
   function initialize() {
     // This function call is
@@ -103,7 +106,7 @@
       var places = $(xml).find('Place');
       // create templates of the plotpoint and description text to clone from
       var pointTemplate = $('<div><a href="#"><div class="plot_point"></div></a></div>');
-      var descTemplate = $('<div class="obj_desc container-fluid"><div class="row"><div class="name col-xs-12 col-md-12 col-lg-12"></div><div class="what col-xs-12 col-md-12 col-lg-12"></div><div class="characteristics col-xs-12 col-md-12 col-lg-12"></div></div></div>');
+      var descTemplate = $('<div class="obj_desc container-fluid"><div class="row"><div class="name col-xs-12 col-md-12 col-lg-12"></div><div class="what col-xs-12 col-md-12 col-lg-12"></div><div class="data col-xs-12 col-md-12 col-lg-12"></div></div></div>');
 
 
       // iterate fully through each places object
@@ -126,15 +129,15 @@
         tmppoint.find('.plot_point').css("top", top).css("left", left);
 
 
-        // grab the class = Name/What/Characteristics html content for each Place from the WTML file
+        // grab the class = Name/What/Data html content for each Place from the WTML file
         var targetname = place.find('.Name').html();
         tmpdesc.find('.name').html(targetname);
 
         var targetwhat = place.find('.What').html();
         tmpdesc.find('.what').html(targetwhat);
 
-        var targetcharacteristics = place.find('.Characteristics').html();
-        tmpdesc.find('.characteristics').html(targetcharacteristics);
+        var targetdata = place.find('.Data').html();
+        tmpdesc.find('.data').html(targetdata);
 
 
         // apply the unique target description class to the description template clone
@@ -173,6 +176,11 @@
           } else {
             $('.fa-arrow-down').hide();
           }
+
+
+          // hide all object spectrum image popups
+          $(".spectrum_popup").hide();
+          popup_open = false;
 
 
           // fade in the galaxy length value if it hasn't appeared yet, and fade out the distance to galaxy value
@@ -218,15 +226,23 @@
             on_click(element, true)
           });
 
-        // pop up image of galaxy spectrum, using mouseenter/mouseleave methods
+        // pop up image of galaxy spectrum, using mouseenter/mouseleave/click methods
+        var popup_id = "#" + place.attr('Index').toLowerCase() + "_spectrum"
         tmpdesc.find('a').mouseenter(function () {
-          var popup_id = "#" + place.attr('Index').toLowerCase() + "_spectrum"
-          //console.log(popup_id)
-          $(popup_id).show();
+          if (!(popup_open)) {
+            $(popup_id).show();
+          }
         })
         tmpdesc.find('a').mouseleave(function () {
-          var popup_id = "#" + place.attr('Index').toLowerCase() + "_spectrum"
-          $(popup_id).hide();
+          if (!(popup_open)) {
+            $(popup_id).hide();
+          }
+        })
+        tmpdesc.find('a').click(function () {
+          if (popup_open) {
+            $(popup_id).hide();
+          }
+          popup_open = !(popup_open);
         })
 
 
@@ -602,5 +618,12 @@
   function print_distance(text) {
     $('#distance_val').html(text);
   }
+
+
+  // Close spectrum popups when clicking the close icon
+  $(".close_spectrum").click(function() {
+    $(".spectrum_popup").hide();
+    popup_open = false;
+  })
 
 })();
