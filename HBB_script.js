@@ -556,10 +556,10 @@
         setTimeout(function () { proceed = true }, delay);
 
         if (event.deltaY < 0) {
-          wwt_ctl.zoom(1.43);
+          wwt_ctl.zoom(1.05);
         }
         else {
-          wwt_ctl.zoom(0.7);
+          wwt_ctl.zoom(0.95);
         }
 
       }
