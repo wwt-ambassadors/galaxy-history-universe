@@ -164,7 +164,6 @@
     </Description>
   </Place>
 
-
   <Place Name="GOODS North Field" RA="12.62267" Dec="62.213" ZoomLevel="0.546617051201536" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1834a.jpg" Constellation="" Modified="Thu Nov 08 2018" Top="33%" Left="47%" Index="Six" Length="100000">
   <Target>galaxyf</Target>
     <ForegroundImageSet>
