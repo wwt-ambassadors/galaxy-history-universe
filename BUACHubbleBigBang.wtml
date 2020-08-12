@@ -69,8 +69,7 @@
     </Description>
   </Place>
 
-
-  <Place Name="SDSS_J143450.62+033842.5" RA="14.5807298760667" Dec="3.645" ZoomLevel="0.113680722092032" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1726a.jpg" Constellation="" Modified="Thu Nov 08 2018" Top="45%" Left="45%" Index="Three" Length="100000">
+  <Place Name="SDSS_J143450.62+033842.5" RA="14.5807298760667" Dec="3.645" ZoomLevel="0.113680722092032" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1726a.jpg" Constellation="" Modified="Thu Nov 08 2018" Top="44%" Left="43%" Index="Three" Length="100000">
   <Target>galaxyc</Target>
     <ForegroundImageSet>
       <ImageSet DataSetType="Sky" Name="SDSS_J143450.62+033842.5" BandPass="Visible" Url="https://wwtfiles.blob.core.windows.net/vamp/Hubble-potw1726aL{1}X{2}Y{3}.png" TileLevels="3" WidthFactor="1" Rotation="-98.38" Projection="Tan" FileType=".png" CenterY="3.64544619847" CenterX="218.710948141" BottomsUp="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.028420180523008" FOV="0.03">
@@ -103,7 +102,7 @@
   </Place>
 
 
-  <Place Name="UGC 2369" RA="2.90060095017333" Dec="14.9741613569" ZoomLevel="0.159164517445798" DataSetType="Sky" Opacity="100" Thumbnail="https://astropix.ipac.caltech.edu/archive/esahubble/potw1931a/esahubble_potw1931a_100.jpg" Constellation="" Top="54%" Left="53%" Index="Four" Length="100000">
+  <Place Name="UGC 2369" RA="2.90060095017333" Dec="14.9741613569" ZoomLevel="0.159164517445798" DataSetType="Sky" Opacity="100" Thumbnail="https://astropix.ipac.caltech.edu/archive/esahubble/potw1931a/esahubble_potw1931a_100.jpg" Constellation="" Top="55%" Left="55%" Index="Four" Length="100000">
     <Target>galaxyd</Target>
     <ForegroundImageSet>
       <ImageSet DataSetType="Sky" Name="UGC 2369" BandPass="Visible" Url="https://astropix.ipac.caltech.edu/archive/esahubble/potw1931a/esahubble_potw1931a_1600.jpg" TileLevels="0" WidthFactor="2" Rotation="-107.2" Projection="SkyImage" FileType=".tif" CenterY="14.9741613569" CenterX="43.5090142526" BottomsUp="False" OffsetX="800" OffsetY="540.330188679245" BaseTileLevel="0" BaseDegreesPerTile="2.9456898907472E-05" FOV="0.05">
@@ -134,15 +133,14 @@
     </Description>
   </Place>
 
-
-  <Place Name="4C 73.08" RA="9.8333" Dec="73.2365" ZoomLevel="0.182228417744599" DataSetType="Sky" Opacity="100" Thumbnail="http://www.spacetelescope.org/static/archives/images/thumbs/potw1246a.jpg" Constellation="" Top="43%" Left="55%" Index="Five" Length="100000">
-    <Target>galaxye</Target>
-    <ForegroundImageSet>
-      <ImageSet DataSetType="Sky" Name="4C 73.08" BandPass="Visible" Url="http://www.spacetelescope.org/static/archives/images/screen/potw1246a.jpg" TileLevels="0" WidthFactor="2" Rotation="-61.96" Projection="SkyImage" FileType=".tif" CenterY="73.2360951224" CenterX="147.455829031" BottomsUp="False" OffsetX="639.823837049" OffsetY="581.690063309" BaseTileLevel="0" BaseDegreesPerTile="3.13274077105556E-05" FOV="0.05">
-        <Credits></Credits>
-        <CreditsUrl>http://www.spacetelescope.org/images/potw1246a/</CreditsUrl>
-      </ImageSet>
-    </ForegroundImageSet>
+<Place Name="4C 73.08" RA="9.8333" Dec="73.2365" ZoomLevel="0.182228417744599" DataSetType="Sky" Opacity="100" Thumbnail="http://www.spacetelescope.org/static/archives/images/thumbs/potw1246a.jpg" Constellation="" Top="42%" Left="55%" Index="Five" Length="100000">
+<Target>galaxye</Target>
+ <ForegroundImageSet>
+ <ImageSet DataSetType="Sky" Name="4C 73.08" BandPass="Visible" Url="https://www.spacetelescope.org/static/archives/images/screen/potw1246a.jpg" TileLevels="0" WidthFactor="2" Rotation="-61.96" Projection="SkyImage" FileType=".tif" CenterY="73.2360951224" CenterX="147.455829031" BottomsUp="False" OffsetX="639.823837049" OffsetY="581.690063309" BaseTileLevel="0" BaseDegreesPerTile="3.13274077105556E-05" FOV="0.05">
+<Credits></Credits>
+<CreditsUrl>http://www.spacetelescope.org/images/potw1246a/</CreditsUrl>
+</ImageSet>
+</ForegroundImageSet>
     <Description Title="J095000+731408">
       <div class="Thumbnail">
         J095000+731408
@@ -166,9 +164,8 @@
     </Description>
   </Place>
 
-
-  <Place Name="GOODS North Field" RA="12.62267" Dec="62.213" ZoomLevel="0.546617051201536" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1834a.jpg" Constellation="" Modified="Thu Nov 08 2018" Top="35%" Left="47%" Index="Six" Length="100000">
-    <Target>galaxyf</Target>
+  <Place Name="GOODS North Field" RA="12.62267" Dec="62.213" ZoomLevel="0.546617051201536" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1834a.jpg" Constellation="" Modified="Thu Nov 08 2018" Top="33%" Left="47%" Index="Six" Length="100000">
+  <Target>galaxyf</Target>
     <ForegroundImageSet>
       <ImageSet DataSetType="Sky" Name="GOODS North Field" BandPass="Visible" Url="https://wwtfiles.blob.core.windows.net/vamp/Hubble-potw1834aL{1}X{2}Y{3}.png" TileLevels="5" WidthFactor="1" Rotation="-19.7" Projection="Tan" FileType=".png" CenterY="62.243952347" CenterX="189.226412195" BottomsUp="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.136654262800384" FOV="0.2">
         <Credits>ESA/Hubble &amp; NASA; The Hubble Deep Field from 1995 allowed astronomers a first glimpse into the early Universe. This first picture was followed lat...</Credits>
@@ -203,7 +200,7 @@
   </Place>
     
 
-  <Place Name="Hercules A" RA="16.8522692206" Dec="4.99292628183" ZoomLevel="0.18247041024" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-opo1247a.jpg" Constellation="" Modified="Fri Nov 09 2018" Top="43%" Left="28%" Index="Seven" Length="200000">
+  <Place Name="Hercules A" RA="16.8522692206" Dec="4.99292628183" ZoomLevel="0.18247041024" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-opo1247a.jpg" Constellation="" Modified="Fri Nov 09 2018" Top="41%" Left="21%" Index="Seven" Length="200000">
     <Target>galaxyg</Target>
     <ForegroundImageSet>
       <ImageSet DataSetType="Sky" Name="Hercules A" BandPass="Visible" Url="https://wwtfiles.blob.core.windows.net/vamp/Hubble-opo1247aL{1}X{2}Y{3}.png" TileLevels="4" WidthFactor="1" Rotation="35.9876208852" Projection="Tan" FileType=".png" CenterY="4.99292628183" CenterX="252.784038309" BottomsUp="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.04561760256" FOV="0.15">
@@ -238,8 +235,7 @@
     </Description>
   </Place>
 
-
-  <Place Name="Abell 370" RA="2.66494" Dec="-1.59464" ZoomLevel="0.273109051054162" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-heic1711a.jpg" Constellation="" Modified="Thu Nov 08 2018" Top="92%" Left="86%" Index="Eight" Length="30000">
+  <Place Name="Abell 370" RA="2.66494" Dec="-1.59464" ZoomLevel="0.273109051054162" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-heic1711a.jpg" Constellation="" Modified="Thu Nov 08 2018" Top="88%" Left="82%" Index="Eight" Length="30000">
     <Target>galaxyh</Target>
     <ForegroundImageSet>
       <ImageSet DataSetType="Sky" Name="Abell 370" BandPass="Visible" Url="https://wwtfiles.blob.core.windows.net/vamp/Hubble-heic1711aL{1}X{2}Y{3}.png" TileLevels="5" WidthFactor="1" Rotation="27.94" Projection="Tan" FileType=".png" CenterY="-1.57683079556" CenterX="39.9702863319" BottomsUp="False" OffsetX="0" OffsetY="0" BaseTileLevel="0" BaseDegreesPerTile="0.0682772627635405" FOV="0.1">
