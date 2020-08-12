@@ -311,6 +311,12 @@ a, a:hover {
     font-size: calc(10px + 1.25vw);
 }
 
+#description_box .row h5 {
+    margin-bottom: 4px;
+	color: #f33413;  /* used to be #8AFF8A */
+    font-size: calc(8px + 1.25vw);
+}
+
 #description_box .row p {
     margin-bottom: 15px;
 }
