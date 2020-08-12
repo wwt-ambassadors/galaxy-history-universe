@@ -215,7 +215,7 @@
             is_dblclick
           );
 
-        }
+        };
 
 
         // attach click events to plot points to trigger the on_click function (defined above)
@@ -231,24 +231,17 @@
             on_click(element, true)
           });
 
-        // pop up image of galaxy spectrum, using mouseenter/mouseleave/click methods
-        var popup_id = "#" + place.attr('Index').toLowerCase() + "_spectrum"
-        tmpdesc.find('a').mouseenter(function () {
-          if (!(popup_open)) {
-            $(popup_id).show();
-          }
-        })
-        tmpdesc.find('a').mouseleave(function () {
-          if (!(popup_open)) {
-            $(popup_id).hide();
-          }
-        })
+        // pop up image of galaxy spectrum, using click methods
+        var popup_id = "#" + place.attr('Index').toLowerCase() + "_spectrum";
         tmpdesc.find('a').click(function () {
           if (popup_open) {
             $(popup_id).hide();
           }
+          else {
+            $(popup_id).show();
+          }
           popup_open = !(popup_open);
-        })
+        });
 
 
         // Plug the set of plot points into the #sloan_image_holder element
@@ -556,10 +549,10 @@
         setTimeout(function () { proceed = true }, delay);
 
         if (event.deltaY < 0) {
-          wwt_ctl.zoom(1.43);
+          wwt_ctl.zoom(1.05);
         }
         else {
-          wwt_ctl.zoom(0.7);
+          wwt_ctl.zoom(0.95);
         }
 
       }

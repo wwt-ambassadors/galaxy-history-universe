@@ -198,10 +198,10 @@ a, a:hover {
 #reset_target {
     position: absolute;
     bottom: 20px;
-    left: 20px;
+    left: 15px;
     font-family: "Font Awesome 5 Free";
     color: #41BEECC0;
-    font-size: 1.25em;
+    font-size: 0.8em;
     display: none;
 }
 
