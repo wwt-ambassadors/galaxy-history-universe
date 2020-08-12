@@ -36,6 +36,14 @@ a, a:hover {
     padding-left: 2px;
 }
 
+.smallcaps {
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+.estimate {
+    color: #41BEEC;
+}
 
 
 /* The two primary containers, top and bottom */
@@ -58,14 +66,29 @@ a, a:hover {
 
 /* Sloan image and plot points. */
 
+.sloan_gutter {
+    position: relative;
+    padding-right: 20px;
+}
+
 .sloan_gutter #sloan_image_holder {
     position: relative;
-    margin-right: 20px;
 }
 
 .sloan_gutter img {
     width: 300px;
 	border: solid 1px #333;
+}
+
+#map_title {
+    position: absolute;
+    top: 7px;
+    left: 0;
+    padding: 2px 5px;
+    border-left: solid 2px #EFA928;
+    color: #EFA928;
+    font-size: 10px;
+    font-weight: bold;
 }
 
 .sloan_gutter .plot_point {
@@ -89,24 +112,54 @@ a, a:hover {
     border: 2px solid #000000BB;
 }
 
-.sloan_gutter .dist_instrux {
+.sloan_gutter #dist_instrux {
+    visibility: hidden;
     width: 300px;
     margin-top: 10px;
 	text-align: left;
-	font-size: 0.7em;
+	font-size: 13px;
+    line-height: 1.4;
     color: #EEEEEECC;
-    padding: 15px;
+    padding: 10px;
     background-color: #00000066;
     border: solid 1px #333;
+    overflow-y: auto;
 }
 
-.sloan_gutter .dist_instrux h6 {
+.sloan_gutter #dist_instrux h6 {
     color: #EFA928;
+    font-size: 14px;
+    font-weight: bold;
+    font-variant: small-caps;
+    text-align: center;
 }
 
-.sloan_gutter .dist_instrux strong {
+.sloan_gutter #dist_instrux li + * {
+    margin-top: 10px;
+}
+
+.sloan_gutter #dist_instrux .li_subtext {
+    margin: 6px 10px 3px 0;
+    padding: 5px 10px;
+    font-size: 0.85em;
+    color: #EEEEEE;
+    border-radius: 3px;
+    background-color: #EEEEEE22;
+}
+
+.sloan_gutter #dist_instrux strong {
     font-family: monospace, Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
     color: #EFA928;
+}
+
+#footnote {
+    position: absolute;
+    bottom: 0px;
+    padding-right: 20px;
+    user-select: none;
+    text-align: left;
+    color: #EEEEEECC; 
+    font-size: 12px;
 }
 
 
@@ -159,8 +212,9 @@ a, a:hover {
 #distance_text {
     border: 3px solid #41BEEC;
     border-radius: 15px;
-    padding: 5px;
-    font-size: 0.75em;
+    padding: 4px 12px;
+    font-size: 0.7em;
+    font-weight: bold;
 }
 
 #distance_text:hover {
@@ -217,20 +271,21 @@ a, a:hover {
     pointer-events: none;
 }
 
-@media screen and (max-width: 976px) {
+@media screen and (max-width: 1200px) {
     #zoom_pan_container {
         display: none;
     }
 }
 
 #zoom_pan_instrux {
-	width: 27em;
+	width: 35em;
     margin: 0 auto;
+    padding: 2px;
 	text-align: center;
 	font-size: 0.6em;
 	color: #EEEEEECC;
     background-color: #00000066;
-    border-radius: 25px;
+    border-radius: 30px;
 }
 
 #zoom_pan_instrux strong {
@@ -301,16 +356,6 @@ a, a:hover {
     padding: 20px;
     color: #EFA928;
     border-bottom: dotted #44FF44 2px;
-}
-
-.footnote {
-    position: absolute;
-    user-select: none;
-    text-align: left;
-    bottom: 10px;
-    padding: 10px;
-    color: #EEEEEECC; 
-    font-size: 12px; /* used to 0.5em */   
 }
 
 #description_box .row * + div {

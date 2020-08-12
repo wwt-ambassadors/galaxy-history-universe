@@ -160,6 +160,10 @@
           $(".plot_point").removeClass("selected");
           $(element).addClass("selected");
 
+          // add distance instructions, and hide the cosmos footnote
+          $("#footnote").hide();
+          $("#dist_instrux").css("visibility", "visible");
+
 
           // enable the reset button (and hide if visible)
           reset_enabled = true;
@@ -190,7 +194,7 @@
 
           // fade in the galaxy length value if it hasn't appeared yet, and fade out the distance to galaxy value
           $("#galaxy_length_val").fadeIn(500);
-          $('#distance_val').fadeOut(1000);
+          $('#distance_val').html("&nbsp;");
 
           /* update the current length value */
           currgal_length_in_ltyr = place.attr("Length");
@@ -392,20 +396,21 @@
   function size_content() {
     var container = $("html");
     var top_container = $(".top_container");
-    var bottom_container = $(".bottom_container")
+    var bottom_container = $(".bottom_container");
     var sloan_gutter = $(".sloan_gutter");
+    var wwtcanvas = $("#wwtcanvas");
 
     // Constants here must be synced with settings in style.css
     const new_wwt_width = (top_container.width() - sloan_gutter.width());
-    const new_wwt_height = top_container.height() - 2;
-    // set wwt_canvas height to fill top_container, subtract 2 to account for border width
+    const new_wwt_height = sloan_gutter.height() - 2;
+    // set wwt_canvas height to fill top_container, subtract 3 to account for border width
 
     const colophon_height = $("#colophon").height();
     const bottom_height = container.height() - top_container.outerHeight() - 50;
     const description_height = bottom_height - colophon_height;
 
     // resize wwtcanvas with new values
-    $("#wwtcanvas").css({
+    $(wwtcanvas).css({
       "width": new_wwt_width + "px",
       "height": new_wwt_height + "px"
     });
@@ -413,13 +418,12 @@
     // resize bottom container to new value
     $(bottom_container).css({
       "height": bottom_height + "px"
-    })
+    });
 
     // resize description box to new value
     $("#description_box").css({
       "height": description_height + "px"
     });
-
   }
 
   $(document).ready(size_content);
@@ -592,7 +596,6 @@
 
     currgal_length_in_Mpc = convert_ltyr_to_Mpc(currgal_length_in_ltyr);
     currgal_distance = currgal_length_in_Mpc / view_height_rad;
-    $('#distance_val').show();
 
     print_distance("calculating.");
     setTimeout(function () {

@@ -39,13 +39,30 @@
         <div class="sloan_gutter">
             <div id="sloan_image_holder">
                 <img src="cosmos_map.png" alt="cosmos map">
+                <div id="map_title">map of our cosmos, Milky Way at the center</div>
             </div>
-            <div class="dist_instrux">
-                <h6>To estimate the distance to a galaxy:</h6>  
+            <div id="footnote">
+                <p>
+                    The cosmos map shows data from the <a href="https://www.sdss.org/" target="_blank"> Sloan Digitial Sky Survey</a> and the <a href="http://www.2dfgrs.net/" target="_blank">2dF Galaxy Redshift Survey</a>, <a href="https://github.com/Samreay/SurveyVisualiser" target="_blank">visualized</a> by Samuel Hinton.
+                </p>
+            </div>
+            <div id="dist_instrux">
+                <h6>to estimate the distance to a galaxy:</h6>  
                 <ol>
-                    <li>Rotate the circled galaxy (hold <strong>control</strong> and click + drag to the left or right) until the longest dimension of the galaxy is vertical</li>
-                    <li>Zoom in/out until the <strong>galaxy</strong> (not the surrounding circle!) just matches the height of the display</li>
-                    <li>Click on "ESTIMATE DISTANCE"</li>
+                    <li>
+                        Rotate the galaxy in the white circle until the longest dimension of the galaxy is vertical
+                        <div class="li_subtext">
+                            <span class="smallcaps">rotate:</span> hold <strong>control</strong> and click + drag to the left or right
+                        </div>
+                    </li>
+                    <li>
+                        Zoom in/out until the galaxy inside the circle (<span class="smallcaps">note:</span> not the circle itself) just matches the height of the display
+                        <div class="li_subtext">
+                            <span class="smallcaps">zoom:</span> scroll in and out (or use the<br>
+                            <strong>I-O</strong> keys for finer control)
+                        </div>
+                    </li>
+                    <li>Click on <span class="smallcaps estimate">estimate distance</span></li>
                 </ol>
             </div>
         </div>
@@ -74,9 +91,9 @@
             </a>
             <div id="zoom_pan_container">
                 <div id="zoom_pan_instrux">
-                    to zoom, scroll in and out (or use the <strong>I-O</strong> keys)<br>
-                    to pan, click + drag (or use the <strong>W-A-S-D</strong> keys)<br>
-                    to rotate, hold <strong>control</strong> while you click + drag
+                    <span class="smallcaps">zoom:</span> scroll in and out (or use the <strong>I-O</strong> keys for finer control)<br>
+                    <span class="smallcaps">rotate:</span> hold <strong>control</strong> and click + drag to the left or right<br>
+                    <span class="smallcaps">pan:</span> click + drag (or use the <strong>W-A-S-D</strong> keys)
                 </div>
             </div>
 
@@ -121,16 +138,10 @@
                 <div class="obj_desc">
                     <div class="points_expl">
                         <p>
-                            The image in the upper left is a map of our cosmos, with the Milky Way in the center.
+                            Click on one of the blue points on the map of our cosmos to fly to the selected galaxy.
                         </p>
-                        <br>
-                            Click on one of the blue points to fly to the selected galaxy.
-                        <br>
-                            Double-click on the point to arrive there immediately.
-                    </div>
-                    <div class="footnote">
                         <p>
-                            The cosmos map shows data from the <a href="https://www.sdss.org/" target="_blank"> Sloan Digitial Sky Survey</a> and the <a href="http://www.2dfgrs.net/" target="_blank">2dF Galaxy Redshift Survey</a>, <a href="https://github.com/Samreay/SurveyVisualiser" target="_blank">visualized</a> by Samuel Hinton.
+                            Double-click on the point to arrive there immediately.
                         </p>
                     </div>
                 </div>
