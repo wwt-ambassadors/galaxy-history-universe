@@ -26,12 +26,11 @@
         <p>This gives us a preview of our future. In about 4 billion years, our galaxy, the Milky Way, will collide with our neighbor Andromeda.
         </p>
       </div>
-      <div class="Characteristics">
+      <div class="Data">
         <h4>Data</h4>
         <ul>
           <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
           <li>Galaxy size assumed in distance estimation: 100,000 light years</li>
-
         </ul>
       </div>
     </Description>
@@ -60,7 +59,7 @@
           Haro 11 is a "starburst" galaxy that is producing new stars at a rate that is 20 times higher than in our own Milky Way galaxy. The many massive newborn stars give Haro 11 its blue'ish hue. Astronomers believe that Haro 11 formed from the merger of two smaller galaxies.
         </p>
       </div>
-      <div class="Characteristics">
+      <div class="Data">
         <h4>Data</h4>
         <ul>
           <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
@@ -92,7 +91,7 @@
           What kind of a name is SDSS J143450.62+033842.5? There are so many galaxies in the cosmos that it is difficult to name them all. Most distant galaxies are named with a long string of numbers that give their coordinates in the sky. This galaxy is at a right ascension of 14h34m50.62s and a declination of 03d38'42.5", and it was identified by the Sloan Digital Sky Survey (SDSS).
         </p>
       </div>
-      <div class="Characteristics">
+      <div class="Data">
         <h4>Data</h4>
         <ul>
           <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
@@ -124,7 +123,7 @@
           Due to the expansion of the Universe, most galaxies in the cosmos are moving apart from each other. However, if galaxies are near enough to each other (like the two galaxies in UGC 2369), gravity can pull them together, causing them to collide and eventually merge. 
         </p>
       </div>
-      <div class="Characteristics">
+      <div class="Data">
         <h4>Data</h4>
         <ul>
           <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
@@ -155,7 +154,7 @@
           J095000+731408 is another distant galaxy that is named for its position in the sky. It is part of a small group of nine galaxies associated with a bright radio source, 4C 73.08, an elliptical galaxy which likely harbors a supermassive black hole. You can see the other galaxies in this group by panning around this image taken with the Hubble Space Telescope.
         </p>
       </div>
-      <div class="Characteristics">
+      <div class="Data">
         <h4>Data</h4>
         <ul>
           <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
@@ -163,7 +162,7 @@
         </ul>
       </div>
     </Description>
-</Place>
+  </Place>
 
   <Place Name="GOODS North Field" RA="12.62267" Dec="62.213" ZoomLevel="0.546617051201536" DataSetType="Sky" Opacity="100" Thumbnail="https://wwtfiles.blob.core.windows.net/vamp/thumb-Hubble-potw1834a.jpg" Constellation="" Modified="Thu Nov 08 2018" Top="33%" Left="47%" Index="Six" Length="100000">
   <Target>galaxyf</Target>
@@ -190,7 +189,7 @@
         After you've estimated the distance to the nearby galaxy, pan around the field to see other galaxies that are much farther away. Astronomers have measured distances to almost 3000 galaxies in this field. How many of them can you spot in the image?
         </p>
       </div>
-      <div class="Characteristics">
+      <div class="Data">
         <h4>Data</h4>
         <ul>
           <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
@@ -226,7 +225,7 @@
           Hercules A is a very large elliptical galaxy with a mass that is roughly 1000 times that of our Milky Way galaxy. This image combines observations from the Hubble Space Telescope and the Jansky Very Large Array radio telescope. The radio observations (shown in pink in false color) show enormous jets that are powered by a supermassive black hole at the center of the galaxy. The jets consist of high energy plasma and magnetic fields that have been blasted almost a million light years away from the galaxy center. 
         </p>
       </div>
-      <div class="Characteristics">
+      <div class="Data">
         <h4>Data</h4>
         <ul>
           <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
@@ -261,7 +260,7 @@
           Note there are also several long arcs that appear streaked between the galaxies. These are images of far more distant galaxies behind the cluster that have been magnified and distorted by the immense mass of the cluster in a phenomenon known as gravitational lensing.
         </p>
       </div>
-      <div class="Characteristics">
+      <div class="Data">
         <h4>Data</h4>
         <ul>
           <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
@@ -270,8 +269,5 @@
       </div>
     </Description>
   </Place>
-
-
-
 
 </Folder>
