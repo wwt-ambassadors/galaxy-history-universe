@@ -105,7 +105,7 @@
       // store each of the Place objects from the WTML file in places
       var places = $(xml).find('Place');
       // create templates of the plotpoint and description text to clone from
-      var pointTemplate = $('<div><a href="#"><div class="plot_point"></div></a></div>');
+      var pointTemplate = $('<div><a href="#" class="plot_point"></a></div>');
       var descTemplate = $('<div class="obj_desc container-fluid"><div class="row"><div class="name col-xs-12 col-md-12 col-lg-12"></div><div class="what col-xs-12 col-md-12 col-lg-12"></div><div class="data col-xs-12 col-md-12 col-lg-12"></div></div></div>');
 
 
@@ -116,6 +116,12 @@
         // create a temporary object of a thumbnail and of a description element from the templates above
         var tmppoint = pointTemplate.clone();
         var tmpdesc = descTemplate.clone();
+
+
+        // find the <a> element for the thumbnail -- and specify the tab-accessibility index from the wtml
+        tmppoint.find('.plot_point').attr({
+          tabindex: place.attr('Index')
+        });
 
 
         // grab the key attributes to associate with the plot point from the wtml
@@ -160,6 +166,10 @@
           $(".plot_point").removeClass("selected");
           $(element).addClass("selected");
 
+          // add distance instructions, and hide the cosmos footnote
+          $("#footnote").hide();
+          $("#dist_instrux").css("visibility", "visible");
+
 
           // enable the reset button (and hide if visible)
           reset_enabled = true;
@@ -190,7 +200,7 @@
 
           // fade in the galaxy length value if it hasn't appeared yet, and fade out the distance to galaxy value
           $("#galaxy_length_val").fadeIn(500);
-          $('#distance_val').fadeOut(1000);
+          $('#distance_val').html("&nbsp;");
 
           /* update the current length value */
           currgal_length_in_ltyr = place.attr("Length");
@@ -215,11 +225,11 @@
             is_dblclick
           );
 
-        }
+        };
 
 
         // attach click events to plot points to trigger the on_click function (defined above)
-        tmppoint.find('a')
+        tmppoint.find('.plot_point')
           .data('foreground-image', place.attr('Name'))
           // specify different functionality for click vs. dblclick
           .on('click', function (event) {
@@ -231,24 +241,17 @@
             on_click(element, true)
           });
 
-        // pop up image of galaxy spectrum, using mouseenter/mouseleave/click methods
-        var popup_id = "#" + place.attr('Index').toLowerCase() + "_spectrum"
-        tmpdesc.find('a').mouseenter(function () {
-          if (!(popup_open)) {
-            $(popup_id).show();
-          }
-        })
-        tmpdesc.find('a').mouseleave(function () {
-          if (!(popup_open)) {
-            $(popup_id).hide();
-          }
-        })
+        // pop up image of galaxy spectrum, using click methods
+        var popup_id = "#" + place.attr('PopupIndex').toLowerCase() + "_spectrum";
         tmpdesc.find('a').click(function () {
           if (popup_open) {
             $(popup_id).hide();
           }
+          else {
+            $(popup_id).show();
+          }
           popup_open = !(popup_open);
-        })
+        });
 
 
         // Plug the set of plot points into the #sloan_image_holder element
@@ -399,20 +402,21 @@
   function size_content() {
     var container = $("html");
     var top_container = $(".top_container");
-    var bottom_container = $(".bottom_container")
+    var bottom_container = $(".bottom_container");
     var sloan_gutter = $(".sloan_gutter");
+    var wwtcanvas = $("#wwtcanvas");
 
     // Constants here must be synced with settings in style.css
     const new_wwt_width = (top_container.width() - sloan_gutter.width());
-    const new_wwt_height = top_container.height() - 2;
-    // set wwt_canvas height to fill top_container, subtract 2 to account for border width
+    const new_wwt_height = sloan_gutter.height() - 2;
+    // set wwt_canvas height to fill top_container, subtract 3 to account for border width
 
     const colophon_height = $("#colophon").height();
     const bottom_height = container.height() - top_container.outerHeight() - 50;
     const description_height = bottom_height - colophon_height;
 
     // resize wwtcanvas with new values
-    $("#wwtcanvas").css({
+    $(wwtcanvas).css({
       "width": new_wwt_width + "px",
       "height": new_wwt_height + "px"
     });
@@ -420,13 +424,12 @@
     // resize bottom container to new value
     $(bottom_container).css({
       "height": bottom_height + "px"
-    })
+    });
 
     // resize description box to new value
     $("#description_box").css({
       "height": description_height + "px"
     });
-
   }
 
   $(document).ready(size_content);
@@ -493,6 +496,11 @@
         // remove the zoom_pan instructions
         $("#zoom_pan_instrux").delay(5000).fadeOut(1000);
 
+        // show reset button if enabled
+        if (reset_enabled) {
+          $("#reset_target").show();
+        }
+
         var action = zoomCodes.hasOwnProperty(event.code) ? zoomCodes[event.code] : zoomCodes[event.keyCode];
 
         if (event.shiftKey)
@@ -507,6 +515,11 @@
       if (moveCodes.hasOwnProperty(event.code) || moveCodes.hasOwnProperty(event.keyCode)) {
         // remove the zoom_pan instructions
         $("#zoom_pan_instrux").delay(5000).fadeOut(1000);
+
+        // show reset button if enabled
+        if (reset_enabled) {
+          $("#reset_target").show();
+        }
 
         var action = moveCodes.hasOwnProperty(event.code) ? moveCodes[event.code] : moveCodes[event.keyCode];
 
@@ -599,7 +612,6 @@
 
     currgal_length_in_Mpc = convert_ltyr_to_Mpc(currgal_length_in_ltyr);
     currgal_distance = currgal_length_in_Mpc / view_height_rad;
-    $('#distance_val').show();
 
     print_distance("calculating.");
     setTimeout(function () {
