@@ -105,7 +105,7 @@
       // store each of the Place objects from the WTML file in places
       var places = $(xml).find('Place');
       // create templates of the plotpoint and description text to clone from
-      var pointTemplate = $('<div><a href="#"><div class="plot_point"></div></a></div>');
+      var pointTemplate = $('<div><a href="#" class="plot_point"></a></div>');
       var descTemplate = $('<div class="obj_desc container-fluid"><div class="row"><div class="name col-xs-12 col-md-12 col-lg-12"></div><div class="what col-xs-12 col-md-12 col-lg-12"></div><div class="data col-xs-12 col-md-12 col-lg-12"></div></div></div>');
 
 
@@ -116,6 +116,12 @@
         // create a temporary object of a thumbnail and of a description element from the templates above
         var tmppoint = pointTemplate.clone();
         var tmpdesc = descTemplate.clone();
+
+
+        // find the <a> element for the thumbnail -- and specify the tab-accessibility index from the wtml
+        tmppoint.find('.plot_point').attr({
+          tabindex: place.attr('Index')
+        });
 
 
         // grab the key attributes to associate with the plot point from the wtml
@@ -223,7 +229,7 @@
 
 
         // attach click events to plot points to trigger the on_click function (defined above)
-        tmppoint.find('a')
+        tmppoint.find('.plot_point')
           .data('foreground-image', place.attr('Name'))
           // specify different functionality for click vs. dblclick
           .on('click', function (event) {
@@ -236,7 +242,7 @@
           });
 
         // pop up image of galaxy spectrum, using click methods
-        var popup_id = "#" + place.attr('Index').toLowerCase() + "_spectrum";
+        var popup_id = "#" + place.attr('PopupIndex').toLowerCase() + "_spectrum";
         tmpdesc.find('a').click(function () {
           if (popup_open) {
             $(popup_id).hide();
