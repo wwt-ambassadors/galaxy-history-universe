@@ -76,7 +76,7 @@ a, a:hover {
 }
 
 .sloan_gutter img {
-    width: 300px;
+    width: 250px;
 	border: solid 1px #333;
 }
 
@@ -114,13 +114,13 @@ a, a:hover {
 
 .sloan_gutter #dist_instrux {
     visibility: hidden;
-    width: 300px;
-    margin-top: 10px;
+    width: 250px;
+    margin-top: 5px;
 	text-align: left;
-	font-size: 13px;
+	font-size: 12px;
     line-height: 1.4;
     color: #EEEEEECC;
-    padding: 10px;
+    padding: 5px;
     background-color: #00000066;
     border: solid 1px #333;
     overflow-y: auto;
@@ -128,22 +128,22 @@ a, a:hover {
 
 .sloan_gutter #dist_instrux h6 {
     color: #EFA928;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     font-variant: small-caps;
     text-align: center;
 }
 
 .sloan_gutter #dist_instrux li + * {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .sloan_gutter #dist_instrux .li_subtext {
-    margin: 6px 10px 3px 0;
-    padding: 5px 10px;
-    font-size: 0.85em;
+    margin: 4px 8px 2px 0;
+    padding: 3px 5px;
+    font-size: 0.8em;
     color: #EEEEEE;
-    border-radius: 3px;
+    border-radius: 2px;
     background-color: #EEEEEE22;
 }
 
@@ -293,7 +293,15 @@ a, a:hover {
     color: #EFA928;
 }
 
+.begin_ss_h4 {
+    margin: 25px 15px 0.3rem 15px;
+	color: #EFA928;  /* used to be #8AFF8A */
+    font-size: calc(10px + 1.25vw);    
+}
 
+.begin_ss_p {
+    margin: 0px 15px 0.3rem 15px;
+}
 
 /* Galaxy Spectrum popup images */
 
