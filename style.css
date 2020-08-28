@@ -12,14 +12,19 @@ html {
 body {
 	position: relative;
 	overflow: hidden;
-	margin: 0px;
-	padding: 0px;
+    display: flex;
+    width: 90%;
+    margin: auto;
+    padding: 30px 0 0 0;
 	color: #FFF;
 	height: 100%;
 	background-color: #111;
 	font-size: calc(11px + 0.6vw);
 }
 
+.left_col {
+    flex: 0 0 300px;
+}
 
 
 /* Generic element settings */
@@ -50,18 +55,13 @@ a, a:hover {
 
 .top_container {
     display: flex;
-    width: 90%;
-    min-height: 50%;
-    margin: auto;
-    padding-top: 30px;
+    min-height: 60%;
+    max-height: 75%;
 }
 
 .bottom_container {
 	padding: 0;
-	width: 90%;
-	margin: 0px 5%;
 }
-
 
 
 /* Sloan image and plot points. */
@@ -76,7 +76,7 @@ a, a:hover {
 }
 
 .sloan_gutter img {
-    width: 250px;
+    width: 300px;
 	border: solid 1px #333;
 }
 
@@ -84,10 +84,10 @@ a, a:hover {
     position: absolute;
     top: 7px;
     left: 0;
-    padding: 2px 5px;
+    padding: 3px 5px;
     border-left: solid 2px #EFA928;
     color: #EFA928;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
 }
 
@@ -114,13 +114,13 @@ a, a:hover {
 
 .sloan_gutter #dist_instrux {
     visibility: hidden;
-    width: 250px;
-    margin-top: 5px;
+    width: 300px;
+    margin-top: 20px;
 	text-align: left;
-	font-size: 12px;
+	font-size: 13px;
     line-height: 1.4;
     color: #EEEEEECC;
-    padding: 5px;
+    padding: 10px;
     background-color: #00000066;
     border: solid 1px #333;
     overflow-y: auto;
@@ -128,22 +128,22 @@ a, a:hover {
 
 .sloan_gutter #dist_instrux h6 {
     color: #EFA928;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
     font-variant: small-caps;
     text-align: center;
 }
 
 .sloan_gutter #dist_instrux li + * {
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .sloan_gutter #dist_instrux .li_subtext {
-    margin: 4px 8px 2px 0;
-    padding: 3px 5px;
-    font-size: 0.8em;
+    margin: 6px 10px 3px 0;
+    padding: 5px 10px;
+    font-size: 0.95em;
     color: #EEEEEE;
-    border-radius: 2px;
+    border-radius: 3px;
     background-color: #EEEEEE22;
 }
 
@@ -154,11 +154,11 @@ a, a:hover {
 
 #footnote {
     position: absolute;
-    bottom: 0px;
+    top: 310px;
     padding-right: 20px;
     user-select: none;
     text-align: left;
-    color: #EEEEEECC; 
+    color: #e1e1e1; 
     font-size: 12px;
 }
 
@@ -167,7 +167,7 @@ a, a:hover {
 
 #wwtcanvas {
 	position: relative;
-	width: 90%;     /* note: overridden in HBB_script.js */
+	width: 99%;     /* note: overridden in HBB_script.js */
 	height: 100%;   /* note: overridden in HBB_script.js */
 	margin: auto;
 	border: solid 1px #333;
