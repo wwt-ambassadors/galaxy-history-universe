@@ -212,7 +212,7 @@ a, a:hover {
 #distance_text {
     border: 3px solid #41BEEC;
     border-radius: 15px;
-    padding: 4px 12px;
+    padding: 4px 8px;
     font-size: 0.7em;
     font-weight: bold;
 }
@@ -278,14 +278,14 @@ a, a:hover {
 }
 
 #zoom_pan_instrux {
-	width: 35em;
+	width: 38em;
     margin: 0 auto;
     padding: 2px;
 	text-align: center;
 	font-size: 0.6em;
 	color: #EEEEEECC;
     background-color: #00000066;
-    border-radius: 30px;
+    border-radius: 25px;
 }
 
 #zoom_pan_instrux strong {
