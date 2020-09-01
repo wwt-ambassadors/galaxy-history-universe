@@ -430,8 +430,6 @@
   // also triggering size_content function in the load_wtml function,
   // because thumbnails aren't loading immediately
 
-
-
   // Backend details: setting up keyboard controls.
   //
   // TODO: this code is from pywwt and was designed for use in Jupyter;
@@ -462,6 +460,9 @@
     const mouse_up = new_event("wwt-move", { movementX: 0, movementY: 53 }, true);
     const mouse_right = new_event("wwt-move", { movementX: -53, movementY: 0 }, true);
     const mouse_down = new_event("wwt-move", { movementX: 0, movementY: -53 }, true);
+    const rotate_left = new_event("wwt-rotate", { movementX: 53, movementY: 0 }, true);
+    const rotate_right = new_event("wwt-rotate", { movementX: -53, movementY: 0 }, true);
+
 
     const zoomCodes = {
       "KeyI": wheel_up,
@@ -475,10 +476,14 @@
       "KeyW": mouse_up,
       "KeyD": mouse_right,
       "KeyS": mouse_down,
+      "KeyJ": rotate_left,
+      "KeyL": rotate_right,
       65: mouse_left,
       87: mouse_up,
       68: mouse_right,
-      83: mouse_down
+      83: mouse_down,
+      74: rotate_left,
+      76: rotate_right,
     };
 
     window.addEventListener("keydown", function (event) {
@@ -496,6 +501,7 @@
 
         var action = zoomCodes.hasOwnProperty(event.code) ? zoomCodes[event.code] : zoomCodes[event.keyCode];
 
+        // Possible to cut this? I don't see action.shiftKey being used anywhere.
         if (event.shiftKey)
           action.shiftKey = 1;
         else
@@ -516,6 +522,8 @@
 
         var action = moveCodes.hasOwnProperty(event.code) ? moveCodes[event.code] : moveCodes[event.keyCode];
 
+
+        // Possible to cut this? I don't see action.shiftKey/altKey being used anywhere.
         if (event.shiftKey)
           action.shiftKey = 1
         else
@@ -542,10 +550,23 @@
 
         setTimeout(function () { proceed = true }, delay);
 
-        if (event.altKey)
-          wwt_ctl._tilt(event.movementX, event.movementY);
+        wwt_ctl.move(event.movementX, event.movementY);
+      }
+    })(true));
+
+    canvas.addEventListener("wwt-rotate", (function (proceed) {
+      return function (event) {
+        if (!proceed)
+          return false;
+
+        if (event.shiftKey)
+          delay = 500; // milliseconds
         else
-          wwt_ctl.move(event.movementX, event.movementY);
+          delay = 100;
+
+        setTimeout(function () { proceed = true }, delay);
+
+        wwt_ctl._tilt(event.movementX, event.movementY);
       }
     })(true));
 
@@ -570,6 +591,7 @@
 
       }
     })(true));
+
   }
 
   // when user scrolls to bottom of the description container, remove the down arrow icon. Add it back when scrolling back up.
