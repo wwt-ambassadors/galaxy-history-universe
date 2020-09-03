@@ -178,7 +178,7 @@ a, a:hover {
 	position: absolute;
 	top: 30px;
 	right: 0px;
-    padding: 10px 30px;
+    padding: 10px 15px;
 	margin: 0;
     background-color: black;
     color: #44ff44;
@@ -308,10 +308,10 @@ a, a:hover {
 .spectrum_popup {
     display: none;
     position: absolute;
-    bottom: 20px;
+    bottom: 55px;
     left: 20px;
     width: calc(100% - 40px);
-    height: calc(100% - 40px);
+    height: calc(100% - 100px);
     overflow: hidden;
 }
 
