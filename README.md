@@ -1,10 +1,10 @@
 ![Build and Deploy](https://github.com/wwt-ambassadors/star-life-cycle/workflows/Build%20and%20Deploy/badge.svg?branch=master&event=push)
 
-# Hubble and the Big Bang Interactive
+# Galaxies and the History of the Universe
 
-WWT-based interactive resource for exploring the Hubble Law and how it relates the Big Bang, created in collaboration with WGBH for NASA's Bringing the Universe to America's Classroom project.
+WWT-based interactive resource for exploring how galaxies move within the cosmos, and how their positions and movement tell us about the history of our Universe. This resource was created in collaboration with WGBH for NASA's Bringing the Universe to America's Classroom project.
 
-http://projects.wwtambassadors.org/hubble-big-bang/
+http://projects.wwtambassadors.org/galaxy-universe-history/
 
 
 ## Building and Testing
