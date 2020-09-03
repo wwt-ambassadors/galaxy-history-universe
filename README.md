@@ -4,7 +4,7 @@
 
 WWT-based interactive resource for exploring how galaxies move within the cosmos, and how their positions and movement tell us about the history of our Universe. This resource was created in collaboration with WGBH for NASA's Bringing the Universe to America's Classroom project.
 
-http://projects.wwtambassadors.org/galaxy-universe-history/
+http://projects.wwtambassadors.org/galaxy-history-universe
 
 
 ## Building and Testing
