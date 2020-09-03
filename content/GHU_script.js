@@ -379,7 +379,7 @@
     }
 
     // Load the image collection
-    var wtmlPath = "BUACGalaxyUniverseHistory.wtml";
+    var wtmlPath = "BUACGalaxyHistoryUniverse.wtml";
     wwt_si.loadImageCollection(wtmlPath);
     console.log("Loaded Image Collection");
     getWtml();
