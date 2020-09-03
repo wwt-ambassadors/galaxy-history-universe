@@ -168,7 +168,7 @@
 
           // add distance instructions, and hide the cosmos footnote
           $("#footnote").hide();
-          $("#dist_instrux").css("visibility", "visible");
+          $(".dist_instrux").css("visibility", "visible");
 
 
           // enable the reset button (and hide if visible)
