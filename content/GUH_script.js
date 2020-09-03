@@ -379,7 +379,7 @@
     }
 
     // Load the image collection
-    var wtmlPath = "BUACHubbleBigBang.wtml";
+    var wtmlPath = "BUACGalaxyUniverseHistory.wtml";
     wwt_si.loadImageCollection(wtmlPath);
     console.log("Loaded Image Collection");
     getWtml();
@@ -493,6 +493,7 @@
       if (zoomCodes.hasOwnProperty(event.code) || zoomCodes.hasOwnProperty(event.keyCode)) {
         // remove the zoom_pan instructions
         $("#zoom_pan_instrux").delay(5000).fadeOut(1000);
+        $("#page_title").delay(5000).fadeOut(1000);
 
         // show reset button if enabled
         if (reset_enabled) {
@@ -514,6 +515,7 @@
       if (moveCodes.hasOwnProperty(event.code) || moveCodes.hasOwnProperty(event.keyCode)) {
         // remove the zoom_pan instructions
         $("#zoom_pan_instrux").delay(5000).fadeOut(1000);
+        $("#page_title").delay(5000).fadeOut(1000);
 
         // show reset button if enabled
         if (reset_enabled) {
@@ -609,6 +611,7 @@
   // remove zoom-pan instructions upon canvas click, after a 5 second delay. Reset button appears
   $('#wwtcanvas').on('click', function () {
     $("#zoom_pan_instrux").delay(5000).fadeOut(1000);
+    $("#page_title").delay(5000).fadeOut(1000);
 
     if (reset_enabled) {
       $("#reset_target").show();
