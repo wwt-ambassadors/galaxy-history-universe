@@ -168,7 +168,7 @@
 
           // add distance instructions, and hide the cosmos footnote
           $("#footnote").hide();
-          $(".dist_instrux").css("visibility", "visible");
+          $("#dist_instrux").css("visibility", "visible");
 
 
           // enable the reset button (and hide if visible)
@@ -379,7 +379,7 @@
     }
 
     // Load the image collection
-    var wtmlPath = "BUACHubbleBigBang.wtml";
+    var wtmlPath = "BUACGalaxyHistoryUniverse.wtml";
     wwt_si.loadImageCollection(wtmlPath);
     console.log("Loaded Image Collection");
     getWtml();
@@ -402,28 +402,21 @@
   function size_content() {
     var container = $("html");
     var top_container = $(".top_container");
-    var bottom_container = $(".bottom_container");
-    var sloan_gutter = $(".sloan_gutter");
     var wwtcanvas = $("#wwtcanvas");
 
     // Constants here must be synced with settings in style.css
-    const new_wwt_width = (top_container.width() - sloan_gutter.width());
-    const new_wwt_height = sloan_gutter.height() - 2;
+    //const new_wwt_width = (top_container.width() - sloan_gutter.width());
+    const new_wwt_height = top_container.height() - 2;
     // set wwt_canvas height to fill top_container, subtract 3 to account for border width
 
     const colophon_height = $("#colophon").height();
-    const bottom_height = container.height() - top_container.outerHeight() - 50;
+    const bottom_height = container.height() - top_container.outerHeight() - 80;
     const description_height = bottom_height - colophon_height;
 
     // resize wwtcanvas with new values
     $(wwtcanvas).css({
-      "width": new_wwt_width + "px",
+      //"width": $(".right_container").width() + "px",
       "height": new_wwt_height + "px"
-    });
-
-    // resize bottom container to new value
-    $(bottom_container).css({
-      "height": bottom_height + "px"
     });
 
     // resize description box to new value
@@ -436,8 +429,6 @@
   $(window).resize(size_content);
   // also triggering size_content function in the load_wtml function,
   // because thumbnails aren't loading immediately
-
-
 
   // Backend details: setting up keyboard controls.
   //
@@ -469,6 +460,9 @@
     const mouse_up = new_event("wwt-move", { movementX: 0, movementY: 53 }, true);
     const mouse_right = new_event("wwt-move", { movementX: -53, movementY: 0 }, true);
     const mouse_down = new_event("wwt-move", { movementX: 0, movementY: -53 }, true);
+    const rotate_left = new_event("wwt-rotate", { movementX: 53, movementY: 0 }, true);
+    const rotate_right = new_event("wwt-rotate", { movementX: -53, movementY: 0 }, true);
+
 
     const zoomCodes = {
       "KeyI": wheel_up,
@@ -482,10 +476,14 @@
       "KeyW": mouse_up,
       "KeyD": mouse_right,
       "KeyS": mouse_down,
+      "KeyJ": rotate_left,
+      "KeyL": rotate_right,
       65: mouse_left,
       87: mouse_up,
       68: mouse_right,
-      83: mouse_down
+      83: mouse_down,
+      74: rotate_left,
+      76: rotate_right,
     };
 
     window.addEventListener("keydown", function (event) {
@@ -495,6 +493,7 @@
       if (zoomCodes.hasOwnProperty(event.code) || zoomCodes.hasOwnProperty(event.keyCode)) {
         // remove the zoom_pan instructions
         $("#zoom_pan_instrux").delay(5000).fadeOut(1000);
+        $("#page_title").delay(5000).fadeOut(1000);
 
         // show reset button if enabled
         if (reset_enabled) {
@@ -503,6 +502,7 @@
 
         var action = zoomCodes.hasOwnProperty(event.code) ? zoomCodes[event.code] : zoomCodes[event.keyCode];
 
+        // Possible to cut this? I don't see action.shiftKey being used anywhere.
         if (event.shiftKey)
           action.shiftKey = 1;
         else
@@ -515,6 +515,7 @@
       if (moveCodes.hasOwnProperty(event.code) || moveCodes.hasOwnProperty(event.keyCode)) {
         // remove the zoom_pan instructions
         $("#zoom_pan_instrux").delay(5000).fadeOut(1000);
+        $("#page_title").delay(5000).fadeOut(1000);
 
         // show reset button if enabled
         if (reset_enabled) {
@@ -523,6 +524,8 @@
 
         var action = moveCodes.hasOwnProperty(event.code) ? moveCodes[event.code] : moveCodes[event.keyCode];
 
+
+        // Possible to cut this? I don't see action.shiftKey/altKey being used anywhere.
         if (event.shiftKey)
           action.shiftKey = 1
         else
@@ -549,10 +552,23 @@
 
         setTimeout(function () { proceed = true }, delay);
 
-        if (event.altKey)
-          wwt_ctl._tilt(event.movementX, event.movementY);
+        wwt_ctl.move(event.movementX, event.movementY);
+      }
+    })(true));
+
+    canvas.addEventListener("wwt-rotate", (function (proceed) {
+      return function (event) {
+        if (!proceed)
+          return false;
+
+        if (event.shiftKey)
+          delay = 500; // milliseconds
         else
-          wwt_ctl.move(event.movementX, event.movementY);
+          delay = 100;
+
+        setTimeout(function () { proceed = true }, delay);
+
+        wwt_ctl._tilt(event.movementX, event.movementY);
       }
     })(true));
 
@@ -577,6 +593,7 @@
 
       }
     })(true));
+
   }
 
   // when user scrolls to bottom of the description container, remove the down arrow icon. Add it back when scrolling back up.
@@ -594,6 +611,7 @@
   // remove zoom-pan instructions upon canvas click, after a 5 second delay. Reset button appears
   $('#wwtcanvas').on('click', function () {
     $("#zoom_pan_instrux").delay(5000).fadeOut(1000);
+    $("#page_title").delay(5000).fadeOut(1000);
 
     if (reset_enabled) {
       $("#reset_target").show();

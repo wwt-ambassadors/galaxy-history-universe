@@ -12,14 +12,19 @@ html {
 body {
 	position: relative;
 	overflow: hidden;
-	margin: 0px;
-	padding: 0px;
+    display: flex;
+    width: 90%;
+    margin: auto;
+    padding: 30px 0 0 0;
 	color: #FFF;
 	height: 100%;
 	background-color: #111;
 	font-size: calc(11px + 0.6vw);
 }
 
+.left_col {
+    flex: 0 0 300px;
+}
 
 
 /* Generic element settings */
@@ -50,19 +55,13 @@ a, a:hover {
 
 .top_container {
     display: flex;
-    width: 90%;
-    min-height: 50%;
-    margin: auto;
-    padding-top: 30px;
+    min-height: 60%;
+    max-height: 75%;
 }
 
 .bottom_container {
 	padding: 0;
-	width: 90%;
-	margin: 0px 5%;
-    display: flex;
 }
-
 
 
 /* Sloan image and plot points. */
@@ -74,7 +73,6 @@ a, a:hover {
 
 .sloan_gutter #sloan_image_holder {
     position: relative;
-    width: 15em;
 }
 
 .sloan_gutter img {
@@ -86,10 +84,10 @@ a, a:hover {
     position: absolute;
     top: 7px;
     left: 0;
-    padding: 2px 5px;
+    padding: 3px 5px;
     border-left: solid 2px #EFA928;
     color: #EFA928;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
 }
 
@@ -114,8 +112,10 @@ a, a:hover {
     border: 2px solid #000000BB;
 }
 
-.dist_instrux {
+.sloan_gutter #dist_instrux {
     visibility: hidden;
+    width: 300px;
+    margin-top: 20px;
 	text-align: left;
 	font-size: 13px;
     line-height: 1.4;
@@ -126,38 +126,7 @@ a, a:hover {
     overflow-y: auto;
 }
 
-@media screen and (max-width: 1200px) {
-    .sloan_gutter .dist_instrux {
-        display: none;
-    }
-    
-    .bottom_container .dist_instrux {
-        display: block;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .sloan_gutter .dist_instrux {
-        display: block;
-    }
-    
-    .bottom_container .dist_instrux {
-        display: none;
-    }
-}
-
-.sloan_gutter .dist_instrux {
-    width: 300px;
-    margin-top: 10px;
-}
-
-.bottom_container .dist_instrux {
-    min-width: 400px;
-    margin: 20px 0 10px;
-    margin-right: 20px;
-}
-
-.dist_instrux h6 {
+.sloan_gutter #dist_instrux h6 {
     color: #EFA928;
     font-size: 14px;
     font-weight: bold;
@@ -165,36 +134,32 @@ a, a:hover {
     text-align: center;
 }
 
-.dist_instrux ol {
-    padding-inline-start: 20px;
-}
-
-.dist_instrux li + * {
+.sloan_gutter #dist_instrux li + * {
     margin-top: 10px;
 }
 
-.dist_instrux .li_subtext {
+.sloan_gutter #dist_instrux .li_subtext {
     margin: 6px 10px 3px 0;
     padding: 5px 10px;
-    font-size: 0.85em;
+    font-size: 0.95em;
     color: #EEEEEE;
     border-radius: 3px;
     background-color: #EEEEEE22;
 }
 
-.dist_instrux strong {
+.sloan_gutter #dist_instrux strong {
     font-family: monospace, Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
     color: #EFA928;
 }
 
 #footnote {
     position: absolute;
-    bottom: 0px;
+    top: 310px;
     padding-right: 20px;
     user-select: none;
     text-align: left;
-    color: #EEEEEECC; 
-    font-size: 0.5em;
+    color: #e1e1e1; 
+    font-size: 12px;
 }
 
 
@@ -202,7 +167,7 @@ a, a:hover {
 
 #wwtcanvas {
 	position: relative;
-	width: 90%;     /* note: overridden in HBB_script.js */
+	width: 99%;     /* note: overridden in HBB_script.js */
 	height: 100%;   /* note: overridden in HBB_script.js */
 	margin: auto;
 	border: solid 1px #333;
@@ -213,7 +178,7 @@ a, a:hover {
 	position: absolute;
 	top: 30px;
 	right: 0px;
-    padding: 10px 30px;
+    padding: 10px 15px;
 	margin: 0;
     background-color: black;
     color: #44ff44;
@@ -247,7 +212,7 @@ a, a:hover {
 #distance_text {
     border: 3px solid #41BEEC;
     border-radius: 15px;
-    padding: 4px 12px;
+    padding: 4px 8px;
     font-size: 0.7em;
     font-weight: bold;
 }
@@ -313,14 +278,14 @@ a, a:hover {
 }
 
 #zoom_pan_instrux {
-	width: 35em;
+	width: 38em;
     margin: 0 auto;
     padding: 2px;
 	text-align: center;
 	font-size: 0.6em;
 	color: #EEEEEECC;
     background-color: #00000066;
-    border-radius: 30px;
+    border-radius: 25px;
 }
 
 #zoom_pan_instrux strong {
@@ -328,17 +293,25 @@ a, a:hover {
     color: #EFA928;
 }
 
+.begin_ss_h4 {
+    margin: 25px 15px 0.3rem 15px;
+	color: #EFA928;  /* used to be #8AFF8A */
+    font-size: calc(10px + 1.25vw);    
+}
 
+.begin_ss_p {
+    margin: 0px 15px 0.3rem 15px;
+}
 
 /* Galaxy Spectrum popup images */
 
 .spectrum_popup {
     display: none;
     position: absolute;
-    bottom: 20px;
+    bottom: 55px;
     left: 20px;
     width: calc(100% - 40px);
-    height: calc(100% - 40px);
+    height: calc(100% - 100px);
     overflow: hidden;
 }
 
