@@ -64,6 +64,9 @@
                     </li>
                     <li>Click on <span class="smallcaps estimate">estimate distance</span></li>
                 </ol>
+                <div id="howto_button">
+                    <span id="howto_text"><a data-toggle="modal" href="#howtoModal">How to <span class="smallcaps">zoom</span> and <span class="smallcaps">rotate</span>?</a></span>
+                </div>
             </div>
         </div>
     </div>
@@ -108,7 +111,7 @@
                     <div class="obj_desc">
                         <div class="points_expl">
                             <p>
-                                Click on one of the blue points on the map of our cosmos to fly to the selected galaxy.
+                                Click on a blue point on the map of our cosmos to fly to the selected galaxy.
                             </p>
                             <p>
                                 Double-click on the point to arrive there immediately.
@@ -127,6 +130,48 @@
             </div>
         </div>
     </div>
+        
+    				
+    
+    <!-- beginning of target object description modal -->
+    <div class="modal fade" id="howtoModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">How to interact with the display</h3>
+                </div>
+                <div class="modal-body">
+
+                    <h4>How to zoom</h4>
+                    <ul>
+                        <li>Scroll in or out (or use the <strong>I-O</strong> keys for finer zoom).</li>
+                    </ul>
+                    <h4>How to rotate</h4>
+                    <ul>
+                        <li>Hold <strong>control</strong> + click + drag to the left or right (or use the <strong>J-L</strong> keys).</li>
+                    </ul>
+                    <h4>How to pan</h4>
+                    <ul>
+                        <li>Click + drag (or use the <strong>W-A-S-D</strong> keys).</li>
+                    </ul>
+                    <h3>Remember! A note about rotating</h3>
+                    <ul>
+                        <li>When rotating your galaxy, you want the LONGEST dimension of the galaxy vertical, i.e. pointing straight up and down. It may look to you like the galaxy is on its side, but this is necessary to get an accurate measurement.</li>
+                    </ul>
+                    <h3>Remember! A note about zooming</h3>
+                    <ul>
+                        <li>When zooming in on your galaxy, you want the galaxy itself (not the white circle!) to fit perfectly in the height of the display. It's up to you to decide where the outer edge of the galaxy is.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <span class="target_object_description"></span>
+                    <button type="button" class="btn btn-info" data-dismiss="modal">close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of target object description modal -->
+    
 
     <!--Move spectra out of WWT canvas space, so they appear bigger-->
     <div id="one_spectrum" class="spectrum_popup shadow-lg">

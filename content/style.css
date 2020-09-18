@@ -112,10 +112,8 @@ a, a:hover {
     border: 2px solid #000000BB;
 }
 
-.sloan_gutter #dist_instrux {
+#dist_instrux {
     visibility: hidden;
-    width: 300px;
-    margin-top: 20px;
 	text-align: left;
 	font-size: 13px;
     line-height: 1.4;
@@ -126,7 +124,12 @@ a, a:hover {
     overflow-y: auto;
 }
 
-.sloan_gutter #dist_instrux h6 {
+.sloan_gutter #dist_instrux {
+    width: 300px;
+    margin-top: 10px;
+}
+
+#dist_instrux h6 {
     color: #EFA928;
     font-size: 14px;
     font-weight: bold;
@@ -134,11 +137,15 @@ a, a:hover {
     text-align: center;
 }
 
-.sloan_gutter #dist_instrux li + * {
+#dist_instrux ol {
+    padding-inline-start: 20px;
+}
+
+#dist_instrux li + * {
     margin-top: 10px;
 }
 
-.sloan_gutter #dist_instrux .li_subtext {
+#dist_instrux .li_subtext {
     margin: 6px 10px 3px 0;
     padding: 5px 10px;
     font-size: 0.95em;
@@ -147,9 +154,22 @@ a, a:hover {
     background-color: #EEEEEE22;
 }
 
-.sloan_gutter #dist_instrux strong {
+@media screen and (max-height: 768px) {
+    #dist_instrux .li_subtext {
+        display: none;
+    }
+}
+
+#dist_instrux strong, #howtoModal strong {
     font-family: monospace, Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
     color: #EFA928;
+}
+
+#dist_instrux #howto_button {
+    position: absolute;
+    font-size: 11px;
+    bottom: 5px;
+    right: 26px;
 }
 
 #footnote {
@@ -159,7 +179,7 @@ a, a:hover {
     user-select: none;
     text-align: left;
     color: #e1e1e1; 
-    font-size: 12px;
+    font-size: 0.5em;
 }
 
 
