@@ -16,21 +16,21 @@
         NGC 6052
       </div>
       <div class="Name">
-        <h3>NGC 6052 <span class="galaxy_type">Colliding&#160;spiral&#160;galaxies</span></h3>
+        <h3>NGC 6052 <span class="galaxy_type">colliding&#160;spiral&#160;galaxies</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-          How many galaxies do you see here? When NGC 6052 was discovered in the late 1700's, it was classified as an irregular galaxy because of its unusual shape. The Hubble Space Telescope image here gives us a clearer picture of what is happening. NGC 6052 is actually two spiral galaxies in the process of crashing into each other.
+          How many galaxies do you see here? When NGC 6052 was discovered in the late 1700s, it was classified as an irregular galaxy because of its unusual shape. The Hubble Space Telescope image here gives us a clearer picture of what is happening. NGC 6052 is actually two spiral galaxies in the process of crashing into each other.
         </p>
-        <p>This gives us a preview of our future. In about 4 billion years, our galaxy, the Milky Way, will collide with our neighbor Andromeda.
+        <p>NGC 6052 gives us a preview of our future. In about 4 billion years, our galaxy, the Milky Way, will collide with our neighbor Andromeda.
         </p>
       </div>
       <div class="Data">
         <h4>Data</h4>
         <ul>
-          <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
-          <li>Galaxy size assumed in distance estimation: 100,000 light years</li>
+          <li><strong><a href="#">Galaxy spectrum</a></strong></li>
+          <li>Galaxy size assumed in distance estimation: 100,000 light-years</li>
         </ul>
       </div>
     </Description>
@@ -51,19 +51,19 @@
         Haro 11
       </div>
       <div class="Name">
-        <h3>Haro 11 <span class="galaxy_type">Irregular&#160;starburst&#160;galaxy</span></h3>
+        <h3>Haro 11 <span class="galaxy_type">irregular&#160;starburst&#160;galaxy</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-          Haro 11 is a "starburst" galaxy that is producing new stars at a rate that is 20 times higher than in our own Milky Way galaxy. The many massive newborn stars give Haro 11 its blue'ish color. Astronomers believe that Haro 11 formed when two smaller galaxies merged.
+          Haro 11 is a "starburst" galaxy that is producing new stars at a rate that is 20 times higher than in our own Milky Way galaxy. The many massive newborn stars give Haro 11 its bluish color. Astronomers believe that Haro 11 formed when two smaller galaxies merged.
         </p>
       </div>
       <div class="Data">
         <h4>Data</h4>
         <ul>
-          <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
-          <li>Galaxy size assumed in distance estimation: 30,000 light years</li>
+          <li><strong><a href="#">Galaxy spectrum</a></strong></li>
+          <li>Galaxy size assumed in distance estimation: 30,000 light-years</li>
         </ul>
       </div>
     </Description>
@@ -84,7 +84,7 @@
         SDSS_J143450.62+033842.5
       </div>
       <div class="Name">
-        <h3>SDSS J143450.62+033842.5 <span class="galaxy_type">Spiral&#160;galaxy</span></h3>
+        <h3>SDSS J143450.62+033842.5 <span class="galaxy_type">spiral&#160;galaxy</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
@@ -95,8 +95,8 @@
       <div class="Data">
         <h4>Data</h4>
         <ul>
-          <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
-          <li>Galaxy size assumed in distance estimation: 100,000 light years</li>
+          <li><strong><a href="#">Galaxy spectrum</a></strong></li>
+          <li>Galaxy size assumed in distance estimation: 100,000 light-years</li>
         </ul>
       </div>
     </Description>
@@ -116,19 +116,19 @@
         UGC 2369
       </div>
       <div class="Name">
-        <h3>UGC 2369 <span class="galaxy_type">Colliding&#160;spiral&#160;galaxies</span></h3>
+        <h3>UGC 2369 <span class="galaxy_type">colliding&#160;spiral&#160;galaxies</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-          Most galaxies in the cosmos are moving apart from each other. However, if galaxies are near enough to each other (like the two galaxies in UGC 2369), gravity can pull them together, causing them to collide and eventually merge. 
+          Most galaxies in the cosmos are moving apart from each other. However, if galaxies are close enough to each other (like the two galaxies in UGC 2369), gravity can pull them together, causing them to collide and eventually merge. 
         </p>
       </div>
       <div class="Data">
         <h4>Data</h4>
         <ul>
-          <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
-          <li>Galaxy size assumed in distance estimation: 100,000 light years</li>
+          <li><strong><a href="#">Galaxy spectrum</a></strong></li>
+          <li>Galaxy size assumed in distance estimation: 100,000 light-years</li>
         </ul>
       </div>
     </Description>
@@ -148,7 +148,7 @@
         J095000+731408
       </div>
       <div class="Name">
-        <h3>J095000+731408 <span class="galaxy_type">Spiral&#160;galaxy</span></h3>
+        <h3>J095000+731408 <span class="galaxy_type">spiral&#160;galaxy</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
@@ -159,8 +159,8 @@
       <div class="Data">
         <h4>Data</h4>
         <ul>
-          <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
-          <li>Galaxy size assumed in distance estimation: 100,000 light years</li>
+          <li><strong><a href="#">Galaxy spectrum</a></strong></li>
+          <li>Galaxy size assumed in distance estimation: 100,000 light-years</li>
         </ul>
       </div>
     </Description>
@@ -181,22 +181,22 @@
         Galaxy in GOODS North
       </div>
       <div class="Name">
-        <h3>Galaxy in GOODS North <span class="galaxy_type">Spiral&#160;galaxy</span></h3>
+        <h3>Galaxy in GOODS North <span class="galaxy_type">spiral&#160;galaxy</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-        This galaxy is one of the closest in a region of sky known as the "GOODS North" field. The Great Observatories Origins Deep Survey (GOODS) included detailed observations of two regions of sky (one northern and one southern) by NASA's Hubble, Spitzer, and Chandra telescopes, and the European Space Agency's Herschel and XMM-Newton telescopes. This image shows the GOODS North field as observed by the Hubble Space Telescope. 
+        This galaxy is one of the closest in a region of sky known as the "GOODS North" field. The Great Observatories Origins Deep Survey (GOODS) included detailed observations of two regions of sky (one northern and one southern) by NASA's Hubble, Spitzer, and Chandra Telescopes and the European Space Agency's Herschel and XMM-Newton Telescopes. This image shows the GOODS North field as observed by the Hubble Space Telescope. 
         </p>
         <p>
-        After you have estimated the distance to the nearby galaxy, pan around the image to see other galaxies that are much farther away. Astronomers have measured distances to almost 3000 galaxies in this region. How many of them can you spot in the image?
+        After you have estimated the distance to the nearby galaxy, pan around the image to see other galaxies that are much farther away. Astronomers have measured distances to almost 3,000 galaxies in this region. How many of them can you spot in the image?
         </p>
       </div>
       <div class="Data">
         <h4>Data</h4>
         <ul>
-          <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
-          <li>Galaxy size assumed in distance estimation: 100,000 light years</li>
+          <li><strong><a href="#">Galaxy spectrum</a></strong></li>
+          <li>Galaxy size assumed in distance estimation: 100,000 light-years</li>
         </ul>
       </div>
     </Description>
@@ -217,22 +217,22 @@
         Hercules A is a 
       </div>
       <div class="Name">
-        <h3>Hercules A <span class="galaxy_type">Elliptical&#160;galaxy (and&#160;radio&#160;galaxy)</span></h3>
+        <h3>Hercules A <span class="galaxy_type">elliptical&#160;galaxy (and&#160;radio&#160;galaxy)</span></h3>
       </div>
       <div class="What">
         <p>
-        <h5>Note: When estimating the distance to Hercules A, only include the central yellow'ish elliptical galaxy in the viewport. Do not include the large radio jets, or your distance estimate will be very inaccurate!</h5>
+        <h5>Note: When estimating the distance to Hercules A, only include the central yellowish elliptical galaxy in the viewport. Do not include the large radio jets, or your distance estimate will be very inaccurate!</h5>
         </p>
         <h4>What is it?</h4>
         <p>
-          Hercules A is a very large elliptical galaxy with a mass that is roughly 1000 times that of our Milky Way galaxy. This image combines observations from the Hubble Space Telescope and the Jansky Very Large Array radio telescope. The radio observations (shown in pink in false color) show enormous jets that are powered by a supermassive black hole at the center of the galaxy. The jets consist of high energy plasma that has been blasted almost a million light years away from the galaxy center, directed by magnetic fields. 
+          Hercules A is a very large elliptical galaxy with a mass that is roughly 1,000 times that of our Milky Way galaxy. This image combines observations from the Hubble Space Telescope and the Jansky Very Large Array radio telescope. The radio observations (shown in pink in false color) show enormous jets that are powered by a supermassive black hole at the center of the galaxy. The jets consist of high-energy plasma that has been blasted almost a million light-years away from the galaxy center, directed by magnetic fields. 
         </p>
       </div>
       <div class="Data">
         <h4>Data</h4>
         <ul>
-          <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
-          <li>Galaxy size assumed in distance estimation: 200,000 light years</li>
+          <li><strong><a href="#">Galaxy spectrum</a></strong></li>
+          <li>Galaxy size assumed in distance estimation: 200,000 light-years</li>
         </ul>
       </div>
     </Description>
@@ -253,22 +253,22 @@
         Galaxy in Abell 370
       </div>
       <div class="Name">
-        <h3>Galaxy in Abell 370 <span class="galaxy_type">Irregular&#160;galaxy</span></h3>
+        <h3>Galaxy in Abell 370 <span class="galaxy_type">irregular&#160;galaxy</span></h3>
       </div>
       <div class="What">
         <h4>What is it?</h4>
         <p>
-          Abell 370 is a galaxy cluster, and it contains several hundred galaxies bound together by gravity. All types of galaxies are represented in this cluster, including spirals and ellipticals and the small blue irregular galaxy whose distance you will estimate.
+          Abell 370 is a galaxy cluster and contains several hundred galaxies bound together by gravity. All types of galaxies are represented in this cluster, including spirals and ellipticals and the small blue irregular galaxy whose distance you will estimate.
         </p>
         <p>
-          Note there are also several long arcs that appear streaked between the galaxies. These are images of far more distant galaxies behind the cluster that have been magnified and distorted by the immense mass of the cluster in a phenomenon known as gravitational lensing.
+          Note that there are also several long arcs that appear streaked between the galaxies. These are images of far more distant galaxies behind the cluster that have been magnified and distorted by the immense mass of the cluster in a phenomenon known as <em>gravitational lensing</em>.
         </p>
       </div>
       <div class="Data">
         <h4>Data</h4>
         <ul>
-          <li><strong><a href="#">Galaxy Spectrum</a></strong></li>
-          <li>Galaxy size assumed in distance estimation: 30,000 light years</li>
+          <li><strong><a href="#">Galaxy spectrum</a></strong></li>
+          <li>Galaxy size assumed in distance estimation: 30,000 light-years</li>
         </ul>
       </div>
     </Description>
