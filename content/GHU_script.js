@@ -166,8 +166,9 @@
           $(".plot_point").removeClass("selected");
           $(element).addClass("selected");
 
-          // add distance instructions, and hide the cosmos footnote
+          // add distance instructions, hide the cosmos footnote, hide the Intro box
           $("#footnote").hide();
+          $("#intro").hide();
           $("#dist_instrux").css("visibility", "visible");
 
 
