@@ -370,6 +370,8 @@ a, a:hover {
     left: 10px;
     color: white;
     font-weight: bolder;
+    border-width: 0;
+    background-color: #0000;
 }
 
 .close_spectrum:hover {
